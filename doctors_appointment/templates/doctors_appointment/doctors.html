@@ -1,1 +1,11 @@
+{% load static %}
 <h1>Записи к врачу</h1>
+
+{% for appt in appointments %}
+    <br>
+    <h2>{{ appt.patient }}</h2>
+    <h2> <a href="{% url 'doctors:detail_appointment' appt.id %}">{{ appt.doctor }}</a></h2>
+    <h2>{{ appt.date }}</h2>
+    <h2>{{ appt.time }}</h2>
+    <br>
+{% endfor %}

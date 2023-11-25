@@ -29,6 +29,9 @@ ALLOWED_HOSTS = ["*"]
 
 # Urls #
 STATIC_URL = 'static/'
+# LOGIN_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = 'users:login' # url для login_required
 
 
 # Application definition
@@ -110,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'Ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
