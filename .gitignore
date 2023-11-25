@@ -1,0 +1,11 @@
+ToDo.txt
+*.log
+*.pot
+*.pyc
+*cpython*
+__pycache__/
+db.sqlite3
+media
+trash/
+media/
+*.pyc
