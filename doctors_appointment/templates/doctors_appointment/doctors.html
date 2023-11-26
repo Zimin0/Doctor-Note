@@ -7,5 +7,6 @@
     <h2> <a href="{% url 'doctors:detail_appointment' appt.id %}">{{ appt.doctor }}</a></h2>
     <h2>{{ appt.date }}</h2>
     <h2>{{ appt.time }}</h2>
+    <a href="{% url 'doctors:add_report' appt.id %}">Добавить отчет</a>
     <br>
 {% endfor %}

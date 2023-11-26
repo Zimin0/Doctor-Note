@@ -9,9 +9,10 @@ class Appointment(models.Model):
     time = models.TimeField(verbose_name="Время", max_length=5, help_text="Формат: XX:XX", blank=False)
     address = models.CharField(verbose_name="Адрес", max_length=100, blank=False)
     office_number = models.CharField(verbose_name="Кабинет", max_length=6, blank=False)
-    health_troubles = models.TextField(verbose_name="Жалобы", blank=True)
+    health_troubles = models.TextField(verbose_name="Жалобы", blank=True, null=True)
     archived = models.BooleanField(verbose_name="Архивировано?", default=False)
-
+    report = models.TextField(verbose_name="Отчет после приема", blank=True, null=True)
+    
     def convert_date(self, date_str:str) -> dict:
         """ Converts data from "21.03.1980" to datetime.date object """
         result = {'date':None, 'status':'OK'}
