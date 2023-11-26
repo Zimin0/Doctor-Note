@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 import datetime
 
 class Appointment(models.Model):
@@ -12,6 +13,7 @@ class Appointment(models.Model):
     health_troubles = models.TextField(verbose_name="Жалобы", blank=True, null=True)
     archived = models.BooleanField(verbose_name="Архивировано?", default=False)
     report = models.TextField(verbose_name="Отчет после приема", blank=True, null=True)
+    is_ended = models.BooleanField(verbose_name="Закончился ли прием?", default=False)
     
     def convert_date(self, date_str:str) -> dict:
         """ Converts data from "21.03.1980" to datetime.date object """
@@ -32,3 +34,11 @@ class Appointment(models.Model):
         except:
             result['status'] = 'ERROR: invalid format of time.'
         return result  
+    
+    def is_appointment_over(self) -> bool:
+        """ Проверяет, прошла ли встреча у доктора исходя из назначенного времени."""
+        current_timezone = timezone.get_current_timezone()
+        current_datetime = timezone.now()
+        appointment_datetime = datetime.datetime.combine(self.date, self.time)
+        appointment_datetime = appointment_datetime.replace(tzinfo=current_timezone)
+        return appointment_datetime < current_datetime

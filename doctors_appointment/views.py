@@ -7,7 +7,12 @@ from doctors_appointment.models import Appointment
 def display_doctors(request):
     """ Главная страница с записями к врачу. """
     context = {}
-    appointments = Appointment.objects.filter(patient=request.user, archived=False) 
+    appointments = Appointment.objects.filter(patient=request.user, archived=False).order_by('-date', '-time')
+    for appt in appointments: # смотрим, какие записи уже истекли
+        if not appt.is_ended:
+            if appt.is_appointment_over():
+                appt.is_ended = True
+                appt.save()
     context['appointments'] = appointments
     return render(request, 'doctors_appointment/doctors.html', context)
 

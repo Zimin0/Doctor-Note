@@ -1,12 +1,241 @@
 {% load static %}
-<h1>Записи к врачу</h1>
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <meta name="keywords" content="​Here a Digital Art Studio, Design and Concept&nbsp;Development, About, ​We offer opportunities for audiences of all ages">
+      <meta name="description" content="">
+      <title>Записи к врачу</title>
+      <link rel="stylesheet" href="{% static 'doctors_appointment/nicepage.css' %}" media="screen">
+      <link rel="stylesheet" href="{% static 'doctors_appointment/doctors.css' %}" media="screen">
+      <script class="u-script" type="text/javascript" src="{% static 'doctors_appointment/jquery.js' %}" defer=""></script> 
+      <script class="u-script" type="text/javascript" src="{% static 'doctors_appointment/nicepage.js' %}" defer=""></script>  
+      <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
+      <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+      <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+      <script type="application/ld+json">{
+         "@context": "http://schema.org",
+         "@type": "Organization",
+         "name": "Doctor"
+         }
+      </script>
+      <meta name="theme-color" content="#3a50f9">
+      <meta property="og:title" content="Записи к врачу">
+      <meta property="og:description" content="">
+      <meta property="og:type" content="website">
+      <meta data-intl-tel-input-cdn-path="intlTelInput/">
+   </head>
+   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru">
+      <header class="u-box-shadow u-clearfix u-grey-10 u-header u-sticky u-sticky-9848 u-header" id="sec-d497">
+         <div class="u-clearfix u-sheet u-valign-middle-md u-sheet-1">
+            <span class="u-hidden-lg u-hidden-md u-hidden-xl u-icon u-icon-1">
+               <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style="">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-2bc3"></use>
+               </svg>
+               <svg class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-2bc3" style="enable-background:new 0 0 42 42;">
+                  <path d="M37.059,16H26V4.941C26,2.224,23.718,0,21,0s-5,2.224-5,4.941V16H4.941C2.224,16,0,18.282,0,21s2.224,5,4.941,5H16v11.059
+                     C16,39.776,18.282,42,21,42s5-2.224,5-4.941V26h11.059C39.776,26,42,23.718,42,21S39.776,16,37.059,16z"></path>
+               </svg>
+            </span>
+            <nav class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xl u-align-left-xs u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="SM">
+               <div class="menu-collapse" style="font-size: 1.375rem; letter-spacing: 0px; font-weight: 700;">
+                  <a class="u-button-style u-custom-border-radius u-custom-color u-custom-effect-duration u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-hover-color u-custom-text-shadow u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="padding: 11px 14px; font-size: calc(1em + 22px);">
+                     <svg class="u-svg-link" viewBox="0 0 24 24">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+                     </svg>
+                     <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                           <rect y="1" width="16" height="2"></rect>
+                           <rect y="7" width="16" height="2"></rect>
+                           <rect y="13" width="16" height="2"></rect>
+                        </g>
+                     </svg>
+                  </a>
+               </div>
+               <div class="u-custom-menu u-nav-container">
+                  <ul class="u-nav u-spacing-33 u-unstyled u-nav-1">
+                     <li class="u-nav-item"><a class="u-button-style u-custom-color-10 u-nav-link u-radius" target="_blank" style="--radius:50px; padding: 10px 20px;">Лекарства</a></li>
+                     <li class="u-nav-item"><a class="u-button-style u-custom-color-10 u-nav-link u-radius" href="Записи-к-врачу.html" style="--radius:50px; padding: 10px 20px;">Запись к врачу</a></li>
+                     <li class="u-nav-item"><a class="u-button-style u-custom-color-10 u-nav-link u-radius" href="Войти.html" target="_blank" style="--radius:50px; padding: 10px 20px;">Войти</a></li>
+                     <li class="u-nav-item"><a class="u-button-style u-custom-color-10 u-nav-link u-radius" href="Регистрация.html" target="_blank" style="--radius:50px; padding: 10px 20px;">Регистрация</a></li>
+                  </ul>
+               </div>
+               <div class="u-custom-menu u-nav-container-collapse">
+                  <div class="u-container-style u-custom-color-10 u-inner-container-layout u-opacity u-opacity-90 u-sidenav">
+                     <div class="u-inner-container-layout u-sidenav-overflow">
+                        <div class="u-menu-close"></div>
+                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" target="_blank">Лекарства</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Записи-к-врачу.html">Запись к врачу</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Войти.html" target="_blank">Войти</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Регистрация.html" target="_blank">Регистрация</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+               </div>
+            </nav>
+            <span class="u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xs u-hidden-md u-hidden-xs u-icon u-icon-2">
+               <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 53 53" style="">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9517"></use>
+               </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" id="svg-9517" style="enable-background:new 0 0 53 53;">
+                  <path style="fill:#E7ECED;" d="M18.613,41.552l-7.907,4.313c-0.464,0.253-0.881,0.564-1.269,0.903C14.047,50.655,19.998,53,26.5,53
+                     c6.454,0,12.367-2.31,16.964-6.144c-0.424-0.358-0.884-0.68-1.394-0.934l-8.467-4.233c-1.094-0.547-1.785-1.665-1.785-2.888v-3.322
+                     c0.238-0.271,0.51-0.619,0.801-1.03c1.154-1.63,2.027-3.423,2.632-5.304c1.086-0.335,1.886-1.338,1.886-2.53v-3.546
+                     c0-0.78-0.347-1.477-0.886-1.965v-5.126c0,0,1.053-7.977-9.75-7.977s-9.75,7.977-9.75,7.977v5.126
+                     c-0.54,0.488-0.886,1.185-0.886,1.965v3.546c0,0.934,0.491,1.756,1.226,2.231c0.886,3.857,3.206,6.633,3.206,6.633v3.24
+                     C20.296,39.899,19.65,40.986,18.613,41.552z"></path>
+                  <g>
+                     <path style="fill:#556080;" d="M26.953,0.004C12.32-0.246,0.254,11.414,0.004,26.047C-0.138,34.344,3.56,41.801,9.448,46.76
+                        c0.385-0.336,0.798-0.644,1.257-0.894l7.907-4.313c1.037-0.566,1.683-1.653,1.683-2.835v-3.24c0,0-2.321-2.776-3.206-6.633
+                        c-0.734-0.475-1.226-1.296-1.226-2.231v-3.546c0-0.78,0.347-1.477,0.886-1.965v-5.126c0,0-1.053-7.977,9.75-7.977
+                        s9.75,7.977,9.75,7.977v5.126c0.54,0.488,0.886,1.185,0.886,1.965v3.546c0,1.192-0.8,2.195-1.886,2.53
+                        c-0.605,1.881-1.478,3.674-2.632,5.304c-0.291,0.411-0.563,0.759-0.801,1.03V38.8c0,1.223,0.691,2.342,1.785,2.888l8.467,4.233
+                        c0.508,0.254,0.967,0.575,1.39,0.932c5.71-4.762,9.399-11.882,9.536-19.9C53.246,12.32,41.587,0.254,26.953,0.004z"></path>
+                  </g>
+               </svg>
+            </span>
+         </div>
+      </header>
+      <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_4bd5">
+         <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500">Запись к врачам</h2>
+            <a href="https://nicepage.com/c/food-restaurant-html-templates" class="u-border-none u-btn u-button-style u-custom-color-10 u-hover-palette-1-dark-1 u-btn-1">
+               <span class="u-icon u-icon-1">
+                  <svg class="u-svg-content" viewBox="0 0 52 52" x="0px" y="0px" style="width: 1em; height: 1em;">
+                     <g>
+                        <path d="M26,0C11.664,0,0,11.663,0,26s11.664,26,26,26s26-11.663,26-26S40.336,0,26,0z M26,50C12.767,50,2,39.233,2,26
+                           S12.767,2,26,2s24,10.767,24,24S39.233,50,26,50z"></path>
+                        <path d="M38.5,25H27V14c0-0.553-0.448-1-1-1s-1,0.447-1,1v11H13.5c-0.552,0-1,0.447-1,1s0.448,1,1,1H25v12c0,0.553,0.448,1,1,1
+                           s1-0.447,1-1V27h11.5c0.552,0,1-0.447,1-1S39.052,25,38.5,25z"></path>
+                     </g>
+                  </svg>
+               </span>
+               &nbsp; Добавить
+            </a>
+            <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
+               <div class="u-repeater u-repeater-1">
+                <!------------------------------------------>
+                {% for appt in appointments %} 
+                    {% if not appt.is_ended %}               
+                        <div class="u-align-left-xl u-container-style u-custom-item u-list-item u-radius u-repeater-item u-shape-round u-white u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                            <div class="u-container-layout u-similar-container u-container-layout-1">
+                                <div class="custom-expanded u-container-style u-custom-color-9 u-custom-item u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-radius u-shape-round u-group-1">
+                                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-2">
+                                    <h4 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-2">{{ appt.doctor }}</h4>
+                                </div>
+                                </div> 
+                                <h6 class="u-custom-item u-text u-text-3">{{ appt.time }}</h6>
+                                <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-custom-item u-text u-text-4"> &nbsp;Время:</h6>
+                                <h6 class="u-text u-text-5">{{ appt.date|date:"l, d.m.Y" }}</h6>
+                                <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-6"> &nbsp;Дата:</h6>
+                                <h6 class="u-text u-text-7">{{ appt.office_number }} каб.</h6>
+                                <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-8"> &nbsp;Кабинет:</h6>
+                                <h6 class="u-text u-text-9">{{ appt.address }}</h6>
+                                <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-10"> &nbsp;Адрес:</h6>
+                                <a href="https://nicepage.com/c/education-website-templates" class="u-active-palette-1-dark-1 u-border-2 u-border-custom-color-10 u-btn u-button-style u-hover-custom-color-11 u-none u-btn-2">Удалить</a>
+                                <a href="{% url 'doctors:detail_appointment' appt.id %}" class="u-active-custom-color-10 u-border-2 u-border-custom-color-10 u-btn u-button-style u-hover-custom-color-11 u-none u-btn-3">Инфо</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="u-align-left-xl u-container-style u-custom-item u-list-item u-radius u-repeater-item u-shape-round u-white u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                            <div class="u-container-layout u-similar-container u-container-layout-3">
+                            <div class="custom-expanded u-container-style u-custom-color-10 u-custom-item u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-radius u-shape-round u-group-2">
+                                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-4">
+                                <h4 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-11">{{ appt.doctor }}</h4>
+                                </div>
+                            </div>
+                            <h6 class="u-custom-item u-text u-text-12">{{ appt.time }}</h6>
+                            <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-custom-item u-text u-text-13"> &nbsp;Время:</h6>
+                            <h6 class="u-text u-text-14">{{ appt.date|date:"l, d.m.Y" }}</h6>
+                            <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-15"> &nbsp;Дата:</h6>
+                            <h6 class="u-text u-text-16">{{ appt.office_number }} каб.</h6>
+                            <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-17"> &nbsp;Кабинет:</h6>
+                            <h6 class="u-text u-text-18">{{ appt.address }}</h6>
+                            <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-19"> &nbsp;Адрес:</h6>
+                            <a href="https://nicepage.com/c/education-website-templates" class="u-active-palette-1-dark-1 u-border-2 u-border-custom-color-10 u-btn u-button-style u-hover-custom-color-11 u-none u-btn-4">Удалить</a>
+                            <a href="{% url 'doctors:add_report' appt.id %}" class="u-active-custom-color-10 u-border-2 u-border-custom-color-10 u-btn u-button-style u-hover-custom-color-11 u-none u-btn-5">+ отчет</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
 
-{% for appt in appointments %}
-    <br>
-    <h2>{{ appt.patient }}</h2>
-    <h2> <a href="{% url 'doctors:detail_appointment' appt.id %}">{{ appt.doctor }}</a></h2>
-    <h2>{{ appt.date }}</h2>
-    <h2>{{ appt.time }}</h2>
-    <a href="{% url 'doctors:add_report' appt.id %}">Добавить отчет</a>
-    <br>
-{% endfor %}
+
+
+                  <!------------------------------------------>
+                  <!-------------------
+                  
+                                      <div class="u-align-left-xl u-container-style u-custom-item u-list-item u-radius u-repeater-item u-shape-round u-white u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                    <div class="u-container-layout u-similar-container u-container-layout-3">
+                       <div class="custom-expanded u-container-style u-custom-color-10 u-custom-item u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-radius u-shape-round u-group-2">
+                          <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-4">
+                             <h4 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-11">Окулист</h4>
+                          </div>
+                       </div>
+                       <h6 class="u-custom-item u-text u-text-12">16:30</h6>
+                       <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-custom-item u-text u-text-13"> &nbsp;Время:</h6>
+                       <h6 class="u-text u-text-14">11.11.2023</h6>
+                       <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-15"> &nbsp;Дата:</h6>
+                       <h6 class="u-text u-text-16">201 каб.</h6>
+                       <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-17"> &nbsp;Кабинет:</h6>
+                       <h6 class="u-text u-text-18">Улица Уфимова, 48 поликлиника</h6>
+                       <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-19"> &nbsp;Адрес:</h6>
+                       <a href="https://nicepage.com/c/education-website-templates" class="u-active-palette-1-dark-1 u-border-2 u-border-custom-color-10 u-btn u-button-style u-hover-custom-color-11 u-none u-btn-4">Удалить</a>
+                       <a href="https://nicepage.com/c/education-website-templates" class="u-active-custom-color-10 u-border-2 u-border-custom-color-10 u-btn u-button-style u-hover-custom-color-11 u-none u-btn-5">+ отчет</a>
+                    </div>
+                 </div>
+
+
+                  <div class="u-align-left-xl u-container-style u-custom-item u-list-item u-radius u-repeater-item u-shape-round u-white u-list-item-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                     <div class="u-container-layout u-similar-container u-container-layout-5">
+                        <div class="custom-expanded u-container-style u-custom-color-10 u-custom-item u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-radius u-shape-round u-group-3">
+                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-6">
+                              <h4 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-20">Отоларинголог</h4>
+                           </div>
+                        </div>
+                        <h6 class="u-custom-item u-text u-text-21">12:00</h6>
+                        <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-custom-item u-text u-text-22"> &nbsp;Время:</h6>
+                        <h6 class="u-text u-text-23">21.05.2023</h6>
+                        <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-24"> &nbsp;Дата:</h6>
+                        <h6 class="u-text u-text-25">305 каб.</h6>
+                        <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-26"> &nbsp;Кабинет:</h6>
+                        <h6 class="u-text u-text-27">Улица Колонтай, 48 поликлиника</h6>
+                        <h6 class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-text u-text-default u-text-28"> &nbsp;Адрес:</h6>
+                        <a href="https://nicepage.com/c/education-website-templates" class="u-active-palette-1-dark-1 u-border-2 u-border-custom-color-10 u-btn u-button-style u-hover-custom-color-11 u-none u-btn-6">Удалить</a>
+                        <a href="https://nicepage.com/c/education-website-templates" class="u-active-custom-color-10 u-border-2 u-border-custom-color-10 u-btn u-button-style u-hover-custom-color-11 u-none u-btn-7">Инфо</a>
+                     </div>
+                  </div>
+                  ---------------------->
+                  
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7512">
+         <div class="u-clearfix u-sheet u-sheet-1">
+            <p class="u-small-text u-text u-text-variant u-text-1">This website is made by Zimino.&nbsp;<br>
+               <span style="font-size: 1rem;">Contacts:&nbsp;</span>
+               <br>&nbsp;<span style="font-weight: 700;">
+               <span style="font-weight: 400;"></span>
+               </span>
+               <span style="font-style: italic;">work_notifications_zimino@mail.ru<br>https://github.com/Zimin0
+               </span>
+               <br>
+            </p>
+         </div>
+      </footer>
+      <section class="u-backlink u-clearfix u-grey-80">
+         <a class="u-link" href="https://nicepage.com/css-templates" target="_blank">
+         <span>CSS Templates</span>
+         </a>
+         <p class="u-text">
+            <span>created with</span>
+         </p>
+         <a class="u-link" href="https://nicepage.one" target="_blank">
+         <span>Best Website Builder</span>
+         </a>. 
+      </section>
+   </body>
+</html>
