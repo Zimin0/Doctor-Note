@@ -358,7 +358,7 @@
             Const = n(3297);
         m((function() {
             var form = new i;
-            window.serviceRequest = p, m("").submit(form.submit), m(".u-form .u-btn-submi").click(form.click)
+            window.serviceRequest = p, m("form.u-form-vertical:not(.u-form-custom-backend), form.u-form-horizontal:not(.u-form-custom-backend)").submit(form.submit), m(".u-form .u-btn-submit").click(form.click)
         })), window.MailChimpForm = i
     },
     11640: function(t, e, n) {
@@ -5241,7 +5241,7 @@
             c = "auth_key";
         if (window.sha256 = u, window._npAuthInit = function() {
                 var form;
-                l("").submit(i)
+                l(".u-password-control form").submit(i)
             }, jQuery && -1 !== document.location.href.indexOf("http")) jQuery((function() {
             window._npAuthInit(), o()
         }))
@@ -12729,13 +12729,3 @@
         }, window.PaymentCart = i
     }
 });
-
-
-
-
-
-
-
-
-
-
