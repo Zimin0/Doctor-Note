@@ -35,7 +35,7 @@ def add_doctors_appointment(request):
                 health_troubles=form.cleaned_data['health_troubles']
             )
             new_appt.save()
-            return render(request, 'doctors_appointment/add.html', {}) 
+            return redirect('doctor:display_doctors')
         else:
             print("Форма невалидна!")
             return render(request, 'doctors_appointment/add.html', {'form':form}) 

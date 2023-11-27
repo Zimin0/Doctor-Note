@@ -6,7 +6,10 @@ def register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect('users:login')
+        else:
+            print("Форма регистрации невалидна!")
+            return render(request, 'users/register.html', {'form':form})
     else:
         form = UserRegistrationForm()
-    return render(request, 'users/register.html', {'form': form})
+        return render(request, 'users/register.html', {'form': form})
