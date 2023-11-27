@@ -99,50 +99,64 @@
             </span>
          </div>
       </header>
-      <section class="u-clearfix u-section-1" id="sec-c321">
-         <div class="u-clearfix u-sheet u-sheet-1">
-            <h6 class="u-text u-text-default u-text-1">Добавить запись к врачу<br>
-            </h6>
-            <div class="u-form u-form-1">
-               <form method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" name="form">
-                {% csrf_token %}
-               <div class="u-form-group u-form-name u-label-none">
-                  <label for="name-3b9a" class="u-label">doctor</label>
-                  <input type="text" placeholder="* Врач:" id="name-3b9a" name="doctor" class="u-input u-input-rectangle u-radius u-input-1" required="">
+         <section class="u-clearfix u-section-1" id="sec-c321">
+            <div class="u-clearfix u-sheet u-sheet-1">
+               <h6 class="u-text u-text-default u-text-1">Добавить запись к врачу<br></h6>
+               <div class="u-form u-form-1">
+                  <form method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" name="form">
+                        {% csrf_token %}
+                        <div class="u-form-group u-form-name u-label-none">
+                           <label for="name-3b9a" class="u-label">doctor</label>
+                           <input type="text" placeholder="* Врач:" id="name-3b9a" name="doctor" class="u-input u-input-rectangle u-radius u-input-1" required="" value="{% if form.doctor.value %} {{ form.doctor.value }} {% endif %}">
+                           {% if form.doctor.errors %}
+                              <div class="error">{{ form.doctor.errors }}</div>
+                           {% endif %}
+                        </div>
+                        <div class="u-form-date u-form-group u-label-none u-form-group-2">
+                           <label for="date-56cb" class="u-label">date</label>
+                           <input type="text" placeholder="XX.XX.XXXX" id="date-56cb" name="date" class="u-input u-input-rectangle u-radius u-input-2" required="" data-date-format="dd.mm.yyyy" value="{% if form.date.value %}{{ form.date.value }}{% endif %}">
+                           {% if form.date.errors %}
+                              <div class="error">{{ form.date.errors }}</div>
+                           {% endif %}
+                        </div>
+                        <div class="u-form-group u-form-time u-label-none u-form-group-3">
+                           <label for="time-900e" class="u-label">time</label>
+                           <input type="time" id="time-900e" name="time" class="u-input u-input-rectangle u-radius u-input-3" data-time-value="12:00" value="{% if form.time.value %} {{ form.time.value }}{% endif %}">
+                           {% if form.time.errors %}
+                              <div class="error">{{ form.time.errors }}</div>
+                           {% endif %}
+                        </div>
+                        <div class="u-form-group u-label-none u-form-group-4">
+                           <label for="text-ccfc" class="u-label">address</label>
+                           <input type="text" placeholder="* Адрес:" id="text-ccfc" name="address" class="u-input u-input-rectangle u-radius u-input-4" required="required" value="{% if form.address.value %} {{ form.address.value }}{% endif %}">
+                           {% if form.address.errors %}
+                              <div class="error">{{ form.address.errors }}</div>
+                           {% endif %}
+                        </div>
+                        <div class="u-form-group u-label-none u-form-group-5">
+                           <label for="text-fbaf" class="u-label">office_number</label>
+                           <input type="text" placeholder="* Кабинет:" id="text-fbaf" name="office_number" class="u-input u-input-rectangle u-radius u-input-5" required="required" value="{% if form.office_number.value %} {{ form.office_number.value }}{% endif %}">
+                           {% if form.office_number.errors %}
+                              <div class="error">{{ form.office_number.errors }}</div>
+                           {% endif %}
+                        </div>
+                        <div class="u-form-group u-form-message u-label-none">
+                           <label for="message-3b9a" class="u-label">health_troubles</label>
+                           <textarea placeholder="Жалобы:" rows="4" cols="50" id="message-3b9a" name="health_troubles" class="u-input u-input-rectangle u-radius u-input-6" required="">{% if form.health_troubles.value %}{{ form.health_troubles.value }}{% endif %}</textarea>
+                           {% if form.health_troubles.errors %}
+                              <div class="error">{{ form.health_troubles.errors }}</div>
+                           {% endif %}
+                        </div>
+                        <div class="u-align-left u-form-group u-form-submit u-label-none">
+                           <input type="submit" class="u-active-custom-color-11 u-border-none u-btn u-btn-submit u-button-style u-custom-color-10 u-hover-custom-color-12 u-btn-1" value="Отправить2">
+                        </div>
+                        <div class="u-form-send-message u-form-send-success"> Новая запись добавлена! </div>
+                        <div class="u-form-send-error u-form-send-message"> Не удалось добаить новую запись. Исправьте ошибки в форме. </div>
+                  </form>
                </div>
-               <div class="u-form-date u-form-group u-label-none u-form-group-2">
-                  <label for="date-56cb" class="u-label">date</label>
-                  <input type="text" placeholder="XX.XX.XXXX" id="date-56cb" name="date" class="u-input u-input-rectangle u-radius u-input-2" required="" data-date-format="dd.mm.yyyy">
-               </div>
-               <div class="u-form-group u-form-time u-label-none u-form-group-3">
-                  <label for="time-900e" class="u-label">time</label>
-                  <input type="time" id="time-900e" name="time" class="u-input u-input-rectangle u-radius u-input-3" data-time-value="12:00">
-               </div>
-               <div class="u-form-group u-label-none u-form-group-4">
-                  <label for="text-ccfc" class="u-label">address</label>
-                  <input type="text" placeholder="* Адрес:" id="text-ccfc" name="address" class="u-input u-input-rectangle u-radius u-input-4" required="required">
-               </div>
-               <div class="u-form-group u-label-none u-form-group-5">
-                  <label for="text-fbaf" class="u-label">office_number</label>
-                  <input type="text" placeholder="* Кабинет:" id="text-fbaf" name="office_number" class="u-input u-input-rectangle u-radius u-input-5" required="required">
-               </div>
-               <div class="u-form-group u-form-message u-label-none">
-                  <label for="message-3b9a" class="u-label">health_troubles</label>
-                  <textarea placeholder="Жалобы:" rows="4" cols="50" id="message-3b9a" name="health_troubles" class="u-input u-input-rectangle u-radius u-input-6" required=""></textarea>
-               </div>
-               <div class="u-align-left u-form-group u-form-submit u-label-none">
-                  <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
-                  <!-- <a href="#" class="u-active-custom-color-11 u-border-none u-btn u-btn-submit u-button-style u-custom-color-10 u-hover-custom-color-12 u-btn-1">Отправить1</a> -->
-                  <input type="submit" class="u-active-custom-color-11 u-border-none u-btn u-btn-submit u-button-style u-custom-color-10 u-hover-custom-color-12 u-btn-1" value="Отправить2">
-               </div>
-               <div class="u-form-send-message u-form-send-success"> Новая запись добавлена! </div>
-               <div class="u-form-send-error u-form-send-message"> Не удалось добаить новую запись. Исправьте ошибки в форме. </div>
-               <!-- <input type="hidden" value="" name="recaptchaResponse">
-                  <input type="hidden" name="formServices" value="053a05f4-46e9-dc54-0903-77a2c20eae4a"> -->
-               </form
             </div>
-         </div>
       </section>
+     
       <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7512">
          <div class="u-clearfix u-sheet u-sheet-1">
             <p class="u-small-text u-text u-text-variant u-text-1">This website is made by Zimino.&nbsp;<br>

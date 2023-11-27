@@ -38,8 +38,10 @@ def add_doctors_appointment(request):
             return render(request, 'doctors_appointment/add.html', {}) 
         else:
             print("Форма невалидна!")
+            return render(request, 'doctors_appointment/add.html', {'form':form}) 
     else:
-        return render(request, 'doctors_appointment/add.html', {})
+        form = AppointmentForm()
+        return render(request, 'doctors_appointment/add.html', {'form':form})
 
 @login_required
 def detail_appointment(request, appt_id):
