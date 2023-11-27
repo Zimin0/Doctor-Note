@@ -8,3 +8,4 @@ urlpatterns = [
     path('doctors/', include('doctors_appointment.urls')),
     path('users/', include('users.urls')),
 ]
+    

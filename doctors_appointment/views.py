@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 
 from doctors_appointment.models import Appointment
+from doctors_appointment.forms import AppointmentForm
 
 @login_required
 def display_doctors(request):
@@ -20,8 +21,25 @@ def display_doctors(request):
 def add_doctors_appointment(request):
     """ Добавление записи к врачу. """
     if request.method == "POST":
-        ...
-    return render(request, 'doctors_appointment/add.html', {})
+        print(request.POST)
+        form = AppointmentForm(request.POST)
+        if form.is_valid():
+            # Создаем новую запись в базе данных
+            new_appt = Appointment.objects.create(
+                patient=request.user,
+                doctor=form.cleaned_data['doctor'],
+                date=form.cleaned_data['date'],
+                time=form.cleaned_data['time'],
+                address=form.cleaned_data['address'],
+                office_number=form.cleaned_data['office_number'],
+                health_troubles=form.cleaned_data['health_troubles']
+            )
+            new_appt.save()
+            return render(request, 'doctors_appointment/add.html', {}) 
+        else:
+            print("Форма невалидна!")
+    else:
+        return render(request, 'doctors_appointment/add.html', {})
 
 @login_required
 def detail_appointment(request, appt_id):
