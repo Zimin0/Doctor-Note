@@ -32,6 +32,7 @@ STATIC_URL = 'static/'
 # LOGIN_REDIRECT_URL = 'home'
 # LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'users:login' # url для login_required
+CSRF_TRUSTED_ORIGINS = ['https://3cf2-91-238-229-3.ngrok-free.app']
 
 
 # Application definition
