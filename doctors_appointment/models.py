@@ -5,10 +5,10 @@ import datetime
 
 class Appointment(models.Model):
     patient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointments')
-    doctor = models.CharField(verbose_name="Врач", max_length=20, blank=False)
+    doctor = models.CharField(verbose_name="Врач", max_length=14, blank=False)  
     date = models.DateField(verbose_name="Дата", max_length=10, help_text="Формат: XX.XX.XXXX", blank=False)
     time = models.TimeField(verbose_name="Время", max_length=5, help_text="Формат: XX:XX", blank=False)
-    address = models.CharField(verbose_name="Адрес", max_length=100, blank=False)
+    address = models.CharField(verbose_name="Адрес", max_length=80, blank=False)
     office_number = models.CharField(verbose_name="Кабинет", max_length=6, blank=False)
     health_troubles = models.TextField(verbose_name="Жалобы", blank=True, null=True)
     archived = models.BooleanField(verbose_name="Архивировано?", default=False)
