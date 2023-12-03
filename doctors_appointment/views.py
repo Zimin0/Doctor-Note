@@ -23,6 +23,7 @@ def add_doctors_appointment(request):
     if request.method == "POST":
         print(request.POST)
         form = AppointmentForm(request.POST)
+        # print(f"result_time={form.cleaned_data['time']}")
         if form.is_valid():
             # Создаем новую запись в базе данных
             new_appt = Appointment.objects.create(
@@ -35,13 +36,14 @@ def add_doctors_appointment(request):
                 health_troubles=form.cleaned_data['health_troubles']
             )
             new_appt.save()
-            return redirect('doctor:display_doctors')
+            return redirect('doctors:display_doctors')
         else:
             print("Форма невалидна!")
-            return render(request, 'doctors_appointment/add.html', {'form':form}) 
+            print(form.errors)
+            return render(request, 'doctors_appointment/addDoctor.html', {'form': form, 'errors': form.errors})
     else:
         form = AppointmentForm()
-        return render(request, 'doctors_appointment/add.html', {'form':form})
+        return render(request, 'doctors_appointment/addDoctor.html', {'form':form})
 
 @login_required
 def detail_appointment(request, appt_id):

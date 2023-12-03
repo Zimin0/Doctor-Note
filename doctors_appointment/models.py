@@ -15,15 +15,15 @@ class Appointment(models.Model):
     report = models.TextField(verbose_name="Отчет после приема", blank=True, null=True)
     is_ended = models.BooleanField(verbose_name="Закончился ли прием?", default=False)
     
-    def convert_date(self, date_str:str) -> dict:
-        """ Converts data from "21.03.1980" to datetime.date object """
-        result = {'date':None, 'status':'OK'}
-        try:    
-            day, month, year = list(map(int, date_str.split('.'))) 
+    def convert_date(self, date_str: str) -> dict:
+        """ Converts date from "21/03/1980" to datetime.date object """
+        result = {'date': None, 'status': 'OK'}
+        try:
+            day, month, year = list(map(int, date_str.split('/')))
             result['date'] = datetime.date(year, month, day)
-        except:
-            result['status'] = 'ERROR: invalid format of data.'
-        return result  
+        except ValueError:
+            result['status'] = 'ERROR: invalid format of date.'
+        return result
     
     def convert_time(self, time_str:str) -> dict:
         """ Converts time from "12:45" to datetime.time object """
