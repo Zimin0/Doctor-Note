@@ -23,7 +23,6 @@ def add_doctors_appointment(request):
     if request.method == "POST":
         print(request.POST)
         form = AppointmentForm(request.POST)
-        # print(f"result_time={form.cleaned_data['time']}")
         if form.is_valid():
             # Создаем новую запись в базе данных
             new_appt = Appointment.objects.create(
