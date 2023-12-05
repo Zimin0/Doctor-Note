@@ -55,14 +55,23 @@ def detail_appointment(request, appt_id):
 @login_required
 def edit_appointment(request, appt_id):
     """ Изменение записи ко врачу """
-    context = {}
-    if request.method == 'GET':
-        # заполняем форму добавления данными из базы данных
-        appointment =  get_object_or_404(Appointment, id=appt_id)
-        context['appointment'] = appointment
-        return render(request, 'doctors_appointment/edit.html', context)
-    if request.method == "POST":
-        ...
+    appointment = get_object_or_404(Appointment, id=appt_id)
+
+    if request.method == 'POST':
+        form = AppointmentForm(request.POST, instance=appointment)
+        if form.is_valid():
+            print()
+            form.save()
+            # Здесь можно добавить перенаправление или обработку успешного сохранения
+        else:
+            print("Форма невалидна!")
+            print(form.errors)
+    else:
+        # Инициализация формы данными из объекта appointment
+        form = AppointmentForm(instance=appointment)
+
+    context = {'form': form}
+    return render(request, 'doctors_appointment/editDoctor.html', context)
 
 @login_required
 def add_report(request, appt_id):
