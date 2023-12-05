@@ -99,14 +99,23 @@
             <div class="u-align-center u-form u-form-1">
                <form method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" name="form" redirect="true">
                 {% csrf_token  %}  
-                <div class="u-form-group u-form-name u-label-none">
+                {% if form.non_field_errors %}
+                  <div class="error">{{ form.non_field_errors }}</div>
+               {% endif %}
+                  <div class="u-form-group u-form-name u-label-none">
                      <label for="name-3b9a" class="u-label">login</label>
                      <input type="text" placeholder="* Логин: " id="name-3b9a" name="username" class="u-border-2 u-input u-input-rectangle u-radius u-input-1" required="">
+                     {% if form.username.errors %}
+                     <div class="error">{{ form.username.errors }}</div>
+                     {% endif %}
                   </div>
                   <div class="u-form-group u-label-none u-form-group-2">
                      <label for="text-c237" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Пароль: " id="text-c237" name="password" class="u-border-2 u-input u-input-rectangle u-radius u-input-2">
-                  </div>
+                     <input type="password" placeholder="* Пароль: " id="text-c237" name="password" class="u-border-2 u-input u-input-rectangle u-radius u-input-2">
+                     {% if form.password.errors %}
+                       <div class="error">{{ form.password.errors }}</div>
+                     {% endif %}
+                   </div>
                   <div class="u-align-left u-form-group u-form-submit">
                      <input value="Войти" type="submit" class="u-active-palette-3-light-2 u-border-none u-btn u-btn-submit u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1">
                      <input type="submit" value="submit" class="u-form-control-hidden">
