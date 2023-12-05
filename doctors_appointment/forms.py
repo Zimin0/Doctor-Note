@@ -2,7 +2,7 @@ from django import forms
 from doctors_appointment.models import Appointment
 
 class AppointmentForm(forms.ModelForm):
-    date = forms.DateField(input_formats=['%d/%m/%Y'])
+    date = forms.DateField(input_formats=['%d/%m/%Y', '%d.%m.%Y','%d-%m-%Y', '%Y-%m-%d' ])
     time = forms.TimeField(input_formats=['%H:%M'])
 
     class Meta:

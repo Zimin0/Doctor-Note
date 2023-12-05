@@ -32,7 +32,7 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'doctors:display_doctors'
 LOGOUT_REDIRECT_URL = 'welcome:welcome'
 LOGIN_URL = 'welcome:welcome' # url для login_required
-CSRF_TRUSTED_ORIGINS = ['https://a6aa-91-238-229-3.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://e72f-91-238-229-3.ngrok-free.app']
 
 
 # Application definition

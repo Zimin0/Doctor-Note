@@ -6305,22 +6305,22 @@
                     }))
                 }),
                 l, c, f;
-            u.masks = {
-                default: "ddd mmm dd yyyy HH:MM:ss",
-                shortDate: "m/d/yy",
-                paddedShortDate: "mm/dd/yyyy",
-                mediumDate: "mmm d, yyyy",
-                longDate: "mmmm d, yyyy",
-                fullDate: "dddd, mmmm d, yyyy",
-                shortTime: "h:MM TT",
-                mediumTime: "h:MM:ss TT",
-                longTime: "h:MM:ss TT Z",
-                isoDate: "yyyy-mm-dd",
-                isoTime: "HH:MM:ss",
-                isoDateTime: "yyyy-mm-dd'T'HH:MM:sso",
-                isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'",
-                expiresHeaderFormat: "ddd, dd mmm yyyy HH:MM:ss Z"
-            }, u.i18n = {
+                u.masks = {
+                    default: "dd/mm/yyyy HH:MM:ss", // изменен для примера, если вы используете этот формат по умолчанию
+                    shortDate: "dd/mm/yy",
+                    paddedShortDate: "dd/mm/yyyy",
+                    mediumDate: "dd/mm/yyyy",
+                    longDate: "dd/mm/yyyy",
+                    fullDate: "dddd, dd mm yyyy",
+                    shortTime: "h:MM TT",
+                    mediumTime: "h:MM:ss TT",
+                    longTime: "h:MM:ss TT Z",
+                    isoDate: "yyyy-mm-dd",
+                    isoTime: "HH:MM:ss",
+                    isoDateTime: "yyyy-mm-dd'T'HH:MM:sso",
+                    isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'",
+                    expiresHeaderFormat: "ddd, dd mmm yyyy HH:MM:ss Z"
+                }, u.i18n = {
                 dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 monthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 timeNames: ["a", "p", "am", "pm", "A", "P", "AM", "PM"]
