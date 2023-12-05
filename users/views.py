@@ -9,7 +9,8 @@ def register(request):
             return redirect('users:login')
         else:
             print("Форма регистрации невалидна!")
-            return render(request, 'users/register.html', {'form':form})
+            print(form.errors)
+            return render(request, 'users/register.html', {'form':form, 'errors': form.errors})
     else:
         form = UserRegistrationForm()
         return render(request, 'users/register.html', {'form': form})

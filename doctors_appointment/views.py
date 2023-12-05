@@ -56,18 +56,15 @@ def detail_appointment(request, appt_id):
 def edit_appointment(request, appt_id):
     """ Изменение записи ко врачу """
     appointment = get_object_or_404(Appointment, id=appt_id)
-
     if request.method == 'POST':
         form = AppointmentForm(request.POST, instance=appointment)
         if form.is_valid():
             print()
             form.save()
-            # Здесь можно добавить перенаправление или обработку успешного сохранения
         else:
             print("Форма невалидна!")
             print(form.errors)
     else:
-        # Инициализация формы данными из объекта appointment
         form = AppointmentForm(instance=appointment)
 
     context = {'form': form}
