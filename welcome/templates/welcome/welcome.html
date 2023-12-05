@@ -47,11 +47,10 @@
                </div>
                <div class="u-custom-menu u-nav-container">
                   <ul class="u-nav u-unstyled u-nav-1">
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="doctors.html" style="--radius:35px; padding: 10px 20px;">Врачи</a></li>
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="medicine.html" style="--radius:35px; padding: 10px 20px;">Лекарства</a></li>
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="login.html" style="--radius:35px; padding: 10px 20px;">Войти</a></li>
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="register.html" style="--radius:35px; padding: 10px 20px;">Регистрация</a></li>
-                  </ul>
+                    <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">Врачи</a></li>
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'welcome:page_in_progress' %}" style="--radius:35px; padding: 10px 20px;">Лекарства</a></li>
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">Войти</a></li>
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">Регистрация</a></li>                  </ul>
                </div>
                <div class="u-custom-menu u-nav-container-collapse">
                   <div class="u-container-style u-custom-color-4 u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
