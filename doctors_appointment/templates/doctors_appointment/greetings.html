@@ -57,11 +57,11 @@
                      <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-spacing-14 u-text-hover-palette-1-light-2 u-unstyled u-nav-2">
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="doctors.html">Врачи</a></li>
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="medicine.html">Лекарства</a></li>
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="login.html">Войти</a></li>
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="register.html">Регистрация</a></li>
-                        </ul>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">Врачи</a></li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'welcome:page_in_progress' %}">Лекарства</a></li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">Войти</a></li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">Регистрация</a></li>
+                       </ul>
                      </div>
                   </div>
                   <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
