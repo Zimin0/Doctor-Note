@@ -29,9 +29,9 @@ ALLOWED_HOSTS = ["*"]
 
 # Urls #
 STATIC_URL = 'static/'
-# LOGIN_REDIRECT_URL = 'home'
-# LOGOUT_REDIRECT_URL = 'home'
-LOGIN_URL = 'users:login' # url для login_required
+LOGIN_REDIRECT_URL = 'doctors:display_doctors'
+LOGOUT_REDIRECT_URL = 'welcome:welcome'
+LOGIN_URL = 'welcome:welcome' # url для login_required
 CSRF_TRUSTED_ORIGINS = ['https://b0f2-91-238-229-3.ngrok-free.app']
 
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'doctors_appointment',
     'users',
+    'welcome',
 ]
 
 MIDDLEWARE = [
