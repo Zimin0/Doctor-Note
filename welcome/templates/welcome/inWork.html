@@ -68,6 +68,7 @@
                </div>
             </nav>
             <h6 class="u-align-right u-text u-text-custom-color-4 u-text-1">
+               {% if user.is_authenticated %}
                <span class="u-icon u-icon-1">
                   <svg class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" style="width: 1em; height: 1em;">
                      <path style="fill:#E7ECED;" d="M18.613,41.552l-7.907,4.313c-0.464,0.253-0.881,0.564-1.269,0.903C14.047,50.655,19.998,53,26.5,53
@@ -86,7 +87,8 @@
                      </g>
                   </svg>
                </span>
-               &nbsp;Зименков Никита
+               {% endif %}
+               &nbsp;{{ user.last_name }} {{ user.first_name }}
             </h6>
          </div>
       </header>

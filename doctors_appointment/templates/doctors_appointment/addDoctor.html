@@ -107,7 +107,7 @@
                   </div>
                   <div class="u-form-date u-form-group u-label-none u-form-group-2">
                      <label for="text-c237" class="u-label">Поле ввода</label>
-                     <input type="text" id="text-c237" name="date" value="{% if form.date.value %} {{ form.date.value }} {% endif %}" class="u-border-custom-color-2 u-input u-input-rectangle u-radius u-input-2" data-date-format="mm/dd/yyyy" placeholder="* Дата:">
+                     <input type="text" id="text-c237" name="date" value="{% if form.date.value %} {{ form.date.value }} {% endif %}" class="u-border-custom-color-2 u-input u-input-rectangle u-radius u-input-2" data-date-format="dd/mm/yyyy" placeholder="* Дата:">
                      {% if form.date.errors %}
                         <div class="error">{{ form.date.errors }}</div>
                      {% endif %}
