@@ -83,3 +83,9 @@ def add_report(request, appt_id):
         appointment.report = report
         appointment.save()
         return redirect('doctors:display_doctors')
+
+@login_required
+def delete_appointment(request, appt_id):
+    obj = get_object_or_404(Appointment, id=appt_id)
+    obj.delete()
+    return redirect('doctors:display_doctors')
