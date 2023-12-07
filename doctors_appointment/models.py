@@ -14,6 +14,10 @@ class Appointment(models.Model):
     archived = models.BooleanField(verbose_name="Архивировано?", default=False)
     report = models.TextField(verbose_name="Отчет после приема", blank=True, null=True)
     is_ended = models.BooleanField(verbose_name="Закончился ли прием?", default=False)
+
+    def save(self, *args, **kwargs):
+        self.is_ended = self.is_appointment_over()
+        super(Appointment, self).save(*args, **kwargs)
     
     def convert_date(self, date_str: str) -> dict:
         """ Converts date from "21/03/1980" to datetime.date object """
