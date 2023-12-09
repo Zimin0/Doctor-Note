@@ -104,7 +104,7 @@
                      <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-1">
                         <div class="u-container-align-center u-container-style u-custom-color-4 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-1">
                            <div class="u-container-layout u-container-layout-2">
-                              <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-2">{{ appt.doctor }}</h3>
+                              <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-2"><a href="{% url 'doctors:edit_appointment' appt.id %}">{{ appt.doctor }}</a></h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-2">
@@ -144,7 +144,7 @@
                      <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-8">
                         <div class="u-container-align-center u-container-style u-custom-color-6 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-7">
                            <div class="u-container-layout u-container-layout-9">
-                              <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-11">{{ appt.doctor }}</h3>
+                              <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-11"><a href="{% url 'doctors:edit_appointment' appt.id %}">{{ appt.doctor }}</a></h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-8">

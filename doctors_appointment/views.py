@@ -45,14 +45,6 @@ def add_doctors_appointment(request):
         return render(request, 'doctors_appointment/addDoctor.html', {'form':form})
 
 @login_required
-def detail_appointment(request, appt_id):
-    """ Детальная информация о записи у врача. """
-    context = {}
-    appointment = get_object_or_404(Appointment, id=appt_id)
-    context['appointment'] = appointment
-    return render(request, 'doctors_appointment/detail.html', context)
-
-@login_required
 def edit_appointment(request, appt_id):
     """ Изменение записи ко врачу """
     appointment = get_object_or_404(Appointment, id=appt_id)
