@@ -10,7 +10,7 @@ from doctors_appointment.forms import AppointmentForm
 def display_doctors(request):
     """ Главная страница с записями к врачу. """
     context = {}
-    appointments = Appointment.objects.filter(patient=request.user, archived=False).order_by('-date', '-time')
+    appointments = Appointment.active_appointments_sorted.filter(patient=request.user) 
     for appt in appointments: # смотрим, какие записи уже истекли
         if not appt.is_ended:
             if appt.is_appointment_over():
@@ -84,4 +84,3 @@ def delete_appointment(request, appt_id):
     obj = get_object_or_404(Appointment, id=appt_id)
     obj.delete()
     return JsonResponse({'status':'success'})
-    # return redirect('doctors:display_doctors')

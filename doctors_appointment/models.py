@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 import datetime
 
+class ActiveAppointmentManager(models.Manager):
+    """ Возвращает только неархивированные записи """
+    def get_queryset(self):
+        return super().get_queryset().filter(archived=False).order_by('-date', '-time')
+
 class Appointment(models.Model):
     patient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointments')
     doctor = models.CharField(verbose_name="Врач", max_length=14, blank=False)  
@@ -14,6 +19,9 @@ class Appointment(models.Model):
     archived = models.BooleanField(verbose_name="Архивировано?", default=False)
     report = models.TextField(verbose_name="Отчет после приема", blank=True, null=True)
     is_ended = models.BooleanField(verbose_name="Закончился ли прием?", default=False)
+
+    objects = models.Manager() # базовый 
+    active_appointments_sorted = ActiveAppointmentManager() # кастомный 
 
     def save(self, *args, **kwargs):
         self.is_ended = self.is_appointment_over()
