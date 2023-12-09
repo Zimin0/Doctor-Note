@@ -9,6 +9,10 @@ class ActiveAppointmentManager(models.Manager):
         return super().get_queryset().filter(archived=False).order_by('-date', '-time')
 
 class Appointment(models.Model):
+    class Meta:
+        verbose_name = "Запись к врачу"
+        verbose_name_plural = "Записи к врачу"
+         
     patient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointments')
     doctor = models.CharField(verbose_name="Врач", max_length=14, blank=False)  
     date = models.DateField(verbose_name="Дата", max_length=10, help_text="Формат: XX.XX.XXXX", blank=False)
@@ -23,6 +27,9 @@ class Appointment(models.Model):
     objects = models.Manager() # базовый 
     active_appointments_sorted = ActiveAppointmentManager() # кастомный 
 
+    def __str__(self):
+        return f'{self.doctor}: {self.date} в {self.time}'
+    
     def save(self, *args, **kwargs):
         self.is_ended = self.is_appointment_over()
         super(Appointment, self).save(*args, **kwargs)
