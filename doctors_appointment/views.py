@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+from django.http import JsonResponse
 
 from doctors_appointment.models import Appointment
 from doctors_appointment.forms import AppointmentForm
@@ -77,7 +79,9 @@ def add_report(request, appt_id):
         return redirect('doctors:display_doctors')
 
 @login_required
+@require_POST
 def delete_appointment(request, appt_id):
     obj = get_object_or_404(Appointment, id=appt_id)
     obj.delete()
-    return redirect('doctors:display_doctors')
+    return JsonResponse({'status':'success'})
+    # return redirect('doctors:display_doctors')

@@ -10,7 +10,9 @@
       <link rel="stylesheet" href="{% static 'doctors_appointment/nicepage.css' %}" media="screen">
       <link rel="stylesheet" href="{% static 'doctors_appointment/doctors.css' %}" media="screen">
       <script class="u-script" type="text/javascript" src="{% static 'doctors_appointment/jquery.js' %}" defer=""></script> 
-      <script class="u-script" type="text/javascript" src="{% static 'doctors_appointment/nicepage.js' %}" defer=""></script> 
+      <script class="u-script" type="text/javascript" src="{% static 'doctors_appointment/nicepage.js' %}" defer=""></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script class="u-script" type="text/javascript" src="{% static 'doctors_appointment/deleteAppt.js' %}"></script> 
       <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
       <link rel="icon" href="{% static 'doctors_appointment/images/4729997.png' %}">
       <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -134,7 +136,7 @@
                         <div class="u-container-style u-custom-item u-expanded-width u-group u-shape-rectangle u-group-6">
                            <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-7">
                               <a href="{% url 'doctors:edit_appointment' appt.id %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-custom-item u-hover-palette-3-light-1 u-btn-2">Инфо</a>
-                              <a href="{% url 'doctors:delete_appointment' appt.id %}" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-3">Удалить</a>
+                              <a href="javascript:void(0);" data-id="{{ appt.id }}" onclick="deleteAppointment(this);" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-3">Удалить</a>
                            </div>
                         </div>
                      </div>
@@ -174,7 +176,7 @@
                         <div class="u-container-style u-custom-item u-expanded-width u-group u-shape-rectangle u-group-12">
                            <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-14">
                               <a href="{% url 'doctors:add_report' appt.id %}" class="u-active-palette-3-light-2 u-align-center u-btn u-button-style u-custom-color-6 u-custom-item u-hover-palette-3-light-1 u-btn-4">+ Отчет</a>
-                              <a href="{% url 'doctors:delete_appointment' appt.id %}" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-5">Удалить</a>
+                              <a href="javascript:void(0);" data-id="{{ appt.id }}" onclick="deleteAppointment(this);" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-3">Удалить</a>
                            </div>
                         </div>
                      </div>
