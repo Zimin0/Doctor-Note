@@ -10,7 +10,9 @@ from doctors_appointment.forms import AppointmentForm
 def display_doctors(request):
     """ Главная страница с записями к врачу. """
     context = {}
-    appointments = Appointment.active_appointments_sorted.filter(patient=request.user) 
+    # appointments = Appointment.active_appointments_sorted.filter(patient=request.user) 
+    appointments = request.user.appointments.all()
+
     for appt in appointments: # смотрим, какие записи уже истекли
         if not appt.is_ended:
             if appt.is_appointment_over():
@@ -27,15 +29,8 @@ def add_doctors_appointment(request):
         form = AppointmentForm(request.POST)
         if form.is_valid():
             # Создаем новую запись в базе данных
-            new_appt = Appointment.objects.create(
-                patient=request.user,
-                doctor=form.cleaned_data['doctor'],
-                date=form.cleaned_data['date'],
-                time=form.cleaned_data['time'],
-                address=form.cleaned_data['address'],
-                office_number=form.cleaned_data['office_number'],
-                health_troubles=form.cleaned_data['health_troubles']
-            )
+            new_appt = form.save(commit=False)
+            new_appt.patient = request.user
             new_appt.save()
             return redirect('doctors:display_doctors')
         else:
@@ -50,19 +45,23 @@ def add_doctors_appointment(request):
 def edit_appointment(request, appt_id):
     """ Изменение записи ко врачу """
     appointment = get_object_or_404(Appointment, id=appt_id)
+    print(f"Сейчас в объявлении {appointment.date}")
+    print(f"Сейчас в объявлении {appointment.time}")
     if request.method == 'POST':
+        print(request.POST)
         form = AppointmentForm(request.POST, instance=appointment)
         if form.is_valid():
-            print()
             form.save()
+            print("Форма сохранена!")
+            return redirect('doctors:display_doctors')
         else:
             print("Форма невалидна!")
             print(form.errors)
+
     else:
         form = AppointmentForm(instance=appointment)
 
-    context = {'form': form}
-    return render(request, 'doctors_appointment/editDoctor.html', context)
+    return render(request, 'doctors_appointment/editDoctor.html', {'form': form})
 
 @login_required
 def add_report(request, appt_id):

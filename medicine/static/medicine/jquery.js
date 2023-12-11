@@ -178,7 +178,7 @@
         n["[object " + t + "]"] = t.toLowerCase()
     });
     var d = function(n) {
-        var e, d, b, o, i, h, f, g, w, u, l, T, C, a, E, v, s, c, y, S = "sizzle" ,
+        var e, d, b, o, i, h, f, g, w, u, l, T, C, a, E, v, s, c, y, S = "sizzle" + 1 * new Date,
             p = n.document,
             k = 0,
             r = 0,
@@ -2195,7 +2195,7 @@
     function ut() {
         return C.setTimeout(function() {
             tt = void 0
-        }), tt = null;
+        }), tt = Date.now()
     }
 
     function lt(e, t) {

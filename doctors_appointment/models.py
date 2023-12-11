@@ -15,8 +15,8 @@ class Appointment(models.Model):
          
     patient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointments')
     doctor = models.CharField(verbose_name="Врач", max_length=14, blank=False)  
-    date = models.DateField(verbose_name="Дата", max_length=10, help_text="Формат: XX.XX.XXXX", blank=False)
-    time = models.TimeField(verbose_name="Время", max_length=5, help_text="Формат: XX:XX", blank=False)
+    date = models.DateField(verbose_name="Дата", help_text="Формат: XX.XX.XXXX", blank=False)
+    time = models.TimeField(verbose_name="Время", help_text="Формат: XX:XX", blank=False)
     address = models.CharField(verbose_name="Адрес", max_length=80, blank=False)
     office_number = models.CharField(verbose_name="Кабинет", max_length=6, blank=False)
     health_troubles = models.TextField(verbose_name="Жалобы", blank=True, null=True)
@@ -33,26 +33,6 @@ class Appointment(models.Model):
     def save(self, *args, **kwargs):
         self.is_ended = self.is_appointment_over()
         super(Appointment, self).save(*args, **kwargs)
-    
-    def convert_date(self, date_str: str) -> dict:
-        """ Converts date from "21/03/1980" to datetime.date object """
-        result = {'date': None, 'status': 'OK'}
-        try:
-            day, month, year = list(map(int, date_str.split('/')))
-            result['date'] = datetime.date(year, month, day)
-        except ValueError:
-            result['status'] = 'ERROR: invalid format of date.'
-        return result
-    
-    def convert_time(self, time_str:str) -> dict:
-        """ Converts time from "12:45" to datetime.time object """
-        result = {'time':None, 'status':'OK'}
-        try:    
-            hour, minutes = list(map(int, time_str.split(':'))) 
-            result['time'] = datetime.time(hour, minutes, 00)
-        except:
-            result['status'] = 'ERROR: invalid format of time.'
-        return result  
     
     def is_appointment_over(self) -> bool:
         """ Проверяет, прошла ли встреча у доктора исходя из назначенного времени."""
