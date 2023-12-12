@@ -114,16 +114,15 @@
                         </div>
                         <div class="u-container-style u-group u-shape-rectangle u-group-3">
                            <div class="u-container-layout u-valign-top u-container-layout-4">
-                              <h3 class="u-align-center u-custom-font u-custom-item u-font-raleway u-text u-text-default u-text-5">{{ med.today }}/{{ med.amount_per_day }}</h3>
+                              <h3 id="today-{{ med.id }}" class="u-align-center u-custom-font u-custom-item u-font-raleway u-text u-text-default u-text-5">{{ med.today }}/{{ med.amount_per_day }}</h3>
                               <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-6">{{ med.dosage }}</h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width u-group u-shape-rectangle u-group-4">
                            <div class="u-container-layout u-container-layout-5">
-                              <a href="https://nicepage.cloud" class="u-active-palette-1-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-3 u-custom-item u-hover-palette-1-light-1 u-btn-2">- 1</a>
-                              <a href="https://nicepage.cloud" class="u-active-custom-color-7 u-align-center u-border-none u-btn u-button-style u-custom-color-6 u-custom-item u-hover-custom-color-7 u-btn-3">+ 1</a>
+                              <a href="javascript:void(0);" data-id="{{ med.id }}" data-action="decrement" onclick="updateMedicine(this);" class="u-active-palette-1-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-3 u-custom-item u-hover-palette-1-light-1 u-btn-2">- 1</a>
+                              <a href="javascript:void(0);" data-id="{{ med.id }}" data-action="increment" onclick="updateMedicine(this);" class="u-active-custom-color-7 u-align-center u-border-none u-btn u-button-style u-custom-color-6 u-custom-item u-hover-custom-color-7 u-btn-3">+ 1</a>                           </div>
                            </div>
-                        </div>
                      </div>
                   </div>
                   {% endfor %}
@@ -313,5 +312,6 @@
             }
          </style>
       </section>
+      <script src="{% static 'medicine/plusOneperDay.js' %}"></script>
    </body>
 </html>

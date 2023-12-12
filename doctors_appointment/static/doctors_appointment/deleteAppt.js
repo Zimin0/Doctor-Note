@@ -5,23 +5,28 @@ function deleteAppointment(element){
     var csrfToken = getCookie('csrftoken');
     
     // Ajax запрос
-    $.ajax(
-        {
-            url:url,
-            type: 'POST',
-            headers: {
-                'X-CSRFToken': csrfToken
-            },
-            success: function(result){
-                listItems.remove(); // удаление элемента со страницы
-                // Проверка, остались ли еще записи
-                updateNoAppointmentsMessage();
-            },
-            error: function(xhr, status, error){
-                alert("Ошибка удаления!");
-            }
+    var postData = {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrfToken,
+            'Content-Type': 'application/json'
         }
-    );
+    };
+
+    fetch(url, postData)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Ошибка сети');  // Вызываем ошибку для неправильного HTTP-статуса
+        }
+        return response.json(); // если всё хорошо, обрабатываем ответ как JSON
+    })
+    .then(result => {
+        listItems.remove(); // удаление элемента со страницы
+        updateNoAppointmentsMessage(); // Проверка, остались ли еще записи
+    })
+    .catch(error => {
+        alert("Ошибка удаления: " + error.message);
+    });
 }
 
 function updateNoAppointmentsMessage(){

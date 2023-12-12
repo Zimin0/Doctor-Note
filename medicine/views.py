@@ -17,6 +17,7 @@ def add_medicine(request):
     """ Добавление выписанного лекарства """
     if request.method == 'POST':
         print(request.POST)
+
         form = MedicineForm(request.POST)
         if form.is_valid():
             new_medicine = form.save(commit=False)
@@ -45,3 +46,23 @@ def edit_medicine(request, medicine_id):
         form = MedicineForm(instance=medicine)
 
     return render(request, 'medicine/editMedicine.html', {'form': form})
+
+
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from .models import Medicine
+
+@csrf_exempt
+def update_medicine(request, medicine_id, action):
+    if request.method == 'POST':
+        try:
+            medicine = Medicine.objects.get(id=medicine_id)
+            if action == 'increment':
+                medicine.today += 1
+            elif action == 'decrement' and medicine.today > 0:
+                medicine.today -= 1
+            medicine.save()
+            return JsonResponse({'success': True, 'new_today': medicine.today, 'amount_per_day': medicine.amount_per_day})
+        except Medicine.DoesNotExist:
+            return JsonResponse({'success': False, 'error': 'Medicine not found'})
+    return JsonResponse({'success': False, 'error': 'Invalid request'})
