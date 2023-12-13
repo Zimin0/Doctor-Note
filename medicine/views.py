@@ -57,7 +57,7 @@ def update_medicine(request, medicine_id, action):
     if request.method == 'POST':
         try:
             medicine = Medicine.objects.get(id=medicine_id)
-            if action == 'increment':
+            if action == 'increment' and medicine.today < medicine.amount_per_day:
                 medicine.today += 1
             elif action == 'decrement' and medicine.today > 0:
                 medicine.today -= 1
