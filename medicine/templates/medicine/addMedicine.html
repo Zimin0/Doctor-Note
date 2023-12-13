@@ -121,7 +121,7 @@
                     </div>
                   <div class="u-form-group u-label-none u-form-group-3">
                      <label for="text-53ed" class="u-label">Поле ввода</label>
-                     <input type="text" value="{% if form.amount_per_day.value %} {{ form.amount_per_day.value }} {% endif %}" placeholder="* Раз в день:" id="text-53ed" name="amount_per_day" class="u-border-custom-color-2 u-input u-input-rectangle u-radius u-input-3">
+                     <input type="number" value="{% if form.amount_per_day.value %} {{ form.amount_per_day.value }} {% endif %}" placeholder="* Раз в день:" id="text-53ed" name="amount_per_day" class="u-border-custom-color-2 u-input u-input-rectangle u-radius u-input-3">
                      {% if form.amount_per_day.errors %}
                      <div class="error">{{ form.amount_per_day.errors }}</div>
                     {% endif %}
