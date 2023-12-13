@@ -6,8 +6,9 @@ from django.http import JsonResponse
 from doctors_appointment.models import Appointment
 from doctors_appointment.forms import AppointmentForm
 
-from welcome.decorators import page_in_progress
+from welcome.decorators import page_in_progress, log_veriables
 
+@log_veriables
 @login_required
 def display_doctors(request):
     """ Главная страница с записями к врачу. """
@@ -23,6 +24,7 @@ def display_doctors(request):
     context['appointments'] = appointments
     return render(request, 'doctors_appointment/doctors.html', context)
 
+@log_veriables
 @login_required
 def add_doctors_appointment(request):
     """ Добавление записи к врачу. """
