@@ -10,3 +10,4 @@ trash/
 *trash*
 media/
 *.pyc
+delete_migrations.py

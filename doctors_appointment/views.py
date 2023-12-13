@@ -13,8 +13,8 @@ from welcome.decorators import page_in_progress, log_veriables
 def display_doctors(request):
     """ Главная страница с записями к врачу. """
     context = {}
-    # appointments = Appointment.active_appointments_sorted.filter(patient=request.user) 
-    appointments = request.user.appointments.all()
+    appointments = Appointment.active_appointments_sorted.filter(patient=request.user)
+    #appointments = request.user.appointments.all()
 
     for appt in appointments: # смотрим, какие записи уже истекли
         if not appt.is_ended:

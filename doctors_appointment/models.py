@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from welcome.models import BaseEntityModel
 from django.utils import timezone
 import datetime
 
@@ -8,21 +9,21 @@ class ActiveAppointmentManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(archived=False).order_by('-date', '-time')
 
-class Appointment(models.Model):
+class Appointment(BaseEntityModel):
     class Meta:
         verbose_name = "Запись к врачу"
         verbose_name_plural = "Записи к врачу"
          
-    patient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointments')
+    #patient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointments')
     doctor = models.CharField(verbose_name="Врач", max_length=14, blank=False)  
     date = models.DateField(verbose_name="Дата", help_text="Формат: XX.XX.XXXX", blank=False)
     time = models.TimeField(verbose_name="Время", help_text="Формат: XX:XX", blank=False)
     address = models.CharField(verbose_name="Адрес", max_length=80, blank=False)
     office_number = models.CharField(verbose_name="Кабинет", max_length=6, blank=False)
     health_troubles = models.TextField(verbose_name="Жалобы", blank=True, null=True)
-    archived = models.BooleanField(verbose_name="Архивировано?", default=False)
+    # archived = models.BooleanField(verbose_name="Архивировано?", default=False)
     report = models.TextField(verbose_name="Отчет после приема", blank=True, null=True)
-    is_ended = models.BooleanField(verbose_name="Закончился ли прием?", default=False)
+    # is_ended = models.BooleanField(verbose_name="Закончился ли прием?", default=False)
 
     objects = models.Manager() # базовый 
     active_appointments_sorted = ActiveAppointmentManager() # кастомный 
@@ -34,6 +35,11 @@ class Appointment(models.Model):
         self.is_ended = self.is_appointment_over()
         super(Appointment, self).save(*args, **kwargs)
     
+    def is_report_was_added(self):
+        """ Был ли загружен отчет. """
+        formatted = self.report.strip().replace('.','').replace(',','')
+        return len(formatted) >= 3
+
     def is_appointment_over(self) -> bool:
         """ Проверяет, прошла ли встреча у доктора исходя из назначенного времени."""
         current_timezone = timezone.get_current_timezone()

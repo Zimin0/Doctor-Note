@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from medicine.models import Medicine
 from medicine.forms import MedicineForm
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST, require_GET
+
+from .models import Medicine
 
 @login_required
 def display_medicines(request):
     """ Главная страница с выписанными лекарствами. """
     context = {}
-    # medicines = Medicine.active_medicine_sorted.filter()
-    medicines = request.user.medicines.all()
+    medicines = Medicine.active_medicine_sorted.filter(patient=request.user)
     context['medicines'] = medicines
     return render(request, 'medicine/medicine.html', context)
 
@@ -16,8 +19,6 @@ def display_medicines(request):
 def add_medicine(request):
     """ Добавление выписанного лекарства """
     if request.method == 'POST':
-        print(request.POST)
-
         form = MedicineForm(request.POST)
         if form.is_valid():
             new_medicine = form.save(commit=False)
@@ -47,12 +48,8 @@ def edit_medicine(request, medicine_id):
 
     return render(request, 'medicine/editMedicine.html', {'form': form})
 
-
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from .models import Medicine
-
 @csrf_exempt
+@require_POST
 def update_medicine(request, medicine_id, action):
     if request.method == 'POST':
         try:
