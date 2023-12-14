@@ -29,6 +29,9 @@ ALLOWED_HOSTS = ["151.248.116.252", "localhost", "127.0.0.1"]
 
 # Urls #
 STATIC_URL = 'static/'
+STATIC_ROOT = 'static/'
+MEDIA_ROOT = f'{BASE_DIR}/media'
+MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'doctors:display_doctors'
 LOGOUT_REDIRECT_URL = 'welcome:welcome'
 LOGIN_URL = 'welcome:welcome' # url для login_required
