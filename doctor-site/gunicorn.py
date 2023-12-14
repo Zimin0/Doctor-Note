@@ -10,7 +10,7 @@ worker_class = 'gevent'
 workers = get_workers()
 
 env = {
-    'DJANGO_SETTINGS_MODULE': '<project>.settings'
+    'DJANGO_SETTINGS_MODULE': 'config.settings'
 }
 
 reload = True
