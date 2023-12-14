@@ -35,7 +35,7 @@ services:
     command: "gunicorn -c gunicorn.py config.wsgi" # запускаем gunicorn
   
   postgres: 
-    image: postgres:9.3.22
+    image: postgres:12
     ports:
       - 5432:5432
     environment:
