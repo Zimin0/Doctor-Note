@@ -15,14 +15,12 @@ class Medicine(BaseEntityModel):
         verbose_name = "Лекарство"
         verbose_name_plural = "Лекарства"
 
-    # patient = models.ForeignKey(User, verbose_name="пациент", on_delete=models.CASCADE, related_name='medicines', default=None, null=True)
     title = models.CharField(verbose_name='Название', max_length=15)
     end_date = models.DateField(verbose_name='Последний день приема')
     today = models.IntegerField(verbose_name="Принято сегодня", default=0, validators=[MinValueValidator(0), ])
     amount_per_day = models.IntegerField(verbose_name='Кол-во раз в день', validators=[MinValueValidator(0),] )
     dosage = models.CharField(verbose_name='Дозировка за один прием', max_length=30, help_text='Например: 3 капсулы')
     comments = models.TextField(verbose_name='Комментарии')
-    # is_ended = models.BooleanField(verbose_name='Прием лекарства закончился?', default=False)
 
     objects = models.Manager()
     active_medicine_sorted = ActiveMedicineManager()
