@@ -6,7 +6,6 @@ volumes:
     driver: local
 
 services:
-
   nginx:
     restart: always # при падении nginx будет стараться подняться
     image: nginx:latest # свежий nginx
@@ -26,14 +25,14 @@ services:
     restart: always
     build: 
       context: .
-      dockefile: Dockerfile
-      volumes: 
-          - ./doctor-site:/srv/www/doctor-site
-      expose:
-          - 8000
-      ports: 
-        - 8000:8000 
-      command: "gunicorn -c gunicorn.py config.wsgi" # запускаем gunicorn
+      dockerfile: Dockerfile
+    volumes: 
+        - ./doctor-site:/srv/www/doctor-site
+    expose:
+        - 8000
+    ports: 
+      - 8000:8000 
+    command: "gunicorn -c gunicorn.py config.wsgi" # запускаем gunicorn
   
   postgres: 
     image: postgres:9.3.22

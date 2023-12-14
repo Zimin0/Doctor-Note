@@ -1,4 +1,4 @@
-FROM python3:9
+FROM python:3.9
 
 COPY ./ /srv/www/doctor-site
 WORKDIR /srv/www/doctor-site
