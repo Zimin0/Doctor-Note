@@ -114,7 +114,7 @@
                     </div>
                   <div class="u-form-date u-form-group u-label-none u-form-group-2">
                      <label for="text-c237" class="u-label">Поле ввода</label>
-                     <input type="text"  value="{% if form.end_date.value %} {{ form.end_date.value }} {% endif %}" id="text-c237" name="end_date" class="u-border-custom-color-2 u-input u-input-rectangle u-radius u-input-2" data-date-format="mm/dd/yyyy" placeholder="* Принимать до:">
+                     <input type="text"  value="{% if form.end_date.value %} {{ form.end_date.value }} {% endif %}" id="text-c237" name="end_date" class="u-border-custom-color-2 u-input u-input-rectangle u-radius u-input-2" data-date-format="dd/mm/yyyy" placeholder="* Принимать до:">
                      {% if form.end_date.errors %}
                      <div class="error">{{ form.end_date.errors }}</div>
                     {% endif %}

@@ -32,7 +32,7 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'doctors:display_doctors'
 LOGOUT_REDIRECT_URL = 'welcome:welcome'
 LOGIN_URL = 'welcome:welcome' # url для login_required
-CSRF_TRUSTED_ORIGINS = ['https://f0a8-91-238-230-158.ngrok-free.app']
+# CSRF_TRUSTED_ORIGINS = ['']
 
 
 # Application definition
@@ -86,11 +86,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'doctor_db',  
+        'USER': 'doctor',      
+        'PASSWORD': '3gGG*2n4', 
+        'HOST': 'postgres',  
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
