@@ -4,9 +4,10 @@ ToDo.txt
 *.pyc
 *cpython*
 __pycache__/
+db.sqlite3
 media
 trash/
 *trash*
 media/
 *.pyc
-untracked
+untracked/
