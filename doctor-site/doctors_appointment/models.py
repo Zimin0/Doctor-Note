@@ -14,16 +14,13 @@ class Appointment(BaseEntityModel):
         verbose_name = "Запись к врачу"
         verbose_name_plural = "Записи к врачу"
          
-    #patient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointments')
     doctor = models.CharField(verbose_name="Врач", max_length=14, blank=False)  
     date = models.DateField(verbose_name="Дата", help_text="Формат: XX.XX.XXXX", blank=False)
     time = models.TimeField(verbose_name="Время", help_text="Формат: XX:XX", blank=False)
     address = models.CharField(verbose_name="Адрес", max_length=80, blank=False)
     office_number = models.CharField(verbose_name="Кабинет", max_length=6, blank=False)
     health_troubles = models.TextField(verbose_name="Жалобы", blank=True, null=True)
-    # archived = models.BooleanField(verbose_name="Архивировано?", default=False)
     report = models.TextField(verbose_name="Отчет после приема", blank=True, null=True)
-    # is_ended = models.BooleanField(verbose_name="Закончился ли прием?", default=False)
 
     objects = models.Manager() # базовый 
     active_appointments_sorted = ActiveAppointmentManager() # кастомный 
