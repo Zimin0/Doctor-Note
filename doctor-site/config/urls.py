@@ -9,5 +9,6 @@ urlpatterns = [
     path('doctors/', include('doctors_appointment.urls')),
     path('users/', include('users.urls')),
     path('medicine/', include('medicine.urls')),
+    path('__debug__/', include("debug_toolbar.urls")),
 ]
     

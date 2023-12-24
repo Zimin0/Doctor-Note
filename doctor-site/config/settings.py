@@ -37,6 +37,10 @@ LOGOUT_REDIRECT_URL = 'welcome:welcome'
 LOGIN_URL = 'welcome:welcome' # url для login_required
 # CSRF_TRUSTED_ORIGINS = ['']
 
+INTERNAL_IPS = [ # The Debug Toolbar is shown only if your IP address is listed in Django’s INTERNAL_IPS setting.
+    "127.0.0.1",
+]
+
 
 # Application definition
 
@@ -51,6 +55,7 @@ INSTALLED_APPS = [
     'users',
     'welcome',
     'medicine',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -61,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'config.urls'

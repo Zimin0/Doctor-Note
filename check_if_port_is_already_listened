@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ $# -eq 0 ]; then
+    echo "Использование скрипта: $0 порт1 [порт2...]"
+    exit 1
+fi
+
+for port in "$@"; do
+    if ! ss -ltnp | grep ":$port "; then
+        echo "Порт $port доступен."
+    else
+        echo "Порт $port недоступен."
+    fi
+done
