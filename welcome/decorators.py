@@ -1,4 +1,5 @@
 from django.shortcuts import redirect
+from django.conf import settings
 
 def page_in_progress(func):
     """ Страница еще в разработке. Редиректит на страницу-заплатку. """
@@ -7,8 +8,13 @@ def page_in_progress(func):
     return _wrapper_view
 
 def log_veriables(func):
-    """ Выводит на экран содержимое session, GET, POST, переменные, переданные в функцию"""
+    """ 
+    Выводит на экран содержимое session, GET, POST, переменные, переданные в функцию. 
+    DEBUG должен быть равен TRUE.
+    """
     def wrapper(request, *args, **kwargs):
+        if not settings.DEBUG:
+            return func(request, *args, **kwargs)
         func_name = func.__name__
         print(f'----------{func_name}----------')
         print(f'------------ARGUMENTS------------')
