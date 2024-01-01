@@ -16,6 +16,11 @@ def log_veriables(func):
         if not settings.DEBUG:
             return func(request, *args, **kwargs)
         func_name = func.__name__
+        print(f'-------------COOKIES-------------')
+        cookies_string = ''
+        for variable in request.COOKIES.items():
+            cookies_string += f""""{variable[0]}":{variable[1]}\n"""
+        print(cookies_string[:-1]) if len(cookies_string) > 0 else None 
         print(f'----------{func_name}----------')
         print(f'------------ARGUMENTS------------')
         arguments_string = ''
