@@ -104,7 +104,7 @@
       <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-grey-10 u-section-1" id="sec-bbfd">
          <div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
             <h1 class="u-align-center u-text u-text-default u-text-1">{{ message }}</h1>
-            <h5 class="u-align-center u-text u-text-default u-text-2">Переадресация через 5 секунд</h5>
+            <h5 class="u-align-center u-text u-text-default u-text-2">Переадресация через <h2 id="seconds">4</h2> секунды</h5>
             <p class="u-align-center u-text u-text-3">Если переадресация не сработала, нажмите на кнопку ниже</p>
             <div class="u-rotation-parent u-rotation-parent-1">
                <div class="u-absolute-hcenter u-shape u-shape-svg u-text-custom-color-4 u-shape-1">
@@ -245,9 +245,19 @@
          </style>
       </section>
       <script type="text/javascript">
-        setTimeout(function() {
-          window.location.href = "/{{ redirect_url }}";
-        }, 4000);
+      //   setTimeout(function() {
+      //     window.location.href = "{{ redirect_url }}";
+      //   }, 4000);
+         seconds_label = document.getElementById('seconds')
+         for (let sec = 5; sec > 0; sec--){
+            setTimeout(function(){
+               seconds_label.textContent = sec;
+               if (sec == 1){
+                  window.location.href = "{{ redirect_url }}";
+               }
+            }, (4 - sec) * 1000);
+        }
+        
       </script>      
    </body>
 </html>
