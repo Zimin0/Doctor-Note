@@ -110,42 +110,42 @@
                   {% csrf_token %}
                   <div class="u-form-group u-form-name u-label-none u-form-group-1">
                      <label for="name-3b9a" class="u-label">login</label>
-                     <input type="text" placeholder="* Имя: " id="name-3b9a" name="first_name" class="u-border-2 u-input u-input-rectangle u-radius u-input-1" required="">
+                     <input type="text" value="{% if form.first_name.value %} {{ form.first_name.value }} {% endif %}" placeholder="* Имя: " id="name-3b9a" name="first_name" class="u-border-2 u-input u-input-rectangle u-radius u-input-1" required="">
                      {% if form.first_name.errors %}
                         <div class="error">{{ form.first_name.errors }}</div>
                      {% endif %}
                   </div>
                   <div class="u-form-group u-label-none u-form-group-2">
                      <label for="text-c237" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Фамилия: " id="text-c237" name="last_name" class="u-border-2 u-input u-input-rectangle u-radius u-input-2">
+                     <input type="text" value="{% if form.last_name.value %} {{ form.last_name.value }} {% endif %}" placeholder="* Фамилия: " id="text-c237" name="last_name" class="u-border-2 u-input u-input-rectangle u-radius u-input-2">
                      {% if form.last_name.errors %}
                         <div class="error">{{ form.last_name.errors }}</div>
                      {% endif %}
                   </div>
                   <div class="u-form-email u-form-group u-label-none u-form-group-3">
                      <label for="text-0c97" class="u-label">Поле ввода</label>
-                     <input type="email" placeholder="* Почта: " id="text-0c97" name="email" class="u-border-2 u-input u-input-rectangle u-radius u-input-3">
+                     <input type="email" value="{% if form.email.value %} {{ form.email.value }} {% endif %}" placeholder="* Почта: " id="text-0c97" name="email" class="u-border-2 u-input u-input-rectangle u-radius u-input-3">
                      {% if form.email.errors %}
                         <div class="error">{{ form.email.errors }}</div>
                      {% endif %}
                   </div>
                   <div class="u-form-group u-label-none u-form-group-4">
                      <label for="text-53ed" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Логин:" id="text-53ed" name="username" class="u-border-2 u-input u-input-rectangle u-radius u-input-4">
+                     <input type="text" placeholder="* Логин:" value="{% if form.username.value %} {{ form.username.value }} {% endif %}" id="text-53ed" name="username" class="u-border-2 u-input u-input-rectangle u-radius u-input-4">
                      {% if form.username.errors %}
                         <div class="error">{{ form.username.errors }}</div>
                      {% endif %}
                   </div>
                   <div class="u-form-group u-label-none u-form-group-5">
                      <label for="text-ed3c" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Пароль:" id="text-ed3c" name="password1" class="u-border-2 u-input u-input-rectangle u-radius u-input-5">
+                     <input type="text" value="{% if form.password1.value %} {{ form.password1.value }} {% endif %}" placeholder="* Пароль:" id="text-ed3c" name="password1" class="u-border-2 u-input u-input-rectangle u-radius u-input-5">
                      {% if form.password1.errors %}
                         <div class="error">{{ form.password1.errors }}</div>
                      {% endif %}
                   </div>
                   <div class="u-form-group u-label-none u-form-group-6">
                      <label for="text-9fba" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Пароль еще раз:" id="text-9fba" name="password2" class="u-border-2 u-input u-input-rectangle u-radius u-input-6">
+                     <input type="text" value="{% if form.password2.value %} {{ form.password2.value }} {% endif %}" placeholder="* Пароль еще раз:" id="text-9fba" name="password2" class="u-border-2 u-input u-input-rectangle u-radius u-input-6">
                      {% if form.password2.errors %}
                         <div class="error">{{ form.password2.errors }}</div>
                      {% endif %}
