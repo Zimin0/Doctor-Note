@@ -1,6 +1,6 @@
 {% load static %}
-<!DOCTYPE html>
-<html style="font-size: 16px;" lang="ru">
+<DOCTYPE html>
+<html style="font-size: 16px;" lang="ru-RU">
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="utf-8">
@@ -31,7 +31,7 @@
    </head>
    <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru">
       <header class="u-clearfix u-header u-header" id="sec-f2bc">
-         <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
+         <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
             <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
                <div class="menu-collapse" style="font-size: 1.5rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
                   <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-border-radius u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="padding: 20px 0px; font-size: calc(1em + 40px);">
@@ -49,6 +49,9 @@
                </div>
                <div class="u-custom-menu u-nav-container">
                   <ul class="u-nav u-unstyled u-nav-1">
+                     {% if user.is_authenticated %}
+                        <li class="u-nav-item">ㅤㅤㅤㅤㅤ</li>
+                     {% endif %}
                      <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">Врачи</a></li>
                      <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'medicine:display_medicines' %}" style="--radius:35px; padding: 10px 20px;">Лекарства</a></li>
                      {% if user.is_authenticated %}
@@ -64,21 +67,21 @@
                      <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-spacing-14 u-text-hover-palette-1-light-2 u-unstyled u-nav-2">
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">Врачи</a></li>
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'medicine:display_medicines' %}">Лекарства</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="doctors.html">Врачи</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="medicine.html">Лекарства</a></li>
                            {% if user.is_authenticated %}
                               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">Выйти</a></li>
                            {% else %}
                               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">Войти</a></li>
                               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">Регистрация</a></li>
-                           {% endif %}
-                        </ul>
+                           {% endif %}                        
+                          </ul>
                      </div>
                   </div>
                   <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
                </div>
             </nav>
-            <h6 class="u-align-right u-text u-text-custom-color-4 u-text-1">
+            <h6 class="u-align-left-xl u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xs u-text u-text-custom-color-4 u-text-1">
                <span class="u-icon u-icon-1">
                   <svg class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" style="width: 1em; height: 1em;">
                      <path style="fill:#E7ECED;" d="M18.613,41.552l-7.907,4.313c-0.464,0.253-0.881,0.564-1.269,0.903C14.047,50.655,19.998,53,26.5,53
@@ -97,13 +100,14 @@
                      </g>
                   </svg>
                </span>
-               &nbsp;{{ user.last_name }} {{ user.first_name }}
+               &nbsp;<a href="{% url 'welcome:page_in_progress' %}">{{ user.last_name }} {{ user.first_name }}</a> 
             </h6>
+            <a href="{% url 'welcome:page_in_progress' %}" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
          </div>
       </header>
       <section class="u-clearfix u-grey-10 u-section-1" id="carousel_42c8">
          <div class="u-clearfix u-sheet u-sheet-1">
-            <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">{% if appointments.count > 0 %} Записи к врачу {% else %} Пока записей нет! :) {% endif %}</h2>
+            <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">Записи к врачу</h2>
             <a href="{% url 'doctors:add_doctors_appointment' %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">+ Добавить</a>
             <div class="u-expanded-width u-list u-list-1">
                <div class="u-repeater u-repeater-1">
@@ -111,10 +115,10 @@
                   {% for appt in appointments %} 
                   {% if not appt.is_ended %}
                   <div class="u-align-center u-container-style u-list-item u-opacity u-opacity-90 u-radius u-repeater-item u-shape-round u-white u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
-                     <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-1">
+                     <div class="u-container-layout u-similar-container u-container-layout-1">
                         <div class="u-container-align-center u-container-style u-custom-color-4 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-1">
-                           <div class="u-container-layout u-container-layout-2">
-                              <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-2"><a href="{% url 'doctors:edit_appointment' appt.id %}">{{ appt.doctor }}</a></h3>
+                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-2">
+                              <h3 class="u-align-center u-custom-font u-font-raleway u-hover-feature u-text u-text-default u-text-2"><a href="{% url 'doctors:edit_appointment' appt.id %}">{{ appt.doctor }}</a></h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-2">
@@ -135,26 +139,27 @@
                               <h3 class="u-align-right u-text u-text-default u-text-8">{{ appt.office_number }} каб.</h3>
                            </div>
                         </div>
-                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-shape-rectangle u-group-5">
+                        <div class="u-align-center u-container-style u-expanded-width u-group u-shape-rectangle u-group-5">
                            <div class="u-container-layout u-container-layout-6">
                               <h3 class="u-custom-item u-text u-text-default u-text-9">Адрес:</h3>
-                              <h3 class="u-custom-item u-text u-text-10">{{ appt.address }}</h3>
+                              <h3 class="u-custom-item u-text u-text-10">{{ appt.address }}<br>
+                              </h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width u-group u-shape-rectangle u-group-6">
-                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-7">
+                            <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-7">
                               <a href="{% url 'doctors:edit_appointment' appt.id %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-custom-item u-hover-palette-3-light-1 u-btn-2">Инфо</a>
                               <a href="javascript:void(0);" data-id="{{ appt.id }}" onclick="deleteAppointment(this);" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-3">Удалить</a>
-                           </div>
+                          </div>
                         </div>
                      </div>
                   </div>
                   {% else %}
                   <div class="u-align-center u-container-style u-list-item u-opacity u-opacity-90 u-radius u-repeater-item u-shape-round u-white u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
-                     <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-8">
-                        <div class="u-container-align-center u-container-style u-custom-color-6 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-7">
-                           <div class="u-container-layout u-container-layout-9">
-                              <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-11"><a href="{% url 'doctors:edit_appointment' appt.id %}">{{ appt.doctor }}</a></h3>
+                     <div class="u-container-layout u-similar-container u-container-layout-8">
+                        <div class="u-container-align-center-xl u-container-style u-custom-color-6 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-7">
+                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-9">
+                              <h3 class="u-align-center u-custom-font u-font-raleway u-hover-feature u-text u-text-default u-text-11"><a href="{% url 'doctors:edit_appointment' appt.id %}">{{ appt.doctor }}</a></h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-8">
@@ -175,30 +180,31 @@
                               <h3 class="u-align-right u-text u-text-default u-text-17">{{ appt.office_number }} каб.</h3>
                            </div>
                         </div>
-                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-shape-rectangle u-group-11">
+                        <div class="u-align-center u-container-style u-expanded-width u-group u-shape-rectangle u-group-11">
                            <div class="u-container-layout u-container-layout-13">
                               <h3 class="u-custom-item u-text u-text-default u-text-18">Адрес:</h3>
-                              <h3 class="u-custom-item u-text u-text-19">{{ appt.address }}</h3>
+                              <h3 class="u-custom-item u-text u-text-19">{{ appt.address }}<br>
+                              </h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width u-group u-shape-rectangle u-group-12">
-                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-14">
-                              {% if appt.is_report_was_added %}
-                                 <a href="{% url 'doctors:edit_appointment' appt.id %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-custom-item u-hover-palette-3-light-1 u-btn-2">Инфо</a>
-                              {% else %}
-                                 <a href="{% url 'doctors:add_report' appt.id %}" class="u-active-palette-3-light-2 u-align-center u-btn u-button-style u-custom-color-6 u-custom-item u-hover-palette-3-light-1 u-btn-4">+ Отчет</a>
-                              {% endif %}
-                              <a href="javascript:void(0);" data-id="{{ appt.id }}" onclick="deleteAppointment(this);" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-3">Удалить</a>
-                           </div>
+                          <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-14">
+                            {% if appt.is_report_was_added %}
+                               <a href="{% url 'doctors:edit_appointment' appt.id %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-custom-item u-hover-palette-3-light-1 u-btn-2">Инфо</a>
+                            {% else %}
+                               <a href="{% url 'doctors:add_report' appt.id %}" class="u-active-palette-3-light-2 u-align-center u-btn u-button-style u-custom-color-6 u-custom-item u-hover-palette-3-light-1 u-btn-4">+ Отчет</a>
+                            {% endif %}
+                            <a href="javascript:void(0);" data-id="{{ appt.id }}" onclick="deleteAppointment(this);" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-3">Удалить</a>
+                         </div>
                         </div>
                      </div>
                   </div>
                   {% endif %}
                   {% endfor %}
                   <div class="u-align-center u-container-style u-hidden-block u-list-item u-opacity u-opacity-90 u-radius u-repeater-item u-shape-round u-white u-list-item-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
-                     <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-15">
-                        <div class="u-container-align-center u-container-style u-custom-color-4 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-13">
-                           <div class="u-container-layout u-container-layout-16">
+                     <div class="u-container-layout u-similar-container u-container-layout-15">
+                        <div class="u-container-align-center-xl u-container-style u-custom-color-4 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-13">
+                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-16">
                               <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-20">Окулист</h3>
                            </div>
                         </div>
@@ -220,63 +226,24 @@
                               <h3 class="u-align-right u-text u-text-default u-text-26">Пример заголовка</h3>
                            </div>
                         </div>
-                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-shape-rectangle u-group-17">
+                        <div class="u-align-center u-container-style u-expanded-width u-group u-shape-rectangle u-group-17">
                            <div class="u-container-layout u-container-layout-20">
                               <h3 class="u-custom-item u-text u-text-default u-text-27">Пример заголовка</h3>
                               <h3 class="u-custom-item u-text u-text-28">Пример заголовка</h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width u-group u-shape-rectangle u-group-18">
-                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-21">
+                           <div class="u-container-layout u-container-layout-21">
                               <a href="https://nicepage.cloud" class="u-active-palette-3-light-2 u-align-center u-btn u-button-style u-custom-color-6 u-custom-item u-hover-palette-3-light-1 u-btn-6">Инфо</a>
-                              <a href="https://nicepage.cloud" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-7">Удалить</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="u-align-center u-container-style u-hidden-block u-list-item u-opacity u-opacity-90 u-radius u-repeater-item u-shape-round u-white u-list-item-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
-                     <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-15">
-                        <div class="u-container-align-center u-container-style u-custom-color-4 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-13">
-                           <div class="u-container-layout u-container-layout-16">
-                              <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-20">Окулист</h3>
-                           </div>
-                        </div>
-                        <div class="u-container-style u-custom-item u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-14">
-                           <div class="u-container-layout">
-                              <h3 class="u-align-right u-text u-text-default u-text-21">Пример заголовка</h3>
-                              <h3 class="u-align-left u-text u-text-default u-text-22">Пример заголовка</h3>
-                           </div>
-                        </div>
-                        <div class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-15">
-                           <div class="u-container-layout">
-                              <h3 class="u-align-center u-text u-text-23">Пример заголовка</h3>
-                              <h3 class="u-align-left u-custom-item u-text u-text-default u-text-24">Пример заголовка</h3>
-                           </div>
-                        </div>
-                        <div class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-16">
-                           <div class="u-container-layout">
-                              <h3 class="u-align-left u-text u-text-default u-text-25">Пример заголовка</h3>
-                              <h3 class="u-align-right u-text u-text-default u-text-26">Пример заголовка</h3>
-                           </div>
-                        </div>
-                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-shape-rectangle u-group-17">
-                           <div class="u-container-layout u-container-layout-20">
-                              <h3 class="u-custom-item u-text u-text-default u-text-27">Пример заголовка</h3>
-                              <h3 class="u-custom-item u-text u-text-28">Пример заголовка</h3>
-                           </div>
-                        </div>
-                        <div class="u-container-style u-custom-item u-expanded-width u-group u-shape-rectangle u-group-18">
-                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-21">
-                              <a href="https://nicepage.cloud" class="u-active-palette-3-light-2 u-align-center u-btn u-button-style u-custom-color-6 u-custom-item u-hover-palette-3-light-1 u-btn-6">Инфо</a>
-                              <a href="https://nicepage.cloud" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-7">Удалить</a>
+                              <a href="https://nicepage.cloud" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-custom-item u-hover-palette-1-light-1 u-btn-7">Удалить</a>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="u-align-center u-container-style u-hidden-block u-list-item u-opacity u-opacity-90 u-radius u-repeater-item u-shape-round u-white u-list-item-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
-                     <div class="u-container-layout u-similar-container u-valign-bottom-xs u-container-layout-22">
+                     <div class="u-container-layout u-similar-container u-container-layout-22">
                         <div class="u-container-align-center u-container-style u-custom-color-4 u-custom-item u-expanded-width u-group u-radius u-shape-round u-group-19">
-                           <div class="u-container-layout u-container-layout-23">
+                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-23">
                               <h3 class="u-align-center u-custom-font u-font-raleway u-text u-text-default u-text-29">Окулист</h3>
                            </div>
                         </div>
@@ -298,16 +265,16 @@
                               <h3 class="u-align-right u-text u-text-default u-text-35">Пример заголовка</h3>
                            </div>
                         </div>
-                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-shape-rectangle u-group-23">
+                        <div class="u-align-center u-container-style u-expanded-width u-group u-shape-rectangle u-group-23">
                            <div class="u-container-layout u-container-layout-27">
                               <h3 class="u-custom-item u-text u-text-default u-text-36">Пример заголовка</h3>
                               <h3 class="u-custom-item u-text u-text-37">Пример заголовка</h3>
                            </div>
                         </div>
                         <div class="u-container-style u-custom-item u-expanded-width u-group u-shape-rectangle u-group-24">
-                           <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-container-layout-28">
+                           <div class="u-container-layout u-container-layout-28">
                               <a href="https://nicepage.cloud" class="u-active-palette-3-light-2 u-align-center u-btn u-button-style u-custom-color-6 u-custom-item u-hover-palette-3-light-1 u-btn-8">Инфо</a>
-                              <a href="https://nicepage.cloud" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-hover-palette-1-light-1 u-btn-9">Удалить</a>
+                              <a href="https://nicepage.cloud" class="u-active-palette-1-light-2 u-align-center u-btn u-button-style u-custom-color-3 u-custom-item u-hover-palette-1-light-1 u-btn-9">Удалить</a>
                            </div>
                         </div>
                      </div>
