@@ -27,6 +27,11 @@ def log_veriables(func):
         for variable in kwargs.items():
             arguments_string += f""""{variable[0]}":{variable[1]}\n"""
         print(arguments_string[:-1]) if len(arguments_string) > 0 else None
+        print(f'--------------FILES--------------')
+        files_string = ''
+        for variable in request.FILES.items():
+            files_string += f""""{variable[0]}":{variable[1]}\n"""
+        print(files_string[:-1]) if len(files_string) > 0 else None # обрезает последний \n
         print(f'-------------SESSION-------------')
         session_string = ''
         for variable in request.session.items():
