@@ -48,6 +48,9 @@
                </div>
                <div class="u-custom-menu u-nav-container">
                   <ul class="u-nav u-unstyled u-nav-1">
+                     {% if user.is_authenticated %}
+                        <li class="u-nav-item">ㅤㅤㅤㅤㅤ</li>
+                     {% endif %}
                      <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">Врачи</a></li>
                      <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'medicine:display_medicines' %}" style="--radius:35px; padding: 10px 20px;">Лекарства</a></li>
                      {% if user.is_authenticated %}
@@ -96,15 +99,16 @@
                      </g>
                   </svg>
                </span>
-               &nbsp;{{ user.last_name }} {{ user.first_name }}
+               &nbsp;<a href="{% url 'welcome:page_in_progress' %}">{{ user.last_name }} {{ user.first_name }}</a> 
             </h6>
+            <a href="{% url 'welcome:page_in_progress' %}" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
          </div>
       </header>
       <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-ca97">
          <div class="u-clearfix u-sheet u-sheet-1">
             <h2 class="u-text u-text-default u-text-1">Редактирование запись к врачу</h2>
             <div class="u-align-center u-form u-form-checks-spacing-0 u-form-1">
-               <form method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" name="form" redirect="true">
+               <form method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" name="form" redirect="true" enctype="multipart/form-data">
                 {% csrf_token %}
                   <div class="u-form-group u-form-name u-label-none u-form-group-1">
                     <label for="name-3b9a" class="u-label">login</label>
@@ -157,6 +161,16 @@
                         <div class="error">{{ form.report.errors }}</div>
                       {% endif %}
                   </div>
+                  <div class="u-form-group u-form-textarea u-label-none u-form-group-7">
+                     <p for="additional_file" class="u-label">Загрузить новый файл (если необходимо):</p>
+                     {% if appointment.additional_file %}
+                         <p>Текущий файл: <a href="{{ appointment.additional_file.url }}">{{ appointment.additional_file.name }}</a></p>
+                     {% endif %}
+                     <input type="file" id="additional_file" name="additional_file" class="u-border-custom-color-2 u-input u-input-rectangle u-radius">
+                     {% if form.additional_file.errors %}
+                         <div class="error">{{ form.additional_file.errors }}</div>
+                     {% endif %}
+                 </div>                 
                   <div class="u-form-checkbox u-form-group u-label-none u-form-group-8">
                      <input type="checkbox" id="checkbox-ac95" name="archived" {% if form.archived.value %} checked {% endif %} class="u-active-palette-1-base u-border-2 u-border-custom-color-4 u-field-input">
                      <label for="checkbox-ac95" class="u-field-label" style="font-weight: 700;">Архивировать?</label>

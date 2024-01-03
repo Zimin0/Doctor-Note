@@ -71,7 +71,6 @@
 .u-section-1 .u-btn-1 {
   background-image: none;
   font-weight: 700;
-  user-select: none;
 }
 
 @media (max-width: 767px) {

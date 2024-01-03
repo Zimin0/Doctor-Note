@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 # Urls #
-STATIC_URL = 'static/'
+STATIC_URL = 'static/'  
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = 'doctors:display_doctors'
 LOGOUT_REDIRECT_URL = 'welcome:welcome'
 LOGIN_URL = 'welcome:welcome' # url для login_required

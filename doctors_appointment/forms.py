@@ -11,4 +11,4 @@ class AppointmentForm(forms.ModelForm):
 
     class Meta:
         model = Appointment
-        fields = ['doctor', 'date', 'time', 'address', 'office_number', 'health_troubles', 'report', 'archived', 'is_ended']
+        fields = ['doctor', 'date', 'time', 'address', 'office_number', 'health_troubles', 'report', 'archived', 'additional_file', 'is_ended']
