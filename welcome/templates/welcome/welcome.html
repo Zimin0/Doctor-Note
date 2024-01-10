@@ -76,8 +76,7 @@
                   <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
                </div>
             </nav>
-            <h6 class="u-align-right u-text u-text-custom-color-4 u-text-1">
-              {% if user.is_authenticated %}
+            <h6 class="u-align-left-xl u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xs u-text u-text-custom-color-4 u-text-1">
                <span class="u-icon u-icon-1">
                   <svg class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" style="width: 1em; height: 1em;">
                      <path style="fill:#E7ECED;" d="M18.613,41.552l-7.907,4.313c-0.464,0.253-0.881,0.564-1.269,0.903C14.047,50.655,19.998,53,26.5,53
@@ -96,9 +95,9 @@
                      </g>
                   </svg>
                </span>
-               {% endif %}
-               &nbsp;{{ user.last_name }} {{ user.first_name }}
-            </h6>
+               &nbsp;<a href="{% url 'welcome:page_in_progress' %}">Пока не знакомы!</a> 
+            </h6> 
+            <a href="{% url 'welcome:page_in_progress' %}" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
          </div>
       </header>
       <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-section-1" id="sec-bbfd">
