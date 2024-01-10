@@ -1681,8 +1681,7 @@
         }
     }, S.removeEvent = function(e, t, n) {
         e.removeEventListener && e.removeEventListener(t, n)
-    }, S.Event = function(e, t) {
-    }, S.Event.prototype = {
+    }, S.Event = function(e, t) {}, S.Event.prototype = {
         constructor: S.Event,
         isDefaultPrevented: Ee,
         isPropagationStopped: Ee,
