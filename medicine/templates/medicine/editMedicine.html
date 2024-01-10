@@ -47,6 +47,9 @@
                </div>
                <div class="u-custom-menu u-nav-container">
                   <ul class="u-nav u-unstyled u-nav-1">
+                     {% if user.is_authenticated %}
+                        <li class="u-nav-item">ㅤㅤㅤㅤㅤ</li>
+                     {% endif %}
                      <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">Врачи</a></li>
                      <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'medicine:display_medicines' %}" style="--radius:35px; padding: 10px 20px;">Лекарства</a></li>
                      {% if user.is_authenticated %}
@@ -95,8 +98,9 @@
                      </g>
                   </svg>
                </span>
-               &nbsp;{{ user.last_name }} {{ user.first_name }}
+               &nbsp;<a href="{% url 'welcome:page_in_progress' %}">{{ user.last_name }} {{ user.first_name }}</a> 
             </h6>
+            <a href="{% url 'welcome:page_in_progress' %}" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
          </div>
       </header>
       <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-ca97">
