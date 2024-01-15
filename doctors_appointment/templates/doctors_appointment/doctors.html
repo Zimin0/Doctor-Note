@@ -309,6 +309,12 @@
                </div>
             </div>
          </div>
+         <script>
+            document.getElementById('cookie-ok-button').addEventListener('click', function() {
+                var cookieConsentBlock = document.getElementById('cookie-consent-block');
+                cookieConsentBlock.style.display = 'none';
+            });
+        </script>
          <style> .u-cookies-consent {
             background-image: none;
             }
