@@ -126,17 +126,14 @@
                    </div>
                   <div class="u-align-left u-form-group u-form-submit">
                      <input value="Войти" type="submit" class="u-active-palette-3-light-2 u-border-none u-btn u-btn-submit u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1">
-                     <input type="submit" value="submit" class="u-form-control-hidden">
                   </div>
                   <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                   <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                  <input type="hidden" value="" name="recaptchaResponse">
-                  <input type="hidden" name="formServices" value="053a05f4-46e9-dc54-0903-77a2c20eae4a">
                </form>
             </div>
             <h3 class="u-text u-text-2">Еще не зарегистрированы?<br>
             </h3>
-            <a href="https://nicepage.one" class="u-active-palette-3-light-2 u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-2">регистрация</a>
+            <a href="{% url 'users:register' %}" class="u-active-palette-3-light-2 u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-2">регистрация</a>
          </div>
       </section>
       <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-59f5">

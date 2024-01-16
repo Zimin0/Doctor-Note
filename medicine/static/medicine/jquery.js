@@ -1681,7 +1681,10 @@
         }
     }, S.removeEvent = function(e, t, n) {
         e.removeEventListener && e.removeEventListener(t, n)
-    }, S.Event = function(e, t) {}, S.Event.prototype = {
+    }, S.Event = function(e, t) {
+        if (!(this instanceof S.Event)) return new S.Event(e, t);
+        e && e.type ? (this.originalEvent = e, this.type = e.type, this.isDefaultPrevented = e.defaultPrevented || void 0 === e.defaultPrevented && !1 === e.returnValue ? Ce : Ee, this.target = e.target && 3 === e.target.nodeType ? e.target.parentNode : e.target, this.currentTarget = e.currentTarget, this.relatedTarget = e.relatedTarget) : this.type = e, t && S.extend(this, t), this.timeStamp = e && e.timeStamp || Date.now(), this[S.expando] = !0
+    }, S.Event.prototype = {
         constructor: S.Event,
         isDefaultPrevented: Ee,
         isPropagationStopped: Ee,

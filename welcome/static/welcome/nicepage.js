@@ -242,69 +242,14 @@
         }
 
         function a(form, t) {
-            if (/list-manage[1-9]?.com/i.test(t.url)) return u(form, t.url), void 0;
-            s(form, {
-                url: t.url,
-                method: t.method,
-                redirectAddress: t.redirectAddress,
-                success: l,
-                showSuccess: true
-            })
+
         }
 
         function s(form, t) {
-            var e = function() {
-                m.ajax({
-                    type: t.method,
-                    url: t.url,
-                    data: new FormData(form[0]),
-                    dataType: "json",
-                    processData: false,
-                    contentType: false
-                }).done((function(data, e) {
-                    if (data && (data.success || data.ok) || !data && "success" === e) {
-                        if (t.showSuccess) FormMessage.showSuccess(form);
-                        if (t.redirectAddress) setTimeout((function() {
-                            window.location.replace(t.redirectAddress)
-                        }), 2e3);
-                        else t.success(form)
-                    } else data = data || {}, FormMessage.showError(form, data.error, data.errorId, data.email)
-                })).fail((function() {
-                    FormMessage.showError(form)
-                }))
-            };
-            if (void 0 !== window.recaptchaObject) window.recaptchaObject.executeContact(e);
-            else e()
+
         }
 
         function u(form, url) {
-            var t = form.find("input[name=name]").val(),
-                email = form.find("input[name=email]").val(),
-                data = {
-                    Email: email,
-                    EMAIL: email
-                };
-            if (t) data.Name = t, data.FNAME = t;
-            var e = form.find("input, textarea");
-            m.each(e, (function(index, t) {
-                var e = m(t).attr("name"),
-                    n = m(t).val();
-                if (e && n) data[e.toUpperCase()] = n
-            }));
-            var n = (url = url.replace("/post?", "/post-json?") + "&c=?").indexOf("u=") + 2;
-            n = url.substring(n, url.indexOf("&", n));
-            var i = url.indexOf("id=") + 3;
-            i = url.substring(i, url.indexOf("&", i)), data["b_" + n + "_" + i] = "", m.ajax({
-                url: url,
-                data: data,
-                dataType: "jsonp"
-            }).done((function(t) {
-                var e;
-                if ("success" === t.result || /already/.test(t.msg)) FormMessage.showSuccess(form), l(form);
-                else FormMessage.showError(form, t.msg)
-            })).fail((function() {
-                FormMessage.showError(form)
-            }))
         }
 
         function l(form) {
@@ -362,7 +307,7 @@
             Const = n(3350);
         m((function() {
             var form = new i;
-            window.serviceRequest = p, m("form.u-form-vertical:not(.u-form-custom-backend), form.u-form-horizontal:not(.u-form-custom-backend)").submit(form.submit), m(".u-form .u-btn-submit").click(form.click)
+            // window.serviceRequest = p, m("form.u-form-vertical:not(.u-form-custom-backend), form.u-form-horizontal:not(.u-form-custom-backend)").submit(form.submit), m(".u-form .u-btn-submit").click(form.click)
         })), window.MailChimpForm = i
     },
     11796: function(t, e, n) {
