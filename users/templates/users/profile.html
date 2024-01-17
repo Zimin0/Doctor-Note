@@ -104,32 +104,31 @@
                 {% endif %}
                 <div class="u-form-group u-form-name u-label-none">
                      <label for="name-6797" class="u-label">Name</label>
-                     <input type="text" placeholder="*Имя" id="name-6797" name="first_name" class="u-input u-input-rectangle u-radius u-input-1" required="">
-                     {% if form.username.errors %}
-                        <div class="error">{{ form.username.errors }}</div>
+                     <input type="text" placeholder="*Имя" id="name-6797" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" name="first_name" class="u-input u-input-rectangle u-radius u-input-1" required="">
+                     {% if form.first_name.errors %}
+                        <div class="error">{{ form.first_name.errors }}</div>
                      {% endif %}
                     </div>
                   <div class="u-form-group u-label-none u-form-group-2">
                      <label for="text-bf7c" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Фамилия" id="text-bf7c" name="last_name" class="u-input u-input-rectangle u-radius u-input-2">
-                     {% if form.username.errors %}
-                        <div class="error">{{ form.username.errors }}</div>
+                     <input type="text" placeholder="* Фамилия" id="text-bf7c" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}" name="last_name" class="u-input u-input-rectangle u-radius u-input-2">
+                     {% if form.last_name.errors %}
+                        <div class="error">{{ form.last_name.errors }}</div>
                      {% endif %}
                     </div>
                   <div class="u-form-email u-form-group u-label-none">
                      <label for="email-6797" class="u-label">Email</label>
-                     <input type="email" placeholder="* Почта" id="email-6797" name="email" class="u-input u-input-rectangle u-radius u-input-3" required="required">
-                     {% if form.username.errors %}
-                        <div class="error">{{ form.username.errors }}</div>
+                     <input type="email" placeholder="* Почта" id="email-6797" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" name="email" class="u-input u-input-rectangle u-radius u-input-3">
+                     {% if form.email.errors %}
+                        <div class="error">{{ form.email.errors }}</div>
                      {% endif %}
                     </div>
                   <div class="u-form-checkbox u-form-group u-label-none u-form-group-4">
-                     <input type="checkbox" id="checkbox-a69b" name="need_to_send_notifics_on_mail"  class="u-active-custom-color-4 u-border-2 u-border-custom-color-4 u-field-input" style="">
+                     <input type="checkbox" id="checkbox-a69b" name="need_to_send_notifics_on_mail"  class="u-active-custom-color-4 u-border-2 u-border-custom-color-4 u-field-input" {% if form.need_to_send_notifics_on_mail.value %}checked{% endif %}>
                      <label for="checkbox-a69b" class="u-custom-font u-field-label u-font-montserrat" style="font-size: 1.125rem;">Отправлять напоминания о записях к врачу на почту</label>
                   </div>
                   <div class="u-align-left u-form-group u-form-submit">
                      <button type="submit" class="u-active-palette-3-light-2 u-border-none u-btn u-btn-submit u-button-style u-custom-color-4 u-custom-font u-font-montserrat u-hover-palette-3-light-1 u-btn-1">Изменить</button>
-                     <!-- <input type="submit" value="submit" class="u-form-control-hidden"> -->
                   </div>
                   <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
                   <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>

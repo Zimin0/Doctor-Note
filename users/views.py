@@ -24,15 +24,17 @@ def register(request):
 @login_required
 def profile(request):
     if request.method == 'GET':
-        form = UserChangeInfoForm(user=request.user)
+        form = UserChangeInfoForm(instance=request.user, user=request.user)
         return render(request, 'users/profile.html', {'form': form})
     elif request.method == 'POST':
-        form = UserChangeInfoForm(request.POST, user=request.user)
+        form = UserChangeInfoForm(request.POST, instance=request.user, user=request.user) 
         if form.is_valid():
             user = form.save()
             profile = user.profile
-            profile.need_to_send_notifics_on_mail = form.cleaned_data.get('need_to_send_notifics_on_mail')
+            profile.need_to_send_notifics_on_mail = form.cleaned_data.get('need_to_send_notifics_on_mail', False)
             profile.save()
             return render(request, 'users/profile.html', {'form': form})
         else:
+            print("В форме есть ошибки!")
+            print(form.errors)
             return render(request, 'users/profile.html', {'form': form, 'errors': form.errors})

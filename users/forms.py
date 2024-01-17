@@ -20,10 +20,9 @@ class UserRegistrationForm(UserCreationForm):
             user.save()
         return user
 
-from .models import Profile
 
 class UserChangeInfoForm(forms.ModelForm):
-    need_to_send_notifics_on_mail = forms.BooleanField()
+    need_to_send_notifics_on_mail = forms.BooleanField(required=False)
 
     class Meta:
         model = User
@@ -33,4 +32,5 @@ class UserChangeInfoForm(forms.ModelForm):
         user = kwargs.pop('user', None)
         super(UserChangeInfoForm, self).__init__(*args, **kwargs)
         if user:
+            # Установка начального значения для чекбокса на основе значения в профиле пользователя
             self.fields['need_to_send_notifics_on_mail'].initial = user.profile.need_to_send_notifics_on_mail
