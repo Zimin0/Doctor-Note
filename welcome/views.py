@@ -32,3 +32,9 @@ def clear_session(request):
     print('Cookies = ', response.cookies)
     print('Session = ', request.session.items()) 
     return response
+
+def handler404(request, *args, **kwargs):
+    return render(request, 'welcome/404.html', status=404)
+
+def handler500(request, *args, **kwargs):
+    return render(request, 'welcome/500.html', status=500)

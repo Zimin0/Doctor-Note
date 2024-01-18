@@ -4,6 +4,9 @@ from django.views.generic.base import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 
+handler404 = 'welcome.views.handler404'
+handler500 = 'welcome.views.handler500'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='doctors/')),
