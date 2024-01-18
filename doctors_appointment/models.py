@@ -20,7 +20,7 @@ class Appointment(BaseEntityModel):
     time = models.TimeField(verbose_name="Время", help_text="Формат: XX:XX", blank=False)
     address = models.CharField(verbose_name="Адрес", max_length=80, blank=False)
     office_number = models.CharField(verbose_name="Кабинет", max_length=6, blank=False)
-    additional_file = models.FileField(verbose_name="Дополнительный файл", blank=True, null=True, validators=[FileExtensionValidator(allowed_extensions=['txt','pdf', 'doc', 'docx', 'jpg', 'png', 'jpeg'])])
+    additional_file = models.FileField(verbose_name="Дополнительный файл", blank=True, null=True, upload_to='%Y/%m/%d/', validators=[FileExtensionValidator(allowed_extensions=['txt','pdf', 'doc', 'docx', 'jpg', 'png', 'jpeg'])])
     health_troubles = models.TextField(verbose_name="Жалобы", blank=True, null=True)
     report = models.TextField(verbose_name="Отчет после приема", blank=True, null=True)
 
