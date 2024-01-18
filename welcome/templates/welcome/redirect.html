@@ -77,7 +77,14 @@
                </div>
             </nav>
             <h6 class="u-align-right u-text u-text-custom-color-4 u-text-1">
-               <a href="{% url 'users:profile' %}">{{ user.last_name }} {{ user.first_name }}</a> 
+               ㅤㅤㅤㅤㅤㅤ
+               {% if user.is_authenticated %}
+                  <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">ㅤㅤ</a></li>
+                  <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">Выйти</a></li>
+               {% else %}
+                  <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">Войти</a></li>
+                  <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">Регистрация</a></li>
+               {% endif %}
             </h6>
          </div>
       </header>
