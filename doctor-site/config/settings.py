@@ -64,7 +64,6 @@ INSTALLED_APPS = [
     'users',
     'welcome',
     'medicine',
-    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
