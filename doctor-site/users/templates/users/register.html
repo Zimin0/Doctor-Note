@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="ru">
+<html style="font-size: 16px;" lang="ru-RU">
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="utf-8">
@@ -30,7 +30,7 @@
    </head>
    <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru">
       <header class="u-clearfix u-header u-header" id="sec-f2bc">
-         <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
+         <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
             <nav class="u-align-center u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
                <div class="menu-collapse" style="font-size: 1.5rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
                   <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-border-radius u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="padding: 20px 0px; font-size: calc(1em + 40px);">
@@ -47,20 +47,21 @@
                   </a>
                </div>
                <div class="u-custom-menu u-nav-container">
-                  <ul class="u-nav u-unstyled u-nav-1">
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">Врачи</a></li>
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'medicine:display_medicines' %}" style="--radius:35px; padding: 10px 20px;">Лекарства</a></li>
-                     {% if user.is_authenticated %}
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">Выйти</a></li>
-                     {% else %}
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">Войти</a></li>
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">Регистрация</a></li>
-                     {% endif %}
-                  </ul>
+                <ul class="u-nav u-unstyled u-nav-1">
+                  ㅤㅤㅤㅤㅤㅤ
+                  {% if user.is_authenticated %}
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">ㅤㅤ</a></li>
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">Выйти</a></li>
+                  {% else %}
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">Войти</a></li>
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">Регистрация</a></li>
+                  {% endif %}
+               </ul>
                </div>
                <div class="u-custom-menu u-nav-container-collapse">
                   <div class="u-container-style u-custom-color-4 u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
                      <div class="u-inner-container-layout u-sidenav-overflow">
+                        <div class="u-menu-close"></div>
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-spacing-14 u-text-hover-palette-1-light-2 u-unstyled u-nav-2">
                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">Врачи</a></li>
@@ -77,88 +78,73 @@
                   <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
                </div>
             </nav>
-            <h6 class="u-align-right u-text u-text-custom-color-4 u-text-1">
+            <h6 class="u-align-left-xl u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xs u-text u-text-custom-color-4 u-text-1">
                {% if user.is_authenticated %}
-               <span class="u-icon u-icon-1">
-                  <svg class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" style="width: 1em; height: 1em;">
-                     <path style="fill:#E7ECED;" d="M18.613,41.552l-7.907,4.313c-0.464,0.253-0.881,0.564-1.269,0.903C14.047,50.655,19.998,53,26.5,53
-                        c6.454,0,12.367-2.31,16.964-6.144c-0.424-0.358-0.884-0.68-1.394-0.934l-8.467-4.233c-1.094-0.547-1.785-1.665-1.785-2.888v-3.322
-                        c0.238-0.271,0.51-0.619,0.801-1.03c1.154-1.63,2.027-3.423,2.632-5.304c1.086-0.335,1.886-1.338,1.886-2.53v-3.546
-                        c0-0.78-0.347-1.477-0.886-1.965v-5.126c0,0,1.053-7.977-9.75-7.977s-9.75,7.977-9.75,7.977v5.126
-                        c-0.54,0.488-0.886,1.185-0.886,1.965v3.546c0,0.934,0.491,1.756,1.226,2.231c0.886,3.857,3.206,6.633,3.206,6.633v3.24
-                        C20.296,39.899,19.65,40.986,18.613,41.552z"></path>
-                     <g>
-                        <path style="fill:#556080;" d="M26.953,0.004C12.32-0.246,0.254,11.414,0.004,26.047C-0.138,34.344,3.56,41.801,9.448,46.76
-                           c0.385-0.336,0.798-0.644,1.257-0.894l7.907-4.313c1.037-0.566,1.683-1.653,1.683-2.835v-3.24c0,0-2.321-2.776-3.206-6.633
-                           c-0.734-0.475-1.226-1.296-1.226-2.231v-3.546c0-0.78,0.347-1.477,0.886-1.965v-5.126c0,0-1.053-7.977,9.75-7.977
-                           s9.75,7.977,9.75,7.977v5.126c0.54,0.488,0.886,1.185,0.886,1.965v3.546c0,1.192-0.8,2.195-1.886,2.53
-                           c-0.605,1.881-1.478,3.674-2.632,5.304c-0.291,0.411-0.563,0.759-0.801,1.03V38.8c0,1.223,0.691,2.342,1.785,2.888l8.467,4.233
-                           c0.508,0.254,0.967,0.575,1.39,0.932c5.71-4.762,9.399-11.882,9.536-19.9C53.246,12.32,41.587,0.254,26.953,0.004z"></path>
-                     </g>
-                  </svg>
-               </span>
+                  <a href="{% url 'users:profile' %}">{{ user.last_name }} {{ user.first_name }}</a> 
+               {% else %}
+                  <a href="{% url 'users:login' %}">Пока не знакомы!</a> 
                {% endif %}
-               &nbsp;{{ user.last_name }} {{ user.first_name }}
-            </h6>
+            </h6> 
+            <a href="{% url 'welcome:page_in_progress' %}" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
          </div>
       </header>
       <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-ca97">
          <div class="u-clearfix u-sheet u-sheet-1">
             <h2 class="u-text u-text-default u-text-1">Регистрация</h2>
             <div class="u-align-center u-form u-form-1">
-               <form method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" name="form" redirect="true">
-                  {% csrf_token %}
-                  <div class="u-form-group u-form-name u-label-none u-form-group-1">
-                     <label for="name-3b9a" class="u-label">login</label>
-                     <input type="text" placeholder="* Имя: " id="name-3b9a" name="first_name" class="u-border-2 u-input u-input-rectangle u-radius u-input-1" required="">
-                     {% if form.first_name.errors %}
-                        <div class="error">{{ form.first_name.errors }}</div>
-                     {% endif %}
-                  </div>
-                  <div class="u-form-group u-label-none u-form-group-2">
-                     <label for="text-c237" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Фамилия: " id="text-c237" name="last_name" class="u-border-2 u-input u-input-rectangle u-radius u-input-2">
-                     {% if form.last_name.errors %}
-                        <div class="error">{{ form.last_name.errors }}</div>
-                     {% endif %}
-                  </div>
-                  <div class="u-form-email u-form-group u-label-none u-form-group-3">
-                     <label for="text-0c97" class="u-label">Поле ввода</label>
-                     <input type="email" placeholder="* Почта: " id="text-0c97" name="email" class="u-border-2 u-input u-input-rectangle u-radius u-input-3">
-                     {% if form.email.errors %}
-                        <div class="error">{{ form.email.errors }}</div>
-                     {% endif %}
-                  </div>
-                  <div class="u-form-group u-label-none u-form-group-4">
-                     <label for="text-53ed" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Логин:" id="text-53ed" name="username" class="u-border-2 u-input u-input-rectangle u-radius u-input-4">
-                     {% if form.username.errors %}
-                        <div class="error">{{ form.username.errors }}</div>
-                     {% endif %}
-                  </div>
-                  <div class="u-form-group u-label-none u-form-group-5">
-                     <label for="text-ed3c" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Пароль:" id="text-ed3c" name="password1" class="u-border-2 u-input u-input-rectangle u-radius u-input-5">
-                     {% if form.password1.errors %}
-                        <div class="error">{{ form.password1.errors }}</div>
-                     {% endif %}
-                  </div>
-                  <div class="u-form-group u-label-none u-form-group-6">
-                     <label for="text-9fba" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Пароль еще раз:" id="text-9fba" name="password2" class="u-border-2 u-input u-input-rectangle u-radius u-input-6">
-                     {% if form.password2.errors %}
-                        <div class="error">{{ form.password2.errors }}</div>
-                     {% endif %}
-                  </div>
-                  <div class="u-form-group u-form-submit u-label-none u-form-group-7">
-                     <input value="Отправить" type="submit" class="u-active-palette-3-light-2 u-border-none u-btn u-btn-submit u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1">
-                     <input type="submit" value="submit" class="u-form-control-hidden">
-                  </div>
-                  <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                  <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                  <input type="hidden" value="" name="recaptchaResponse">
-                  <input type="hidden" name="formServices" value="053a05f4-46e9-dc54-0903-77a2c20eae4a">
-               </form>
+              <form method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" name="form" redirect="true">
+                {% csrf_token %}
+                <div class="u-form-group u-form-name u-label-none u-form-group-1">
+                   <label for="name-3b9a" class="u-label">login</label>
+                   <input type="text" value="{% if form.first_name.value %} {{ form.first_name.value }} {% endif %}" placeholder="* Имя: " id="name-3b9a" name="first_name" class="u-border-2 u-input u-input-rectangle u-radius u-input-1" required="">
+                   {% if form.first_name.errors %}
+                      <div class="error">{{ form.first_name.errors }}</div>
+                   {% endif %}
+                </div>
+                <div class="u-form-group u-label-none u-form-group-2">
+                   <label for="text-c237" class="u-label">Поле ввода</label>
+                   <input type="text" value="{% if form.last_name.value %} {{ form.last_name.value }} {% endif %}" placeholder="* Фамилия: " id="text-c237" name="last_name" class="u-border-2 u-input u-input-rectangle u-radius u-input-2">
+                   {% if form.last_name.errors %}
+                      <div class="error">{{ form.last_name.errors }}</div>
+                   {% endif %}
+                </div>
+                <div class="u-form-email u-form-group u-label-none u-form-group-3">
+                   <label for="text-0c97" class="u-label">Поле ввода</label>
+                   <input type="email" value="{% if form.email.value %} {{ form.email.value }} {% endif %}" placeholder="* Почта: " id="text-0c97" name="email" class="u-border-2 u-input u-input-rectangle u-radius u-input-3">
+                   {% if form.email.errors %}
+                      <div class="error">{{ form.email.errors }}</div>
+                   {% endif %}
+                </div>
+                <div class="u-form-group u-label-none u-form-group-4">
+                   <label for="text-53ed" class="u-label">Поле ввода</label>
+                   <input type="text" placeholder="* Логин:" value="{% if form.username.value %} {{ form.username.value }} {% endif %}" id="text-53ed" name="username" class="u-border-2 u-input u-input-rectangle u-radius u-input-4">
+                   {% if form.username.errors %}
+                      <div class="error">{{ form.username.errors }}</div>
+                   {% endif %}
+                </div>
+                <div class="u-form-group u-label-none u-form-group-5">
+                   <label for="text-ed3c" class="u-label">Поле ввода</label>
+                   <input type="text" value="{% if form.password1.value %} {{ form.password1.value }} {% endif %}" placeholder="* Пароль:" id="text-ed3c" name="password1" class="u-border-2 u-input u-input-rectangle u-radius u-input-5">
+                   {% if form.password1.errors %}
+                      <div class="error">{{ form.password1.errors }}</div>
+                   {% endif %}
+                </div>
+                <div class="u-form-group u-label-none u-form-group-6">
+                   <label for="text-9fba" class="u-label">Поле ввода</label>
+                   <input type="text" value="{% if form.password2.value %} {{ form.password2.value }} {% endif %}" placeholder="* Пароль еще раз:" id="text-9fba" name="password2" class="u-border-2 u-input u-input-rectangle u-radius u-input-6">
+                   {% if form.password2.errors %}
+                      <div class="error">{{ form.password2.errors }}</div>
+                   {% endif %}
+                </div>
+                <div class="u-form-group u-form-submit u-label-none u-form-group-7">
+                   <input value="Отправить" type="submit" class="u-active-palette-3-light-2 u-border-none u-btn u-btn-submit u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1">
+                   <input type="submit" value="submit" class="u-form-control-hidden">
+                </div>
+                <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                <input type="hidden" value="" name="recaptchaResponse">
+                <input type="hidden" name="formServices" value="053a05f4-46e9-dc54-0903-77a2c20eae4a">
+             </form>
             </div>
          </div>
       </section>

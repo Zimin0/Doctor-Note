@@ -8,7 +8,6 @@ from doctors_appointment.forms import AppointmentForm
 
 from welcome.decorators import page_in_progress, log_veriables
 
-@log_veriables
 @login_required
 def display_doctors(request):
     """ Главная страница с записями к врачу. """
@@ -49,11 +48,11 @@ def add_doctors_appointment(request):
 def edit_appointment(request, appt_id):
     """ Изменение записи ко врачу """
     appointment = get_object_or_404(Appointment, id=appt_id)
+    print(appointment.additional_file)
     print(f"Сейчас в объявлении {appointment.date}")
     print(f"Сейчас в объявлении {appointment.time}")
     if request.method == 'POST':
-        print(request.POST)
-        form = AppointmentForm(request.POST, instance=appointment)
+        form = AppointmentForm(request.POST, request.FILES, instance=appointment)
         if form.is_valid():
             form.save()
             print("Форма сохранена!")
@@ -61,11 +60,10 @@ def edit_appointment(request, appt_id):
         else:
             print("Форма невалидна!")
             print(form.errors)
-
     else:
         form = AppointmentForm(instance=appointment)
 
-    return render(request, 'doctors_appointment/editDoctor.html', {'form': form})
+    return render(request, 'doctors_appointment/editDoctor.html', {'form': form, 'appointment':appointment})
 
 @login_required
 def add_report(request, appt_id):
