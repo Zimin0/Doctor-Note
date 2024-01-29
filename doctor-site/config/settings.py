@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-*99(uiv=_$sye=&xrdst^rny&$p8vcsg%@hb)dsl5qw^g-j4pn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
+ALLOWED_HOSTS = [
+    "89.108.115.89",
+    'chat.acheron.tech',
+    'accounts.acheron.tech',
+    'acheron.tech'
+                 ]
 
 # Urls #
 STATIC_URL = 'static/'
@@ -35,6 +40,11 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'doctors:display_doctors'
 LOGOUT_REDIRECT_URL = 'welcome:welcome'
 LOGIN_URL = 'welcome:welcome' # url для login_required
+# CSRF_TRUSTED_ORIGINS = [
+#     '89.108.115.89',
+#     'chat.acheron.tech',
+#     'accounts.acheron.tech',
+#     'acheron.tech',]
 
 INTERNAL_IPS = [ # The Debug Toolbar is shown only if your IP address is listed in Django’s INTERNAL_IPS setting.
     "127.0.0.1",
