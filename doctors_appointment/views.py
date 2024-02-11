@@ -29,7 +29,6 @@ def display_doctors(request):
 def add_doctors_appointment(request):
     """ Добавление записи к врачу. """
     if request.method == "POST":
-        # print(request.POST)
         form = AppointmentForm(request.POST)
         if form.is_valid():
             # Создаем новую запись в базе данных
@@ -73,6 +72,8 @@ def add_report(request, appt_id):
     """ Добавление отчета после посещения врача """
     context = {}
     appointment = get_object_or_404(Appointment, id=appt_id) 
+    if appointment.patient != request.user:
+        raise PermissionDenied
     if request.method == 'GET':
         context['doctor_and_datatime'] = f'{appointment.doctor} - {appointment.date} в {appointment.time}'
         return render(request, 'doctors_appointment/report.html', context)
@@ -86,5 +87,7 @@ def add_report(request, appt_id):
 @require_POST
 def delete_appointment(request, appt_id):
     obj = get_object_or_404(Appointment, id=appt_id)
+    if obj.patient != request.user:
+        raise PermissionDenied
     obj.delete()
     return JsonResponse({'status':'success'})

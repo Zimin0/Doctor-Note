@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST, require_GET
+from django.core.exceptions import PermissionDenied
 
 from .models import Medicine
 
@@ -36,6 +37,8 @@ def add_medicine(request):
 def edit_medicine(request, medicine_id):
     """ Изменение выписанного лекарства """
     medicine = get_object_or_404(Medicine, id=medicine_id)
+    if medicine.patient != request.user:
+        raise PermissionDenied
     if request.method == 'POST':
         form = MedicineForm(request.POST, instance=medicine)
         if form.is_valid():
@@ -54,6 +57,8 @@ def update_medicine(request, medicine_id, action):
     if request.method == 'POST':
         try:
             medicine = Medicine.objects.get(id=medicine_id)
+            if medicine.patient != request.user:
+                raise PermissionDenied
             if action == 'increment' and medicine.today < medicine.amount_per_day:
                 medicine.today += 1
             elif action == 'decrement' and medicine.today > 0:
