@@ -28,7 +28,7 @@ def display_doctors(request):
 def add_doctors_appointment(request):
     """ Добавление записи к врачу. """
     if request.method == "POST":
-        print(request.POST)
+        # print(request.POST)
         form = AppointmentForm(request.POST)
         if form.is_valid():
             # Создаем новую запись в базе данных

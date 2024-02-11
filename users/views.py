@@ -7,25 +7,25 @@ from welcome.decorators import page_in_progress, log_veriables
 from users.forms import UserChangeInfoForm
 
 def register(request):
-    if request.method == "POST":
+    if request.method == 'GET':
+        form = UserRegistrationForm()
+        return render(request, 'users/register.html', {'form': form}, status=200)
+    elif request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             request.session['message-in-redirect-page'] = 'Вы заргестрированы!'
-            return redirect('welcome:redirect_page_with_reason', url_pattern_name='users:login')
+            return redirect('welcome:redirect_page_with_reason', url_pattern_name='users:login', status_code=301)
         else:
-            print("Форма регистрации невалидна!")
-            print(form.errors)
-            return render(request, 'users/register.html', {'form':form, 'errors': form.errors})
-    else:
-        form = UserRegistrationForm()
-        return render(request, 'users/register.html', {'form': form})
+            # ошибка валидации
+            return render(request, 'users/register.html', {'form':form, 'errors': form.errors}, status=400)
+
 
 @login_required
 def profile(request):
     if request.method == 'GET':
         form = UserChangeInfoForm(instance=request.user, user=request.user)
-        return render(request, 'users/profile.html', {'form': form})
+        return render(request, 'users/profile.html', {'form': form}, status=200)
     elif request.method == 'POST':
         form = UserChangeInfoForm(request.POST, instance=request.user, user=request.user) 
         if form.is_valid():
@@ -33,8 +33,7 @@ def profile(request):
             profile = user.profile
             profile.need_to_send_notifics_on_mail = form.cleaned_data.get('need_to_send_notifics_on_mail', False)
             profile.save()
-            return render(request, 'users/profile.html', {'form': form})
+            return render(request, 'users/profile.html', {'form': form}, status=201)
         else:
-            print("В форме есть ошибки!")
-            print(form.errors)
-            return render(request, 'users/profile.html', {'form': form, 'errors': form.errors})
+            # ошибка валидации
+            return render(request, 'users/profile.html', {'form': form, 'errors': form.errors}, status=400)
