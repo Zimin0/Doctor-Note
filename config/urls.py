@@ -10,6 +10,7 @@ handler403 = 'welcome.views.handler403'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
     path('', RedirectView.as_view(url='doctors/')),
     path('', include('welcome.urls')),
     path('doctors/', include('doctors_appointment.urls')),
