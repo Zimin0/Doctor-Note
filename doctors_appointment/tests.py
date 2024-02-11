@@ -44,5 +44,25 @@ class DoctorsAvailabilityTest(TestCase):
         self.assertEqual(response.redirect_chain[0][0], '/doctors/')
         self.assertTrue(Appointment.active_appointments_sorted.filter(doctor='Тестовый_врач'))
 
-    def tearDown(self):
-        ...
+    def test_touch_not_your_own_doctor_appoint(self):
+        """ Нельзя получить запись к доктору другого пользователя. """
+        date = timezone.now().date() + datetime.timedelta(days=1)
+        time = timezone.now().time().strftime('%H:%M')
+        appointment = {
+            'doctor': 'Тестовый_врач',
+            'date': date,
+            'time': time,
+            'address': 'Тестовый адрес, д. 0',
+            'office_number': "101",
+            'health_troubles': "Тестовые жалобы",
+            'report': "",
+            'is_ended': False,
+            'archived': False,
+        }
+        self.client.post('/doctors/add/', appointment, follow=True)
+
+        self.client2 = Client()
+        self.client2.login(username='admin2', password='admin2')
+        appointment_id = Appointment.active_appointments_sorted.get(doctor='Тестовый_врач').id
+        response = self.client2.get(f'/doctors/edit/{appointment_id}')
+        print(response.status_code, '121212')

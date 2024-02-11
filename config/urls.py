@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 
 handler404 = 'welcome.views.handler404'
 handler500 = 'welcome.views.handler500'
+handler403 = 'welcome.views.handler403'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
+from django.core.exceptions import PermissionDenied
 
 from doctors_appointment.models import Appointment
 from doctors_appointment.forms import AppointmentForm
@@ -48,7 +49,9 @@ def add_doctors_appointment(request):
 def edit_appointment(request, appt_id):
     """ Изменение записи ко врачу """
     appointment = get_object_or_404(Appointment, id=appt_id)
-    print(appointment.additional_file)
+    if appointment.patient != request.user:
+        raise PermissionDenied
+    # print(appointment.additional_file)
     print(f"Сейчас в объявлении {appointment.date}")
     print(f"Сейчас в объявлении {appointment.time}")
     if request.method == 'POST':

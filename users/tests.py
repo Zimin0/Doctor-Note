@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
+from users.models import Profile
 
 class LoginAndLogoutTestCase(TestCase):
     """ Проверка системы регистрации. """
@@ -38,7 +39,7 @@ class LoginAndLogoutTestCase(TestCase):
         self.assertEqual(response.status_code, 201)
     
     def test_login_and_change_invalid_data_on_profile_page(self):
-        """ Проверка валидации почты в форме изменения в профиле. """
+        """ Валидация почты в форме изменения в профиле. """
         data = {"first_name": "Никита",
                 "last_name": "Зименков",
                 "email": "nikgmailcom",
@@ -46,4 +47,9 @@ class LoginAndLogoutTestCase(TestCase):
         response = self.client.post('/users/profile/', data)
         self.assertEqual(response.status_code, 400)
     
+    def test_no_user_with_no_profile(self):
+        """ У всех пользователей есть их профили. """
+        amount_of_users = User.objects.filter().count()
+        amount_of_profiles = Profile.objects.filter().count()
+        self.assertEqual(amount_of_profiles, amount_of_users)
     
