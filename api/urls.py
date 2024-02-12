@@ -4,6 +4,7 @@ from api import views
 
 router = DefaultRouter()
 router.register(r'appointments', views.AppointmentViewSet)
+router.register(r'medicine', views.)
 
 urlpatterns = [
     path('', include(router.urls)),
