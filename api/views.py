@@ -34,14 +34,6 @@ class MedicineViewSet(viewsets.ModelViewSet):
     serializer_class = MedicineSerializer
     http_method_names = ['get', 'post', 'head']
 
-    # def create(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
-
-    # def delete(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    
-    # def delete(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 class UserViewSet(viewsets.ModelViewSet):
     """ Вывод всех пользователей. """

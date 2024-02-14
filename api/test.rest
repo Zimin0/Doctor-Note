@@ -1,6 +1,7 @@
-### 
 POST http://127.0.0.1:8000/api/login/
 content-type: application/json
+Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
+
 {
     "username": "admin",
     "password": "admin"
@@ -16,3 +17,9 @@ GET http://127.0.0.1:8000/api/groups
 Content-Type: application/json
 Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
 ### 
+
+# HEAD method is used instead of needless OPTION because of its uncacheable being. 
+# Getting allowed methods by HEAD 
+HEAD  http://127.0.0.1:8000/api/medicine/
+Content-Type: application/json
+Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
