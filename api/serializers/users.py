@@ -13,6 +13,12 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         )
         return user
     
+    def update(self, instance, validated_data):
+        instance.username=validated_data.get('username', instance.username)
+        instance.email=validated_data.get('email', instance.email)
+        instance.save()
+        return instance
+    
     class Meta:
         model = User
         fields = ['url', 'username', 'email', 'groups', 'password']

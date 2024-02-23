@@ -8,12 +8,22 @@ Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
 }
 ###
 
-GET http://127.0.0.1:8000/api/users
+GET http://127.0.0.1:8000/api/users/
 content-type: application/json
 Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
 ###
 
-GET http://127.0.0.1:8000/api/groups
+GET http://127.0.0.1:8000/api/groups/
+Content-Type: application/json
+Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
+### 
+
+GET http://127.0.0.1:8000/api/users/1/
+Content-Type: application/json
+Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
+### 
+
+GET http://127.0.0.1:8000/api/appointments/
 Content-Type: application/json
 Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
 ### 
@@ -23,3 +33,24 @@ Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
 HEAD  http://127.0.0.1:8000/api/medicine/
 Content-Type: application/json
 Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
+
+###
+PATCH http://127.0.0.1:8000/api/users/2/
+Content-Type: application/json
+Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
+
+{
+    "email": "nikzim2005@gmail.com"
+}
+
+###
+GET http://127.0.0.1:8000/api/users/2/
+Content-Type: application/json
+Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
+### 
+
+GET http://127.0.0.1:8000/api/appointments/2/
+Content-Type: application/json
+Authorization: Token 783b6e6b7e7c66f5f1bcc914822eca5ef84fb5b3
+### 
+
