@@ -12,8 +12,9 @@
 }
 
 .u-section-1 .u-form-1 {
+  height: 392px;
   width: 570px;
-  margin: 29px auto 60px;
+  margin: 31px auto 60px;
 }
 
 .u-section-1 .u-form-group-1 {
@@ -63,6 +64,12 @@
 .u-section-1 .u-btn-1 {
   background-image: none;
   font-weight: 700;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 671px;
+  }
 }
 
 @media (max-width: 767px) {
