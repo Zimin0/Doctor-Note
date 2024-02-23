@@ -60,6 +60,27 @@ class UserRegistrationView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = UserSerializer
 
+class UserChangePasswordView(APIView):
+    """ Изменение пароля """
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        user = request.user
+        old_password = request.data.get('old_password')
+        new_password = request.data.get('new_password')
+
+        if not old_password or not new_password:
+            return Response({'error': "Необходимо предоставить старый и новый пароль."}, status=status.HTTP_400_BAD_REQUEST)
+    
+        if not user.check_password(old_password):
+            return Response({'error': "Неверный старый пароль."}, status=status.HTTP_400_BAD_REQUEST)
+
+        user.set_password(new_password)
+        user.save() 
+        return Response({'success': "Пароль успешно изменен."}, status=status.HTTP_200_OK)
+
+
+
 """ 
 Вместо того, чтобы писать несколько представлений, мы объединяем все общее поведение в классы под названием ViewSets.
 При необходимости мы можем легко разбить их на отдельные представления, но использование наборов представлений позволяет сохранить логику представления хорошо организованной, а также очень лаконичной.
