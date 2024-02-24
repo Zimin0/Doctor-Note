@@ -49,10 +49,7 @@ def edit_appointment(request, appt_id):
     """ Изменение записи ко врачу """
     appointment = get_object_or_404(Appointment, id=appt_id)
     if appointment.patient != request.user:
-        raise PermissionDenied
-    # print(appointment.additional_file)
-    print(f"Сейчас в объявлении {appointment.date}")
-    print(f"Сейчас в объявлении {appointment.time}")
+        raise PermissionDenied('Попытка открыть запись к врачу другого пользователя!')
     if request.method == 'POST':
         form = AppointmentForm(request.POST, request.FILES, instance=appointment)
         if form.is_valid():

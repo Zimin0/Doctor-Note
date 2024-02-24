@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from doctors_appointment.models import Appointment
 
 import datetime
+import unittest
 from django.utils import timezone
 
 
@@ -44,14 +45,31 @@ class DoctorsAvailabilityTest(TestCase):
         self.assertEqual(response.redirect_chain[0][0], '/doctors/')
         self.assertTrue(Appointment.active_appointments_sorted.filter(doctor='Тестовый_врач'))
 
-    def test_touch_not_your_own_doctor_appoint(self):
-        """ Нельзя получить запись к доктору другого пользователя. """
-        date = timezone.now().date() + datetime.timedelta(days=1)
-        time = timezone.now().time().strftime('%H:%M')
+    def test_can_get_your_appoint(self):
+        """ Можно ли просмотреть свою запись к врачу. """
         appointment = {
             'doctor': 'Тестовый_врач',
-            'date': date,
-            'time': time,
+            'date': timezone.now().date() + datetime.timedelta(days=1),
+            'time': timezone.now().time().strftime('%H:%M'),
+            'address': 'Тестовый адрес, д. 0',
+            'office_number': "101",
+            'health_troubles': "Тестовые жалобы",
+            'report': "",
+            'is_ended': False,
+            'archived': False,
+        }
+
+        self.client.post('/doctors/add/', data=appointment) # создаем запись в БД
+        appoint = Appointment.objects.get(doctor='Тестовый_врач') # подтягиваем запись из БД
+        response = self.client.get(f'/doctors/edit/{appoint.id}/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_touch_not_your_own_doctor_appoint(self):
+        """ Нельзя получить запись к доктору другого пользователя. """
+        appointment = {
+            'doctor': 'Тестовый_врач',
+            'date': timezone.now().date() + datetime.timedelta(days=1),
+            'time': timezone.now().time().strftime('%H:%M'),
             'address': 'Тестовый адрес, д. 0',
             'office_number': "101",
             'health_troubles': "Тестовые жалобы",
@@ -60,9 +78,14 @@ class DoctorsAvailabilityTest(TestCase):
             'archived': False,
         }
         self.client.post('/doctors/add/', appointment, follow=True)
-
-        self.client2 = Client()
-        self.client2.login(username='admin2', password='admin2')
         appointment_id = Appointment.active_appointments_sorted.get(doctor='Тестовый_врач').id
-        response = self.client2.get(f'/doctors/edit/{appointment_id}')
-        print(response.status_code, '121212')
+
+        # создание втрого пользователя #
+        self.client2 = Client()
+        User.objects.create_user('admin2', 'admin@gmail.com', 'admin2')
+        self.client2.login(username='admin2', password='admin2')
+
+        # Получение пользователем не его записи #
+        response = self.client2.get(f'/doctors/edit/{appointment_id}/', folow=True)
+
+        self.assertEqual(response.status_code, 403) # PermissionDenied 403
