@@ -85,8 +85,24 @@
                   <a href="{% url 'users:login' %}">Пока не знакомы!</a> 
                {% endif %}
             </h6> 
-            <a href="{% url 'welcome:page_in_progress' %}" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
-         </div>
+         <!------- Переключение языка ------->
+         <form id="languageForm" action="{% url 'set_language' %}" method="post" style="display: none;">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ request.path }}">
+            <input type="hidden" name="language" id="languageInput">
+         </form>
+         {% if request.LANGUAGE_CODE == 'ru' %}
+         <a onclick="changeLanguage('en')" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">EN</a>
+         {% elif request.LANGUAGE_CODE == 'en' %}
+         <a onclick="changeLanguage('ru')" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
+         {% endif %}
+         <script>
+         function changeLanguage(lang) {
+            document.getElementById('languageInput').value = lang;
+            document.getElementById('languageForm').submit();
+         }
+         </script>
+         <!---------------------------------->         </div>
       </header>
       <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-ca97">
          <div class="u-clearfix u-sheet u-sheet-1">

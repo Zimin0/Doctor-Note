@@ -14,7 +14,7 @@ from doctors_appointment.models import Appointment
 from medicine.models import Medicine
 from api.serializers.doctors import AppointmentSerializer
 from api.serializers.medicine import MedicineSerializer
-from api.serializers.users import UserSerializer, GroupSerializer
+from api.serializers.users import UserSerializer, GroupSerializer, ChangePasswordSerializer
 
 class AppointmentViewSet(viewsets.ModelViewSet):
     queryset = Appointment.objects.all()
@@ -65,12 +65,13 @@ class UserChangePasswordView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
-        user = request.user
-        old_password = request.data.get('old_password')
-        new_password = request.data.get('new_password')
+        
+        serializer = ChangePasswordSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
 
-        if not old_password or not new_password:
-            return Response({'error': "Необходимо предоставить старый и новый пароль."}, status=status.HTTP_400_BAD_REQUEST)
+        user = request.user
+        old_password = serializer.validated_data.get('old_password')
+        new_password = serializer.validated_data.get('new_password')
     
         if not user.check_password(old_password):
             return Response({'error': "Неверный старый пароль."}, status=status.HTTP_400_BAD_REQUEST)

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+    """ Пользователь """
     password = serializers.CharField(write_only=True)
 
     def create(self, validated_data):
@@ -24,8 +25,13 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'username', 'email', 'groups', 'password']
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    """ Группы пользователей. """
     class Meta:
         model = Group
         fields = ['url', 'name']
         
-    
+
+class ChangePasswordSerializer(serializers.Serializer):
+    """ Изменение пароля пользователя. """
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(reqiered=True)

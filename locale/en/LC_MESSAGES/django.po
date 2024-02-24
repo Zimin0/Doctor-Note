@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-23 21:38+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\config\settings.py:58
+msgid "Russian"
+msgstr ""
+
+#: .\config\settings.py:59
+msgid "English"
+msgstr ""
+
+#: .\welcome\templates\welcome\welcome.html:8
+msgid ""
+"Учителя центра Пилатеса и йоги, Наша команда, Наша философия, Наши тренеры"
+msgstr ""
+
+#: .\welcome\templates\welcome\welcome.html:9
+#: .\welcome\templates\welcome\welcome.html:27
+msgid "Сайт для сохранения своих записей к врачам и выписанных лекарств."
+msgstr "Website for storing your doctor's notes and prescribed medications."
+
+#: .\welcome\templates\welcome\welcome.html:10
+#: .\welcome\templates\welcome\welcome.html:26
+msgid "приветствие"
+msgstr "greetings"
+
+#: .\welcome\templates\welcome\welcome.html:54
+#: .\welcome\templates\welcome\welcome.html:69
+msgid "Выйти"
+msgstr "Logout"
+
+#: .\welcome\templates\welcome\welcome.html:56
+#: .\welcome\templates\welcome\welcome.html:71
+#: .\welcome\templates\welcome\welcome.html:108
+msgid "Войти"
+msgstr "Login"
+
+#: .\welcome\templates\welcome\welcome.html:57
+#: .\welcome\templates\welcome\welcome.html:72
+msgid "Регистрация"
+msgstr "Register"
+
+#: .\welcome\templates\welcome\welcome.html:66
+msgid "Врачи"
+msgstr "Doctors"
+
+#: .\welcome\templates\welcome\welcome.html:67
+msgid "Лекарства"
+msgstr "Medicines"
+
+#: .\welcome\templates\welcome\welcome.html:81
+msgid "Пока не знакомы!"
+msgstr "Not familiar yet!"
+
+#: .\welcome\templates\welcome\welcome.html:105
+msgid "ЗАМЕТКА ДЛЯ ДОКТОРА&nbsp;"
+msgstr "DOCTOR NOTE&nbsp;"
+
+#: .\welcome\templates\welcome\welcome.html:106
+msgid "Добро пожаловать!"
+msgstr "Welcome!"
+
+#: .\welcome\templates\welcome\welcome.html:107
+msgid ""
+"Это ​сайт, где вы можете удобно хранить записи к врачам и информацию о "
+"лекарствах. Просто войдите или зарегистрируйтесь, чтобы начать пользоваться "
+"сервисом!"
+msgstr ""
+"This is a website where you can conveniently store notes for doctors and "
+"information about medicines. Simply log in or register to start using the "
+"service!"
+
+#: .\welcome\templates\welcome\welcome.html:109
+msgid "или"
+msgstr "or"
+
+#: .\welcome\templates\welcome\welcome.html:110
+msgid "Зарегистрироваться"
+msgstr "Sign Up"
+
+#: .\welcome\templates\welcome\welcome.html:115
+msgid ""
+"Сайт сделан Zimin0<br>Почта:&nbsp;work_notifications_zimino@mail."
+"ru<br>Телеграм:&nbsp;&nbsp;https://t.me/Zimin0"
+msgstr ""
+
+#: .\welcome\templates\welcome\welcome.html:126
+msgid "Cookies"
+msgstr "Cookies"
+
+#: .\welcome\templates\welcome\welcome.html:127
+msgid ""
+" Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. "
+"Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов."
+"&nbsp;"
+msgstr ""
+"We use cookies to improve your experience on our site. By continuing to use "
+"the site, you agree to the use of these files."
+
+#: .\welcome\templates\welcome\welcome.html:132
+msgid "Окей!"
+msgstr "Okay!"

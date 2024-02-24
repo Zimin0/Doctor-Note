@@ -1,12 +1,13 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="ru">
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="utf-8">
-      <meta name="keywords" content="Pilates &amp;amp; Yoga Center Teachers, Our Team, ​Our Philoshophy, Our Trainers">
-      <meta name="description" content="Сайт для сохранения своих записей к врачам и выписанных лекарств. ">
-      <title>greetings</title>
+      <meta name="keywords" content="{% blocktrans %}Учителя центра Пилатеса и йоги, Наша команда, Наша философия, Наши тренеры{% endblocktrans %}">
+      <meta name="description" content="{% blocktrans %}Сайт для сохранения своих записей к врачам и выписанных лекарств.{% endblocktrans %}">
+      <title>{% blocktrans %}приветствие{% endblocktrans %}</title>
       <link rel="stylesheet" href="{% static 'welcome/nicepage.css' %}" media="screen">
       <link rel="stylesheet" href="{% static 'welcome/welcome.css' %}" media="screen">
       <script class="u-script" type="text/javascript" src="{% static 'welcome/jquery.js' %}" defer=""></script> 
@@ -22,8 +23,8 @@
          }
       </script>
       <meta name="theme-color" content="#ea4c2a">
-      <meta property="og:title" content="greetings">
-      <meta property="og:description" content="Сайт для сохранения своих записей к врачам и выписанных лекарств. ">
+      <meta property="og:title" content="{% blocktrans %}приветствие{% endblocktrans %}">
+      <meta property="og:description" content="{% blocktrans %}Сайт для сохранения своих записей к врачам и выписанных лекарств.{% endblocktrans %}">
       <meta property="og:type" content="website">
       <meta data-intl-tel-input-cdn-path="intlTelInput/">
    </head>
@@ -50,10 +51,10 @@
                      ㅤㅤㅤㅤㅤㅤㅤㅤ
                      {% if user.is_authenticated %}
                      <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">ㅤㅤ</a></li>
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">Выйти</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Выйти{% endblocktrans %}</a></li>
                      {% else %}
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">Войти</a></li>
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">Регистрация</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Войти{% endblocktrans %}</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Регистрация{% endblocktrans %}</a></li>
                      {% endif %}
                   </ul>
                </div>
@@ -62,13 +63,13 @@
                      <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-spacing-14 u-text-hover-palette-1-light-2 u-unstyled u-nav-2">
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">Врачи</a></li>
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'medicine:display_medicines' %}">Лекарства</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">{% blocktrans %}Врачи{% endblocktrans %}</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'medicine:display_medicines' %}">{% blocktrans %}Лекарства{% endblocktrans %}</a></li>
                            {% if user.is_authenticated %}
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">Выйти</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">{% blocktrans %}Выйти{% endblocktrans %}</a></li>
                            {% else %}
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">Войти</a></li>
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">Регистрация</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">{% blocktrans %}Войти{% endblocktrans %}</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">{% blocktrans %}Регистрация{% endblocktrans %}</a></li>
                            {% endif %}
                         </ul>
                      </div>
@@ -77,24 +78,41 @@
                </div>
             </nav>
             <h6 class="u-align-left-xl u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xs u-text u-text-custom-color-4 u-text-1">
-               <a href="{% url 'users:login' %}">Пока не знакомы!</a> 
+               <a href="{% url 'users:login' %}">{% blocktrans %}Пока не знакомы!{% endblocktrans %}</a> 
             </h6> 
-            <a href="{% url 'welcome:page_in_progress' %}" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
+         <!------- Переключение языка ------->
+         <form id="languageForm" action="{% url 'set_language' %}" method="post" style="display: none;">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ request.path }}">
+            <input type="hidden" name="language" id="languageInput">
+         </form>
+         {% if request.LANGUAGE_CODE == 'ru' %}
+         <a onclick="changeLanguage('en')" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">EN</a>
+         {% elif request.LANGUAGE_CODE == 'en' %}
+         <a onclick="changeLanguage('ru')" class="u-active-palette-3-light-2 u-align-left u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">RU</a>
+         {% endif %}
+         <script>
+         function changeLanguage(lang) {
+            document.getElementById('languageInput').value = lang;
+            document.getElementById('languageForm').submit();
+         }
+         </script>
+         <!---------------------------------->
          </div>
       </header>
       <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-section-1" id="sec-bbfd">
          <div class="u-clearfix u-sheet u-sheet-1">
-            <h5 class="u-align-center u-text u-text-default u-text-1">the DOCTOR NOTE&nbsp;</h5>
-            <h1 class="u-align-center u-text u-text-default u-text-2">Добро пожаловать!</h1>
-            <p class="u-align-center u-text u-text-3">Это ​сайт, где вы можете удобно хранить записи к врачам и информацию о лекарствах. Просто войдите или зарегистрируйтесь, чтобы начать пользоваться сервисом!</p>
-            <a href="{% url 'users:login' %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1">Войти </a>
-            <p class="u-align-center u-text u-text-4">или</p>
-            <a href="{% url 'users:register' %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-2">Зарегистрироваться</a>
+            <h5 class="u-align-center u-text u-text-default u-text-1">{% blocktrans %}ЗАМЕТКА ДЛЯ ДОКТОРА&nbsp;{% endblocktrans %}</h5>
+            <h1 class="u-align-center u-text u-text-default u-text-2">{% blocktrans %}Добро пожаловать!{% endblocktrans %}</h1>
+            <p class="u-align-center u-text u-text-3">{% blocktrans %}Это ​сайт, где вы можете удобно хранить записи к врачам и информацию о лекарствах. Просто войдите или зарегистрируйтесь, чтобы начать пользоваться сервисом!{% endblocktrans %}</p>
+            <a href="{% url 'users:login' %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1">{% blocktrans %}Войти{% endblocktrans %}</a>
+            <p class="u-align-center u-text u-text-4">{% blocktrans %}или{% endblocktrans %}</p>
+            <a href="{% url 'users:register' %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-2">{% blocktrans %}Зарегистрироваться{% endblocktrans %}</a>
          </div>
       </section>
       <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-59f5">
          <div class="u-clearfix u-sheet u-sheet-1">
-            <p class="u-small-text u-text u-text-variant u-text-1">Сайт сделан Zimin0<br>Почта:&nbsp;work_notifications_zimino@mail.ru<br>Телеграм:&nbsp;&nbsp;https://t.me/Zimin0
+            <p class="u-small-text u-text u-text-variant u-text-1">{% blocktrans %}Сайт сделан Zimin0<br>Почта:&nbsp;work_notifications_zimino@mail.ru<br>Телеграм:&nbsp;&nbsp;https://t.me/Zimin0{% endblocktrans %}
             </p>
          </div>
       </footer>
@@ -105,13 +123,13 @@
                   <div class="u-layout-row">
                      <div class="u-container-style u-layout-cell u-left-cell u-size-43-md u-size-43-sm u-size-43-xs u-size-46-lg u-size-46-xl u-layout-cell-1">
                         <div class="u-container-layout u-container-layout-1">
-                           <h3 class="u-text u-text-default u-text-1">Cookies</h3>
-                           <p class="u-text u-text-default u-text-2"> Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов.&nbsp;</p>
+                           <h3 class="u-text u-text-default u-text-1">{% blocktrans %}Cookies{% endblocktrans %}</h3>
+                           <p class="u-text u-text-default u-text-2">{% blocktrans %} Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов.&nbsp;{% endblocktrans %}</p>
                         </div>
                      </div>
                      <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-14-lg u-size-14-xl u-size-17-md u-size-17-sm u-size-17-xs u-layout-cell-2">
                         <div class="u-container-layout u-valign-middle u-container-layout-2">
-                           <a href="###" class="u-border-none u-btn u-button-confirm u-button-style u-custom-color-6 u-btn-1">Окей!</a>
+                           <a href="###" class="u-border-none u-btn u-button-confirm u-button-style u-custom-color-6 u-btn-1">{% blocktrans %}Окей!{% endblocktrans %}</a>
                         </div>
                      </div>
                   </div>
@@ -206,16 +224,25 @@
             }
             @media (max-width: 575px) {
             .u-cookies-consent .u-sheet-1 {
-            min-height: 121px;
+            min-height: 212px;
             }
             .u-cookies-consent .u-layout-cell-1 {
-            min-height: 100px;
+            min-height: 162px;
+            }
+            .u-cookies-consent .u-container-layout-1 {
+            padding-left: 20px;
+            padding-right: 20px;
             }
             .u-cookies-consent .u-layout-cell-2 {
-            min-height: 15px;
+            min-height: 162px;
+            }
+            .u-cookies-consent .u-container-layout-2 {
+            padding-left: 20px;
+            padding-right: 20px;
             }
             }
          </style>
       </section>
+      <script class="u-script" type="text/javascript" src="{% static 'welcome/nicepage.js' %}" defer=""></script> 
    </body>
 </html>
