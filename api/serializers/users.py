@@ -34,4 +34,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class ChangePasswordSerializer(serializers.Serializer):
     """ Изменение пароля пользователя. """
     old_password = serializers.CharField(required=True)
-    new_password = serializers.CharField(reqiered=True)
+    new_password = serializers.CharField(required=True)
