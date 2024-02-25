@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="ru-RU">
    <head>
@@ -25,7 +26,7 @@
       </script>
       <meta name="theme-color" content="#ea4c2a">
       <meta property="og:title" content="profile">
-      <meta property="og:description" content="Сайт для сохранения своих записей к врачам и выписанных лекарств. ">
+      <meta property="og:description" content="{% blocktrans %}Сайт для сохранения своих записей к врачам и выписанных лекарств.{% endblocktrans %}">
       <meta property="og:type" content="website">
       <meta data-intl-tel-input-cdn-path="intlTelInput/">
    </head>
@@ -52,13 +53,13 @@
                     {% if user.is_authenticated %}
                     <li class="u-nav-item"></li>
                     {% endif %}
-                    <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">Врачи</a></li>
-                    <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'medicine:display_medicines' %}" style="--radius:35px; padding: 10px 20px;">Лекарства</a></li>
+                    <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Врачи{% endblocktrans %}</a></li>
+                    <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'medicine:display_medicines' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Лекарства{% endblocktrans %}</a></li>
                     {% if user.is_authenticated %}
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">Выйти</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Выйти{% endblocktrans %}</a></li>
                     {% else %}
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">Войти</a></li>
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">Регистрация</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Войти{% endblocktrans %}</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Регистрация{% endblocktrans %}</a></li>
                     {% endif %}
                 </ul>
                </div>
@@ -67,13 +68,13 @@
                      <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-spacing-14 u-text-hover-palette-1-light-2 u-unstyled u-nav-2">
-                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="doctors.html">Врачи</a></li>
-                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="medicine.html">Лекарства</a></li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="doctors.html">{% blocktrans %}Врачи{% endblocktrans %}</a></li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="medicine.html">{% blocktrans %}Лекарства{% endblocktrans %}</a></li>
                           {% if user.is_authenticated %}
-                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">Выйти</a></li>
+                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">{% blocktrans %}Выйти{% endblocktrans %}</a></li>
                           {% else %}
-                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">Войти</a></li>
-                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">Регистрация</a></li>
+                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">{% blocktrans %}Войти{% endblocktrans %}</a></li>
+                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">{% blocktrans %}Регистрация{% endblocktrans %}</a></li>
                           {% endif %}                                                </ul>
                      </div>
                   </div>
@@ -105,9 +106,9 @@
       </header>
       <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-ca97">
          <div class="u-clearfix u-sheet u-sheet-1">
-            <h2 class="u-text u-text-1">Здравствуйте,<br>{{ user.first_name }}!
+            <h2 class="u-text u-text-1">{% blocktrans %}Здравствуйте{% endblocktrans %},<br>{{ user.first_name }}!
             </h2>
-            <a href="https://nicepage.com/c/pets-animals-html-templates" class="u-active-palette-3-light-3 u-align-center-xs u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1">архивированные записи</a>
+            <a href="{% url 'doctors:display_doctors' %}?archived=yes" class="u-active-palette-3-light-3 u-align-center-xs u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1">{% blocktrans %}архивированные записи{% endblocktrans %}</a>
          </div>
       </section>
       <section class="u-align-center u-clearfix u-grey-10 u-section-2" id="sec-aeae">
@@ -120,34 +121,32 @@
                 {% endif %}
                 <div class="u-form-group u-form-name u-label-none">
                      <label for="name-6797" class="u-label">Name</label>
-                     <input type="text" placeholder="*Имя" id="name-6797" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" name="first_name" class="u-input u-input-rectangle u-radius u-input-1" required="">
+                     <input type="text" placeholder="*{% blocktrans %}Имя{% endblocktrans %}" id="name-6797" value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}" name="first_name" class="u-input u-input-rectangle u-radius u-input-1" required="">
                      {% if form.first_name.errors %}
                         <div class="error">{{ form.first_name.errors }}</div>
                      {% endif %}
                     </div>
                   <div class="u-form-group u-label-none u-form-group-2">
                      <label for="text-bf7c" class="u-label">Поле ввода</label>
-                     <input type="text" placeholder="* Фамилия" id="text-bf7c" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}" name="last_name" class="u-input u-input-rectangle u-radius u-input-2">
+                     <input type="text" placeholder="*{% blocktrans %}Фамилия{% endblocktrans %}" id="text-bf7c" value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}" name="last_name" class="u-input u-input-rectangle u-radius u-input-2">
                      {% if form.last_name.errors %}
                         <div class="error">{{ form.last_name.errors }}</div>
                      {% endif %}
                     </div>
                   <div class="u-form-email u-form-group u-label-none">
                      <label for="email-6797" class="u-label">Email</label>
-                     <input type="email" placeholder="* Почта" id="email-6797" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" name="email" class="u-input u-input-rectangle u-radius u-input-3">
+                     <input type="email" placeholder="*{% blocktrans %}Почта{% endblocktrans %}" id="email-6797" value="{% if form.email.value %}{{ form.email.value }}{% endif %}" name="email" class="u-input u-input-rectangle u-radius u-input-3">
                      {% if form.email.errors %}
                         <div class="error">{{ form.email.errors }}</div>
                      {% endif %}
                     </div>
                   <div class="u-form-checkbox u-form-group u-label-none u-form-group-4">
                      <input type="checkbox" id="checkbox-a69b" name="need_to_send_notifics_on_mail"  class="u-active-custom-color-4 u-border-2 u-border-custom-color-4 u-field-input" {% if form.need_to_send_notifics_on_mail.value %}checked{% endif %}>
-                     <label for="checkbox-a69b" class="u-custom-font u-field-label u-font-montserrat" style="font-size: 1.125rem;">Отправлять напоминания о записях к врачу на почту</label>
+                     <label for="checkbox-a69b" class="u-custom-font u-field-label u-font-montserrat" style="font-size: 1.125rem;">{% blocktrans %}Отправлять напоминания о записях к врачу на почту{% endblocktrans %}</label>
                   </div>
                   <div class="u-align-left u-form-group u-form-submit">
-                     <button type="submit" class="u-active-palette-3-light-2 u-border-none u-btn u-btn-submit u-button-style u-custom-color-4 u-custom-font u-font-montserrat u-hover-palette-3-light-1 u-btn-1">Изменить</button>
+                     <button type="submit" class="u-active-palette-3-light-2 u-border-none u-btn u-btn-submit u-button-style u-custom-color-4 u-custom-font u-font-montserrat u-hover-palette-3-light-1 u-btn-1">{% blocktrans %}Изменить{% endblocktrans %}</button>
                   </div>
-                  <div class="u-form-send-message u-form-send-success">Thank you! Your message has been sent.</div>
-                  <div class="u-form-send-error u-form-send-message">Unable to send your message. Please fix errors then try again.</div>
                   <input type="hidden" value="" name="recaptchaResponse">
                   <input type="hidden" name="formServices" value="053a05f4-46e9-dc54-0903-77a2c20eae4a">
                </form>
@@ -156,7 +155,7 @@
       </section>
       <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-59f5">
          <div class="u-clearfix u-sheet u-sheet-1">
-            <p class="u-small-text u-text u-text-variant u-text-1">Сайт сделан Zimin0<br>Почта:&nbsp;work_notifications_zimino@mail.ru<br>Телеграм:&nbsp;&nbsp;https://t.me/Zimin0
+            <p class="u-small-text u-text u-text-variant u-text-1">{% blocktrans %}Сайт сделан{% endblocktrans %}Zimin0<br>{% blocktrans %}Почта{% endblocktrans %}:&nbsp;work_notifications_zimino@mail.ru<br>{% blocktrans %}Телеграм{% endblocktrans %}:&nbsp;&nbsp;https://t.me/Zimin0
             </p>
          </div>
       </footer>
@@ -168,12 +167,12 @@
                      <div class="u-container-style u-layout-cell u-left-cell u-size-43-md u-size-43-sm u-size-43-xs u-size-46-lg u-size-46-xl u-layout-cell-1">
                         <div class="u-container-layout u-container-layout-1">
                            <h3 class="u-text u-text-default u-text-1">Cookies</h3>
-                           <p class="u-text u-text-default u-text-2"> Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов.&nbsp;</p>
+                           <p class="u-text u-text-default u-text-2">{% blocktrans %}Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов.{% endblocktrans %}&nbsp;</p>
                         </div>
                      </div>
                      <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-14-lg u-size-14-xl u-size-17-md u-size-17-sm u-size-17-xs u-layout-cell-2">
                         <div class="u-container-layout u-valign-middle u-container-layout-2">
-                           <a href="###" class="u-border-none u-btn u-button-confirm u-button-style u-custom-color-6 u-btn-1">Окей!</a>
+                           <a href="###" class="u-border-none u-btn u-button-confirm u-button-style u-custom-color-6 u-btn-1">{% blocktrans %}Окей!{% endblocktrans %}</a>
                         </div>
                      </div>
                   </div>

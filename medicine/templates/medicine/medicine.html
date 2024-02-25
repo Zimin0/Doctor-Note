@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="ru-RU">
@@ -5,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="utf-8">
       <meta name="keywords" content="врач запись лекарства запомнить записать блокнот сохранение записей к врачу лечение поликлиника больница выписанные лекарства логин войти регистрация ">
-      <meta name="description" content="Сайт для сохранения своих записей к врачам и выписанных лекарств. ">
+      <meta name="description" content="{% blocktrans %}Сайт для сохранения своих записей к врачам и выписанных лекарств.{% endblocktrans %}">
       <title>medicine</title>
       <link rel="stylesheet" href="{% static 'medicine/nicepage.css' %}" media="screen">
       <link rel="stylesheet" href="{% static 'medicine/medicine.css' %}" media="screen">
@@ -47,13 +48,13 @@
                </div>
                <div class="u-custom-menu u-nav-container">
                   <ul class="u-nav u-unstyled u-nav-1">
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">Врачи</a></li>
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'medicine:display_medicines' %}" style="--radius:35px; padding: 10px 20px;">Лекарства</a></li>
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Врачи{% endblocktrans %}</a></li>
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'medicine:display_medicines' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Лекарства{% endblocktrans %}</a></li>
                      {% if user.is_authenticated %}
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">Выйти</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:logout' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Выйти{% endblocktrans %}</a></li>
                      {% else %}
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">Войти</a></li>
-                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">Регистрация</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:login' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Войти{% endblocktrans %}</a></li>
+                        <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'users:register' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Регистрация{% endblocktrans %}</a></li>
                      {% endif %}
                   </ul>
                </div>
@@ -62,13 +63,13 @@
                      <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-spacing-14 u-text-hover-palette-1-light-2 u-unstyled u-nav-2">
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">Врачи</a></li>
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'medicine:display_medicines' %}">Лекарства</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">{% blocktrans %}Врачи{% endblocktrans %}</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'medicine:display_medicines' %}">{% blocktrans %}Лекарства{% endblocktrans %}</a></li>
                            {% if user.is_authenticated %}
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">Выйти</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">{% blocktrans %}Выйти{% endblocktrans %}</a></li>
                            {% else %}
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">Войти</a></li>
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">Регистрация</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">{% blocktrans %}Войти{% endblocktrans %}</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">{% blocktrans %}Регистрация{% endblocktrans %}</a></li>
                            {% endif %}
                         </ul>
                      </div>
@@ -93,14 +94,16 @@
             document.getElementById('languageForm').submit();
          }
          </script>
-         <!---------------------------------->            <h6 class="u-align-left-xl u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xs u-text u-text-custom-color-4 u-text-1">
+         <!---------------------------------->            
+         <h6 class="u-align-left-xl u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xs u-text u-text-custom-color-4 u-text-1">
                <a href="{% url 'users:profile' %}">{{ user.last_name }} {{ user.first_name }}</a> 
             </h6>
          </div>
       </header>
       <section class="u-clearfix u-grey-10 u-section-1" id="carousel_42c8">
          <div class="u-clearfix u-sheet u-sheet-1">
-            <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">{% if medicines.count > 0 %} Лекарства {% else %} Пока лекарств не добавлено! :) {% endif %}</h2>
+            <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">{% if medicines.count > 0 %} {% blocktrans %}Лекарства{% endblocktrans %} {% else %} {% blocktrans %}Пока лекарств не добавлено! :) {% endblocktrans %}{% endif %}</h2>
+            <a href="{% url 'medicine:add_medicine' %}" class="u-active-palette-3-light-2 u-align-center u-border-none u-btn u-button-style u-custom-color-4 u-hover-palette-3-light-1 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">{% blocktrans %}+ Добавить{% endblocktrans %}</a>
             <div class="u-expanded-width u-list u-list-1">
                <div class="u-repeater u-repeater-1">
 
@@ -115,8 +118,8 @@
                         </div>
                         <div class="u-container-style u-custom-item u-group u-shape-rectangle u-group-2">
                            <div class="u-container-layout u-container-layout-3">
-                              <h3 class="u-align-left u-custom-font u-font-raleway u-text u-text-default u-text-3">Сегодня:</h3>
-                              <h3 class="u-align-left u-custom-font u-font-raleway u-text u-text-default u-text-4">Дозировка:</h3>
+                              <h3 class="u-align-left u-custom-font u-font-raleway u-text u-text-default u-text-3">{% blocktrans %}Сегодня:{% endblocktrans %}</h3>
+                              <h3 class="u-align-left u-custom-font u-font-raleway u-text u-text-default u-text-4">{% blocktrans %}Дозировка:{% endblocktrans %}</h3>
                            </div>
                         </div>
                         <div class="u-container-style u-group u-shape-rectangle u-group-3">
@@ -198,7 +201,7 @@
       </section>
       <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-59f5">
          <div class="u-clearfix u-sheet u-sheet-1">
-            <p class="u-small-text u-text u-text-variant u-text-1">Сайт сделан Zimin0<br>Почта:&nbsp;work_notifications_zimino@mail.ru<br>Телеграм:&nbsp;&nbsp;https://t.me/Zimin0
+            <p class="u-small-text u-text u-text-variant u-text-1">{% blocktrans %}Сайт сделан{% endblocktrans %}Zimin0<br>{% blocktrans %}Почта{% endblocktrans %}:&nbsp;work_notifications_zimino@mail.ru<br>{% blocktrans %}Телеграм{% endblocktrans %}:&nbsp;&nbsp;https://t.me/Zimin0
             </p>
          </div>
       </footer>
@@ -210,12 +213,12 @@
                      <div class="u-container-style u-layout-cell u-left-cell u-size-43-md u-size-43-sm u-size-43-xs u-size-46-lg u-size-46-xl u-layout-cell-1">
                         <div class="u-container-layout u-container-layout-1">
                            <h3 class="u-text u-text-default u-text-1">Cookies</h3>
-                           <p class="u-text u-text-default u-text-2"> Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов.&nbsp;</p>
+                           <p class="u-text u-text-default u-text-2"> {% blocktrans %}Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов.{% endblocktrans %}&nbsp;</p>
                         </div>
                      </div>
                      <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-14-lg u-size-14-xl u-size-17-md u-size-17-sm u-size-17-xs u-layout-cell-2">
                         <div class="u-container-layout u-valign-middle u-container-layout-2">
-                           <a href="###" class="u-border-none u-btn u-button-confirm u-button-style u-custom-color-6 u-btn-1">Окей!</a>
+                           <a href="###" class="u-border-none u-btn u-button-confirm u-button-style u-custom-color-6 u-btn-1">{% blocktrans %}Окей!{% endblocktrans %}</a>
                         </div>
                      </div>
                   </div>

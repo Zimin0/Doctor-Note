@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 21:38+0300\n"
+"POT-Creation-Date: 2024-02-25 20:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,60 +16,535 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: .\config\settings.py:58
-msgid "Russian"
-msgstr ""
 
-#: .\config\settings.py:59
-msgid "English"
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:9
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:9
+#: .\medicine\templates\medicine\addMedicine.html:9
+#: .\medicine\templates\medicine\addMedicine.html:27
+#: .\medicine\templates\medicine\medicine.html:9
+#: .\users\templates\users\login.html:9 .\users\templates\users\login.html:28
+#: .\users\templates\users\profile.html:29
+#: .\users\templates\users\register.html:9
+#: .\users\templates\users\register.html:28
+#: .\welcome\templates\welcome\403.html:27
+#: .\welcome\templates\welcome\welcome.html:9
+#: .\welcome\templates\welcome\welcome.html:27
+msgid "Сайт для сохранения своих записей к врачам и выписанных лекарств."
+msgstr "Site for saving your doctor's appointments and prescribed medications."
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:55
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:70
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:56
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:71
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:55
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:70
+#: .\doctors_appointment\templates\doctors_appointment\report.html:55
+#: .\doctors_appointment\templates\doctors_appointment\report.html:70
+#: .\medicine\templates\medicine\addMedicine.html:51
+#: .\medicine\templates\medicine\addMedicine.html:66
+#: .\medicine\templates\medicine\editMedicine.html:51
+#: .\medicine\templates\medicine\editMedicine.html:66
+#: .\medicine\templates\medicine\medicine.html:51
+#: .\medicine\templates\medicine\medicine.html:66
+#: .\users\templates\users\login.html:67
+#: .\users\templates\users\profile.html:56
+#: .\users\templates\users\profile.html:71
+#: .\users\templates\users\register.html:68
+#: .\welcome\templates\welcome\403.html:61
+#: .\welcome\templates\welcome\404.html:61
+#: .\welcome\templates\welcome\500.html:61
+#: .\welcome\templates\welcome\inWork.html:61
+#: .\welcome\templates\welcome\redirect.html:51
+#: .\welcome\templates\welcome\redirect.html:66
+#: .\welcome\templates\welcome\welcome.html:66
+msgid "Врачи"
+msgstr "Doctors"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:56
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:71
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:57
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:72
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:56
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:71
+#: .\doctors_appointment\templates\doctors_appointment\report.html:56
+#: .\doctors_appointment\templates\doctors_appointment\report.html:71
+#: .\medicine\templates\medicine\addMedicine.html:52
+#: .\medicine\templates\medicine\addMedicine.html:67
+#: .\medicine\templates\medicine\editMedicine.html:52
+#: .\medicine\templates\medicine\editMedicine.html:67
+#: .\medicine\templates\medicine\medicine.html:52
+#: .\medicine\templates\medicine\medicine.html:67
+#: .\medicine\templates\medicine\medicine.html:105
+#: .\users\templates\users\login.html:68
+#: .\users\templates\users\profile.html:57
+#: .\users\templates\users\profile.html:72
+#: .\users\templates\users\register.html:69
+#: .\welcome\templates\welcome\403.html:62
+#: .\welcome\templates\welcome\404.html:62
+#: .\welcome\templates\welcome\500.html:62
+#: .\welcome\templates\welcome\inWork.html:62
+#: .\welcome\templates\welcome\redirect.html:52
+#: .\welcome\templates\welcome\redirect.html:67
+#: .\welcome\templates\welcome\welcome.html:67
+msgid "Лекарства"
+msgstr "Medications"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:58
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:73
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:59
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:74
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:58
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:73
+#: .\doctors_appointment\templates\doctors_appointment\report.html:58
+#: .\doctors_appointment\templates\doctors_appointment\report.html:73
+#: .\medicine\templates\medicine\addMedicine.html:54
+#: .\medicine\templates\medicine\addMedicine.html:69
+#: .\medicine\templates\medicine\editMedicine.html:54
+#: .\medicine\templates\medicine\editMedicine.html:69
+#: .\medicine\templates\medicine\medicine.html:54
+#: .\medicine\templates\medicine\medicine.html:69
+#: .\users\templates\users\login.html:55 .\users\templates\users\login.html:70
+#: .\users\templates\users\profile.html:59
+#: .\users\templates\users\profile.html:74
+#: .\users\templates\users\register.html:55
+#: .\users\templates\users\register.html:71
+#: .\welcome\templates\welcome\403.html:64
+#: .\welcome\templates\welcome\404.html:64
+#: .\welcome\templates\welcome\500.html:64
+#: .\welcome\templates\welcome\inWork.html:64
+#: .\welcome\templates\welcome\redirect.html:54
+#: .\welcome\templates\welcome\redirect.html:69
+#: .\welcome\templates\welcome\welcome.html:54
+#: .\welcome\templates\welcome\welcome.html:69
+msgid "Выйти"
+msgstr "Log out"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:60
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:75
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:61
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:76
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:60
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:75
+#: .\doctors_appointment\templates\doctors_appointment\report.html:60
+#: .\doctors_appointment\templates\doctors_appointment\report.html:75
+#: .\medicine\templates\medicine\addMedicine.html:56
+#: .\medicine\templates\medicine\addMedicine.html:71
+#: .\medicine\templates\medicine\editMedicine.html:56
+#: .\medicine\templates\medicine\editMedicine.html:71
+#: .\medicine\templates\medicine\medicine.html:56
+#: .\medicine\templates\medicine\medicine.html:71
+#: .\users\templates\users\login.html:57 .\users\templates\users\login.html:72
+#: .\users\templates\users\login.html:109
+#: .\users\templates\users\login.html:131
+#: .\users\templates\users\profile.html:61
+#: .\users\templates\users\profile.html:76
+#: .\users\templates\users\register.html:57
+#: .\users\templates\users\register.html:73
+#: .\welcome\templates\welcome\403.html:66
+#: .\welcome\templates\welcome\404.html:66
+#: .\welcome\templates\welcome\500.html:66
+#: .\welcome\templates\welcome\inWork.html:66
+#: .\welcome\templates\welcome\redirect.html:56
+#: .\welcome\templates\welcome\redirect.html:71
+#: .\welcome\templates\welcome\redirect.html:107
+#: .\welcome\templates\welcome\welcome.html:56
+#: .\welcome\templates\welcome\welcome.html:71
+#: .\welcome\templates\welcome\welcome.html:108
+msgid "Войти"
+msgstr "Log in"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:61
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:76
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:62
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:77
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:61
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:76
+#: .\doctors_appointment\templates\doctors_appointment\report.html:61
+#: .\doctors_appointment\templates\doctors_appointment\report.html:76
+#: .\medicine\templates\medicine\addMedicine.html:57
+#: .\medicine\templates\medicine\addMedicine.html:72
+#: .\medicine\templates\medicine\editMedicine.html:57
+#: .\medicine\templates\medicine\editMedicine.html:72
+#: .\medicine\templates\medicine\medicine.html:57
+#: .\medicine\templates\medicine\medicine.html:72
+#: .\users\templates\users\login.html:58 .\users\templates\users\login.html:73
+#: .\users\templates\users\profile.html:62
+#: .\users\templates\users\profile.html:77
+#: .\users\templates\users\register.html:58
+#: .\users\templates\users\register.html:74
+#: .\users\templates\users\register.html:110
+#: .\welcome\templates\welcome\403.html:67
+#: .\welcome\templates\welcome\404.html:67
+#: .\welcome\templates\welcome\500.html:67
+#: .\welcome\templates\welcome\inWork.html:67
+#: .\welcome\templates\welcome\redirect.html:57
+#: .\welcome\templates\welcome\redirect.html:72
+#: .\welcome\templates\welcome\welcome.html:57
+#: .\welcome\templates\welcome\welcome.html:72
+msgid "Регистрация"
+msgstr "Register"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:108
+msgid "Добавить запись к врачу"
+msgstr "Add a doctor's appointment"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:114
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:114
+msgid "Врач"
+msgstr "Doctor"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:121
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:132
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:173
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:122
+msgid "Дата"
+msgstr "Date"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:128
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:166
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:287
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:189
+#: .\doctors_appointment\templates\doctors_appointment\report.html:131
+#: .\medicine\templates\medicine\addMedicine.html:156
+#: .\medicine\templates\medicine\editMedicine.html:156
+#: .\medicine\templates\medicine\medicine.html:204
+#: .\users\templates\users\login.html:142
+#: .\users\templates\users\profile.html:138
+#: .\users\templates\users\profile.html:158
+#: .\users\templates\users\register.html:130
+#: .\users\templates\users\register.html:168
+#: .\welcome\templates\welcome\403.html:109
+#: .\welcome\templates\welcome\404.html:109
+#: .\welcome\templates\welcome\500.html:109
+#: .\welcome\templates\welcome\inWork.html:109
+#: .\welcome\templates\welcome\redirect.html:112
+#: .\welcome\templates\welcome\welcome.html:115
+msgid "Почта"
+msgstr "Email"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:135
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:143
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:184
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:137
+msgid "Адрес"
+msgstr "Address"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:142
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:137
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:178
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:144
+msgid "Кабинет"
+msgstr "Office"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:149
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:151
+msgid "Жалобы"
+msgstr "Complaints"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:166
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:287
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:189
+#: .\doctors_appointment\templates\doctors_appointment\report.html:131
+#: .\medicine\templates\medicine\addMedicine.html:156
+#: .\medicine\templates\medicine\editMedicine.html:156
+#: .\medicine\templates\medicine\medicine.html:204
+#: .\users\templates\users\login.html:142
+#: .\users\templates\users\profile.html:158
+#: .\users\templates\users\register.html:168
+#: .\welcome\templates\welcome\403.html:109
+#: .\welcome\templates\welcome\404.html:109
+#: .\welcome\templates\welcome\500.html:109
+#: .\welcome\templates\welcome\inWork.html:109
+#: .\welcome\templates\welcome\redirect.html:112
+#: .\welcome\templates\welcome\welcome.html:115
+msgid "Сайт сделан"
+msgstr "Site created by"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:166
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:287
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:189
+#: .\doctors_appointment\templates\doctors_appointment\report.html:131
+#: .\medicine\templates\medicine\addMedicine.html:156
+#: .\medicine\templates\medicine\editMedicine.html:156
+#: .\medicine\templates\medicine\medicine.html:204
+#: .\users\templates\users\login.html:142
+#: .\users\templates\users\profile.html:158
+#: .\users\templates\users\register.html:168
+#: .\welcome\templates\welcome\403.html:109
+#: .\welcome\templates\welcome\404.html:109
+#: .\welcome\templates\welcome\500.html:109
+#: .\welcome\templates\welcome\inWork.html:109
+#: .\welcome\templates\welcome\redirect.html:112
+#: .\welcome\templates\welcome\welcome.html:115
+msgid "Телеграм"
+msgstr "Telegram"
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:178
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:299
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:201
+#: .\doctors_appointment\templates\doctors_appointment\report.html:143
+#: .\medicine\templates\medicine\addMedicine.html:168
+#: .\medicine\templates\medicine\editMedicine.html:168
+#: .\medicine\templates\medicine\medicine.html:216
+#: .\users\templates\users\login.html:154
+#: .\users\templates\users\profile.html:170
+#: .\users\templates\users\register.html:180
+#: .\welcome\templates\welcome\403.html:121
+#: .\welcome\templates\welcome\404.html:121
+#: .\welcome\templates\welcome\500.html:121
+#: .\welcome\templates\welcome\inWork.html:121
+#: .\welcome\templates\welcome\redirect.html:124
+msgid ""
+"Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. "
+"Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов."
 msgstr ""
+"We use cookies to enhance your experience on our site. By continuing to use "
+"the site, you agree to the use of these files."
+
+#: .\doctors_appointment\templates\doctors_appointment\addDoctor.html:183
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:304
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:206
+#: .\doctors_appointment\templates\doctors_appointment\report.html:148
+#: .\medicine\templates\medicine\addMedicine.html:173
+#: .\medicine\templates\medicine\editMedicine.html:173
+#: .\medicine\templates\medicine\medicine.html:221
+#: .\users\templates\users\login.html:159
+#: .\users\templates\users\profile.html:175
+#: .\users\templates\users\register.html:185
+#: .\welcome\templates\welcome\403.html:126
+#: .\welcome\templates\welcome\404.html:126
+#: .\welcome\templates\welcome\500.html:126
+#: .\welcome\templates\welcome\inWork.html:126
+#: .\welcome\templates\welcome\redirect.html:129
+#: .\welcome\templates\welcome\welcome.html:132
+msgid "Окей!"
+msgstr "Okay!"
+
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:109
+msgid "Записи к врачу"
+msgstr "Doctor's appointments"
+
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:109
+msgid "Пока записей нет! :)"
+msgstr "No records yet! :)"
+
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:110
+#: .\medicine\templates\medicine\medicine.html:106
+msgid "+ Добавить"
+msgstr "+ Add"
+
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:126
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:167
+msgid "Время"
+msgstr "Time"
+
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:150
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:192
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:236
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:275
+msgid "Инфо"
+msgstr "Info"
+
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:151
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:196
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:237
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:276
+msgid "Удалить"
+msgstr "Delete"
+
+#: .\doctors_appointment\templates\doctors_appointment\doctors.html:194
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:158
+msgid "Отчет"
+msgstr "Report"
+
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:108
+msgid "Редактирование запись к врачу"
+msgstr "Edit a doctor's appointment"
+
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:164
+msgid "Загрузить новый файл (если необходимо)"
+msgstr "Upload a new file (if necessary)"
+
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:166
+msgid "Текущий файл"
+msgstr "Current file"
+
+#: .\doctors_appointment\templates\doctors_appointment\editDoctor.html:175
+msgid "Архивировать?"
+msgstr "Archive?"
+
+#: .\doctors_appointment\templates\doctors_appointment\report.html:108
+msgid "Добавить отчет после посещения врача"
+msgstr "Add a report after visiting a doctor"
+
+#: .\medicine\templates\medicine\addMedicine.html:105
+msgid "Добавить новое лекарство"
+msgstr "Add new medication"
+
+#: .\medicine\templates\medicine\addMedicine.html:111
+#: .\medicine\templates\medicine\editMedicine.html:111
+msgid "Название"
+msgstr "Name"
+
+#: .\medicine\templates\medicine\addMedicine.html:118
+#: .\medicine\templates\medicine\editMedicine.html:118
+msgid "Принимать до"
+msgstr "Take until"
+
+#: .\medicine\templates\medicine\addMedicine.html:132
+#: .\medicine\templates\medicine\editMedicine.html:132
+msgid "Дозировка"
+msgstr "Dosage"
+
+#: .\medicine\templates\medicine\addMedicine.html:139
+#: .\medicine\templates\medicine\editMedicine.html:139
+msgid "Комментарии"
+msgstr "Comments"
+
+#: .\medicine\templates\medicine\addMedicine.html:145
+msgid "Отправить"
+msgstr "Submit"
+
+#: .\medicine\templates\medicine\editMedicine.html:9
+msgid "Сайт для сохранения своих записей к врачам и выписанных лекарств. "
+msgstr "Site for saving your doctor's appointments and prescribed medications."
+
+#: .\medicine\templates\medicine\editMedicine.html:105
+msgid "Лекарство"
+msgstr "Medication"
+
+#: .\medicine\templates\medicine\editMedicine.html:125
+msgid "Раз в день"
+msgstr "Amount per day"
+
+#: .\medicine\templates\medicine\medicine.html:105
+msgid "Пока лекарств не добавлено! :) "
+msgstr "No medications added yet! :)"
+
+#: .\medicine\templates\medicine\medicine.html:121
+msgid "Сегодня:"
+msgstr "Today:"
+
+#: .\medicine\templates\medicine\medicine.html:122
+msgid "Дозировка:"
+msgstr "Dosage:"
+
+#: .\users\templates\users\login.html:85
+#: .\users\templates\users\register.html:86
+#: .\welcome\templates\welcome\403.html:79
+#: .\welcome\templates\welcome\404.html:79
+#: .\welcome\templates\welcome\500.html:79
+#: .\welcome\templates\welcome\inWork.html:79
+#: .\welcome\templates\welcome\welcome.html:81
+msgid "Пока не знакомы!"
+msgstr "Who are you?"
+
+#: .\users\templates\users\login.html:118
+#: .\users\templates\users\register.html:137
+msgid "Логин"
+msgstr "Login"
+
+#: .\users\templates\users\login.html:125
+#: .\users\templates\users\register.html:144
+msgid "Пароль"
+msgstr "Password"
+
+#: .\users\templates\users\login.html:135
+msgid "Еще не зарегистрированы?"
+msgstr "Not registered yet?"
+
+#: .\users\templates\users\login.html:137
+msgid "регистрация"
+msgstr "registration"
+
+#: .\users\templates\users\profile.html:109
+msgid "Здравствуйте"
+msgstr "Hello"
+
+#: .\users\templates\users\profile.html:111
+msgid "архивированные записи"
+msgstr "archived appointments"
+
+#: .\users\templates\users\profile.html:124
+#: .\users\templates\users\register.html:116
+msgid "Имя"
+msgstr "First Name"
+
+#: .\users\templates\users\profile.html:131
+#: .\users\templates\users\register.html:123
+msgid "Фамилия"
+msgstr "Last Name"
+
+#: .\users\templates\users\profile.html:145
+msgid "Отправлять напоминания о записях к врачу на почту"
+msgstr "Send reminders of appointments to email"
+
+#: .\users\templates\users\profile.html:148
+msgid "Изменить"
+msgstr "Change"
+
+#: .\users\templates\users\register.html:151
+msgid "Пароль еще раз"
+msgstr "Password again"
+
+#: .\welcome\templates\welcome\403.html:53
+#: .\welcome\templates\welcome\404.html:53
+#: .\welcome\templates\welcome\500.html:53
+#: .\welcome\templates\welcome\inWork.html:53
+msgid "Главная"
+msgstr "Home"
+
+#: .\welcome\templates\welcome\403.html:104
+#: .\welcome\templates\welcome\404.html:104
+#: .\welcome\templates\welcome\500.html:104
+msgid "ошибка"
+msgstr "Error"
+
+#: .\welcome\templates\welcome\403.html:104
+msgid " Кажется, вам сюда нельзя! :("
+msgstr " It seems you're not allowed here! :("
+
+#: .\welcome\templates\welcome\404.html:104
+msgid "Такой страницы не найдено! :("
+msgstr "Such a page was not found! :("
+
+#: .\welcome\templates\welcome\500.html:104
+msgid "Ой!"
+msgstr "Oops!"
+
+#: .\welcome\templates\welcome\500.html:104
+msgid "У нас на сервере что-то сломалось! :("
+msgstr "Something broke on our server! :("
+
+#: .\welcome\templates\welcome\inWork.html:104
+msgid "Страница в разработке!"
+msgstr "Page is under development!"
+
+#: .\welcome\templates\welcome\redirect.html:95
+msgid "Переадресация через"
+msgstr "Redirecting in"
+
+#: .\welcome\templates\welcome\redirect.html:95
+msgid "секунды"
+msgstr "seconds"
+
+#: .\welcome\templates\welcome\redirect.html:96
+msgid "Если переадресация не сработала, нажмите на кнопку ниже"
+msgstr "If redirection didn't work, click the button below"
 
 #: .\welcome\templates\welcome\welcome.html:8
 msgid ""
 "Учителя центра Пилатеса и йоги, Наша команда, Наша философия, Наши тренеры"
 msgstr ""
 
-#: .\welcome\templates\welcome\welcome.html:9
-#: .\welcome\templates\welcome\welcome.html:27
-msgid "Сайт для сохранения своих записей к врачам и выписанных лекарств."
-msgstr "Website for storing your doctor's notes and prescribed medications."
-
 #: .\welcome\templates\welcome\welcome.html:10
 #: .\welcome\templates\welcome\welcome.html:26
 msgid "приветствие"
-msgstr "greetings"
-
-#: .\welcome\templates\welcome\welcome.html:54
-#: .\welcome\templates\welcome\welcome.html:69
-msgid "Выйти"
-msgstr "Logout"
-
-#: .\welcome\templates\welcome\welcome.html:56
-#: .\welcome\templates\welcome\welcome.html:71
-#: .\welcome\templates\welcome\welcome.html:108
-msgid "Войти"
-msgstr "Login"
-
-#: .\welcome\templates\welcome\welcome.html:57
-#: .\welcome\templates\welcome\welcome.html:72
-msgid "Регистрация"
-msgstr "Register"
-
-#: .\welcome\templates\welcome\welcome.html:66
-msgid "Врачи"
-msgstr "Doctors"
-
-#: .\welcome\templates\welcome\welcome.html:67
-msgid "Лекарства"
-msgstr "Medicines"
-
-#: .\welcome\templates\welcome\welcome.html:81
-msgid "Пока не знакомы!"
-msgstr "Not familiar yet!"
+msgstr "greeting"
 
 #: .\welcome\templates\welcome\welcome.html:105
-msgid "ЗАМЕТКА ДЛЯ ДОКТОРА&nbsp;"
-msgstr "DOCTOR NOTE&nbsp;"
+msgid "ЗАПИСИ К ВРАЧУ"
+msgstr "DOCTOR'S APPOINTMENTS"
 
 #: .\welcome\templates\welcome\welcome.html:106
 msgid "Добро пожаловать!"
@@ -82,9 +556,9 @@ msgid ""
 "лекарствах. Просто войдите или зарегистрируйтесь, чтобы начать пользоваться "
 "сервисом!"
 msgstr ""
-"This is a website where you can conveniently store notes for doctors and "
-"information about medicines. Simply log in or register to start using the "
-"service!"
+"This is a site where you can conveniently store appointments with doctors "
+"and information about medications. Simply log in or register to start using "
+"the service!"
 
 #: .\welcome\templates\welcome\welcome.html:109
 msgid "или"
@@ -92,17 +566,11 @@ msgstr "or"
 
 #: .\welcome\templates\welcome\welcome.html:110
 msgid "Зарегистрироваться"
-msgstr "Sign Up"
-
-#: .\welcome\templates\welcome\welcome.html:115
-msgid ""
-"Сайт сделан Zimin0<br>Почта:&nbsp;work_notifications_zimino@mail."
-"ru<br>Телеграм:&nbsp;&nbsp;https://t.me/Zimin0"
-msgstr ""
+msgstr "Register"
 
 #: .\welcome\templates\welcome\welcome.html:126
 msgid "Cookies"
-msgstr "Cookies"
+msgstr ""
 
 #: .\welcome\templates\welcome\welcome.html:127
 msgid ""
@@ -111,8 +579,7 @@ msgid ""
 "&nbsp;"
 msgstr ""
 "We use cookies to improve your experience on our site. By continuing to use "
-"the site, you agree to the use of these files."
+"the site, you agree to our use of cookies.&nbsp;"
 
-#: .\welcome\templates\welcome\welcome.html:132
-msgid "Окей!"
-msgstr "Okay!"
+#~ msgid "ЗАМЕТКА ДЛЯ ДОКТОРА&nbsp;"
+#~ msgstr "NOTE FOR DOCTOR&nbsp;"

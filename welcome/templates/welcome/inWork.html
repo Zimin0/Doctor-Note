@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="ru">
    <head>
@@ -49,7 +50,7 @@
                   <ul class="u-nav u-unstyled u-nav-1">
                      ㅤㅤㅤㅤㅤㅤㅤ
                      <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">ㅤㅤ</a></li>
-                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">Главная</a></li>
+                     <li class="u-nav-item"><a class="u-border-6 u-border-active-custom-color-4 u-border-hover-palette-3-light-1 u-button-style u-nav-link u-radius u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% url 'doctors:display_doctors' %}" style="--radius:35px; padding: 10px 20px;">{% blocktrans %}Главная{% endblocktrans %}</a></li>
                   </ul>
                </div>
                <div class="u-custom-menu u-nav-container-collapse">
@@ -57,13 +58,13 @@
                      <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-spacing-14 u-text-hover-palette-1-light-2 u-unstyled u-nav-2">
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">Врачи</a></li>
-                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'medicine:display_medicines' %}">Лекарства</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'doctors:display_doctors' %}">{% blocktrans %}Врачи{% endblocktrans %}</a></li>
+                           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'medicine:display_medicines' %}">{% blocktrans %}Лекарства{% endblocktrans %}</a></li>
                            {% if user.is_authenticated %}
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">Выйти</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:logout' %}">{% blocktrans %}Выйти{% endblocktrans %}</a></li>
                            {% else %}
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">Войти</a></li>
-                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">Регистрация</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:login' %}">{% blocktrans %}Войти{% endblocktrans %}</a></li>
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'users:register' %}">{% blocktrans %}Регистрация{% endblocktrans %}</a></li>
                            {% endif %}
                         </ul>
                      </div>
@@ -75,7 +76,7 @@
                {% if user.is_authenticated %}
                   <a href="{% url 'users:profile' %}">{{ user.last_name }} {{ user.first_name }}</a> 
                {% else %}
-                  <a href="{% url 'users:login' %}">Пока не знакомы!</a> 
+                  <a href="{% url 'users:login' %}">{% blocktrans %}Пока не знакомы!{% endblocktrans %}</a> 
                {% endif %}
             </h6> 
          <!------- Переключение языка ------->
@@ -100,12 +101,12 @@
       <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-section-1" id="sec-bbfd">
          <div class="u-clearfix u-sheet u-sheet-1">
             <h5 class="u-align-center u-text u-text-default u-text-1">the DOCTOR NOTE&nbsp;</h5>
-            <h1 class="u-align-center u-text u-text-default u-text-2">Страница в разработке!</h1> 
+            <h1 class="u-align-center u-text u-text-default u-text-2">{% blocktrans %}Страница в разработке!{% endblocktrans %}</h1> 
          </div>
       </section>
       <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-59f5">
          <div class="u-clearfix u-sheet u-sheet-1">
-            <p class="u-small-text u-text u-text-variant u-text-1">Сайт сделан Zimin0<br>Почта:&nbsp;work_notifications_zimino@mail.ru<br>Телеграм:&nbsp;&nbsp;https://t.me/Zimin0
+            <p class="u-small-text u-text u-text-variant u-text-1">{% blocktrans %}Сайт сделан{% endblocktrans %}Zimin0<br>{% blocktrans %}Почта{% endblocktrans %}:&nbsp;work_notifications_zimino@mail.ru<br>{% blocktrans %}Телеграм{% endblocktrans %}:&nbsp;&nbsp;https://t.me/Zimin0
             </p>
          </div>
       </footer>
@@ -117,12 +118,12 @@
                      <div class="u-container-style u-layout-cell u-left-cell u-size-43-md u-size-43-sm u-size-43-xs u-size-46-lg u-size-46-xl u-layout-cell-1">
                         <div class="u-container-layout u-container-layout-1">
                            <h3 class="u-text u-text-default u-text-1">Cookies</h3>
-                           <p class="u-text u-text-default u-text-2"> Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов.&nbsp;</p>
+                           <p class="u-text u-text-default u-text-2">{% blocktrans %}Мы используем куки, чтобы улучшить ваш опыт использования нашего сайта. Продолжая пользоваться сайтом, вы соглашаетесь на использование этих файлов.{% endblocktrans %}&nbsp;</p>
                         </div>
                      </div>
                      <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-14-lg u-size-14-xl u-size-17-md u-size-17-sm u-size-17-xs u-layout-cell-2">
                         <div class="u-container-layout u-valign-middle u-container-layout-2">
-                           <a href="###" class="u-border-none u-btn u-button-confirm u-button-style u-custom-color-6 u-btn-1">Окей!</a>
+                           <a href="###" class="u-border-none u-btn u-button-confirm u-button-style u-custom-color-6 u-btn-1">{% blocktrans %}Окей!{% endblocktrans %}</a>
                         </div>
                      </div>
                   </div>
