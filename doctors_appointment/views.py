@@ -12,9 +12,18 @@ from welcome.decorators import page_in_progress, log_veriables
 @login_required
 def display_doctors(request):
     """ Главная страница с записями к врачу. """
+
+    def is_archived_get_param(request) -> bool:
+        """ Парсит парамент GET из запроса (request). """
+        parameter = request.GET.get('archived', False)
+        if parameter:
+            return parameter.strip().lower() in ('true', '1', 'yes')
+        return False
+            
     context = {}
-    appointments = Appointment.active_appointments_sorted.filter(patient=request.user)
-    #appointments = request.user.appointments.all()
+    is_archived_needed = is_archived_get_param(request)
+    print(f"is_archived_needed={is_archived_needed}")
+    appointments = Appointment.objects.filter(patient=request.user, archived=is_archived_needed)
 
     for appt in appointments: # смотрим, какие записи уже истекли
         if not appt.is_ended:
